@@ -79,7 +79,7 @@ class ExtractionRunner(Runner):
         expand_and_cluster.reconstruct(students, losses, self.desc.extraction_path(self.global_seed),
                                        self.desc.extraction_hparams, self.desc.dataset_hparams,
                                        self.desc.training_hparams, self.desc.model_hparams,
-                                       verbose=self.verbose, layer=layer)
+                                       verbose=self.verbose)
 
 
 def find_best_seed(it_per_epoch, path):
