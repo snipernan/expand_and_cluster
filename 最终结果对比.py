@@ -4,24 +4,22 @@ import os
 from models import registry
 from foundations import hparams
 
-# (第 1 部分和第 2 部分保持不变)
-# ...
 # ============================================================
-#   (1) 定义对比输入
+#   (1) 定义对比输入
 # ============================================================
 torch.manual_seed(0)
 compare_input = torch.randn(5, 2) 
 print(f"--- 对比输入 (Shape: {compare_input.shape}) ---\n{compare_input.numpy()}\n")
 
 # ============================================================
-#   (2) 加载模型 B (原始教师 - 标准方式)
+#   (2) 加载模型 B (原始教师 - 标准方式) + [新增] 打印权重
 # ============================================================
-# (这部分代码与之前完全相同)
 print("=" * 60)
 print("加载模型 B (原始教师 - 标准加载)")
 print("=" * 60)
 model_B_path = '/home/alvin/expand-and-cluster/data/sims/train_custom_teacher/seed_0/main/model_ep0_it0.pth'
 teacher_B_out = None
+
 try:
     teacher_hparams = hparams.ModelHparams(
         model_name='custom_teacher', model_init='kaiming_normal',
@@ -32,10 +30,53 @@ try:
     teacher_model_B.load_state_dict(teacher_ckpt)
     teacher_model_B.eval()
     print(f"成功加载模型 B: {model_B_path}\n")
+
+    # ----- [新增部分] 提取并打印模型 B 的权重结构 -----
+    # 假设模型是简单的 MLP，我们可以按顺序获取参数
+    # param_list[0]: Layer 1 Weights [Hidden, Input]
+    # param_list[1]: Layer 1 Bias    [Hidden]
+    # param_list[2]: Layer 2 Weights [Output, Hidden]
+    # param_list[3]: Layer 2 Bias    [Output]
+    params_B = list(teacher_model_B.parameters())
+    
+    W1_B = params_B[0].detach().cpu().numpy() # Shape: [Hidden, Input]
+    b1_B = params_B[1].detach().cpu().numpy() # Shape: [Hidden]
+    W2_B = params_B[2].detach().cpu().numpy() # Shape: [1, Hidden]
+    b2_B = params_B[3].detach().cpu().numpy() # Shape: [1]
+
+    print("=" * 60)
+    print("模型 B (原始教师) 的权重结构")
+    print("=" * 60)
+
+    # 第一层权重
+    print(f"\n--- 第一层 (Hidden) 的 {W1_B.shape[0]} 个神经元 ---\n")
+    print("格式: 神经元: [Input 1 权重] [Input 2 权重]   [偏置]")
+    print("-" * 59)
+    for i in range(W1_B.shape[0]):
+        # W1_B 的每一行对应一个神经元的输入权重
+        weights_str = "   ".join([f"{w:11.7f}" for w in W1_B[i, :]])
+        bias_str = f"{b1_B[i]:11.7f}"
+        print(f"神经元 {i+1:02d}:  {weights_str}  {bias_str}")
+    print("-" * 59)
+
+    # 第二层权重
+    print(f"\n--- 第二层 (Output) 输出层 ---")
+    print(f"权重 (来自 L1 的 {W1_B.shape[0]} 个神经元，连接到唯一的输出):")
+    # 展平以便打印，匹配模型 A 的格式
+    print(W2_B.flatten()) 
+    print(f"\n偏置 (L2 的 {len(b2_B)} 个输出):")
+    for i, bias in enumerate(b2_B):
+        print(f"  {bias:.7f}")
+    print("-" * 59 + "\n")
+    # -----------------------------------------------------
+
     with torch.no_grad():
         teacher_B_out = teacher_model_B(compare_input).detach().cpu().numpy().flatten()
+
 except Exception as e:
     print(f"⚠️ 无法加载模型 B (原始教师): {e}\n")
+    import traceback
+    traceback.print_exc()
 
 
 # ============================================================  
@@ -45,8 +86,8 @@ print("=" * 60)
 print("加载模型 A (重构教师 - 手动加载)")  
 print("=" * 60)  
   
-model_A_path = "/home/alvin/expand-and-cluster/data/sims/ec_d2cbdbf017/seed_-1/main/clustering_995dc42cbd/reconstructed_model/model_ep5000_it0.pth"  
-affine_path = "/home/alvin/expand-and-cluster/data/sims/ec_d2cbdbf017/seed_-1/main/clustering_995dc42cbd/reconstructed_model/affine.pth"  
+model_A_path = "/home/alvin/expand-and-cluster/data/sims/ec_5e03884262/seed_-1/main/clustering_995dc42cbd/reconstructed_model/model_ep5000_it0.pth"  
+affine_path = "/home/alvin/expand-and-cluster/data/sims/ec_5e03884262/seed_-1/main/clustering_995dc42cbd/reconstructed_model/affine.pth"  
 teacher_A_out = None  
   
 try:  
