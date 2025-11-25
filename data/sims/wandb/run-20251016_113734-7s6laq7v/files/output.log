@@ -1,0 +1,62 @@
+Generating dataset with teacher...
+train	ep 00000	it 000	loss 1.112e+03	ex 60000	time 0.00s
+Ep 0	It 0	Time Elapsed 0.00
+Ep 100	It 0	Time Elapsed 110.13
+Ep 200	It 0	Time Elapsed 111.19
+Ep 300	It 0	Time Elapsed 105.00
+Ep 400	It 0	Time Elapsed 106.77
+Ep 500	It 0	Time Elapsed 103.53
+Ep 600	It 0	Time Elapsed 110.87
+Ep 700	It 0	Time Elapsed 98.26
+Ep 800	It 0	Time Elapsed 94.53
+Ep 900	It 0	Time Elapsed 93.41
+Ep 1000	It 0	Time Elapsed 90.29
+Ep 1100	It 0	Time Elapsed 91.18
+Ep 1200	It 0	Time Elapsed 94.31
+Ep 1300	It 0	Time Elapsed 89.89
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 71, in <module>
+    cli.main()
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 508, in main
+    run()
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 358, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+  File "/home/alvin/expand-and-cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/alvin/expand-and-cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/alvin/expand-and-cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/alvin/expand-and-cluster/extraction/runner.py", line 66, in run
+    students, losses = expand_and_cluster.train_students(
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 82, in train_students
+    train(training_hparams, model, train_loader, output_location, callbacks, start_step=start_step)
+  File "/home/alvin/expand-and-cluster/training/train.py", line 126, in train
+    for it, (examples, labels) in enumerate(train_loader):
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 677, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 265, in default_collate
+    return collate(batch, collate_fn_map=default_collate_fn_map)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 137, in collate
+    if not all(len(elem) == elem_size for elem in it):
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 137, in <genexpr>
+    if not all(len(elem) == elem_size for elem in it):
+  File "_pydevd_bundle\\pydevd_cython.pyx", line 1697, in _pydevd_bundle.pydevd_cython.SafeCallWrapper.__call__
+  File "_pydevd_bundle\\pydevd_cython.pyx", line 2017, in _pydevd_bundle.pydevd_cython.ThreadTracer.__call__
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydev_bundle/pydev_is_thread_alive.py", line 20, in is_thread_alive
+    def is_thread_alive(t):
+KeyboardInterrupt

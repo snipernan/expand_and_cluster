@@ -1,0 +1,14 @@
+{"time":"2025-10-24T21:28:29.545648515+08:00","level":"INFO","msg":"stream: starting","core version":"0.22.1"}
+{"time":"2025-10-24T21:28:30.009149357+08:00","level":"INFO","msg":"stream: created new stream","id":"a3wop1u5"}
+{"time":"2025-10-24T21:28:30.009255907+08:00","level":"INFO","msg":"handler: started","stream_id":"a3wop1u5"}
+{"time":"2025-10-24T21:28:30.009314834+08:00","level":"INFO","msg":"stream: started","id":"a3wop1u5"}
+{"time":"2025-10-24T21:28:30.009347219+08:00","level":"INFO","msg":"writer: started","stream_id":"a3wop1u5"}
+{"time":"2025-10-24T21:28:30.009375272+08:00","level":"INFO","msg":"sender: started","stream_id":"a3wop1u5"}
+{"time":"2025-10-24T21:28:36.923508062+08:00","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":52}
+{"time":"2025-10-24T21:28:36.923551222+08:00","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":1}
+{"time":"2025-10-25T02:35:55.343708836+08:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/graphql","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-10-25T07:31:10.827028834+08:00","level":"INFO","msg":"stream: closing","id":"a3wop1u5"}
+{"time":"2025-10-25T07:31:11.826748728+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-10-25T07:31:12.226344966+08:00","level":"INFO","msg":"handler: closed","stream_id":"a3wop1u5"}
+{"time":"2025-10-25T07:31:12.226487928+08:00","level":"INFO","msg":"sender: closed","stream_id":"a3wop1u5"}
+{"time":"2025-10-25T07:31:12.226495652+08:00","level":"INFO","msg":"stream: closed","id":"a3wop1u5"}

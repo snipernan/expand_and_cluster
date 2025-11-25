@@ -19,13 +19,15 @@ from models import cifar_resnet, cifar_vgg, mnist_lenet, imagenet_resnet, studen
 from models import bn_initializers, initializers, activation_functions
 from platforms.platform import get_platform
 from utils.utils import set_seeds
-
+from models import custom_teacher
+from models import students_custom  
+import inspect 
 registered_models = [mnist_lenet.Model, cifar_lenet.Model, cifar_resnet.Model, cifar_vgg.Model, imagenet_resnet.Model,
                      students_mnist_lenet.Model, students_cifar_lenet.Model, mnist_conv.Model,
-                     students_mnist_conv.Model, cifar_conv.Model, students_cifar_conv.Model]
+                     students_mnist_conv.Model, cifar_conv.Model, students_cifar_conv.Model,custom_teacher.Model, students_custom.Model]
 
 
-def get(model_hparams: ModelHparams, outputs=None):
+def get(model_hparams: ModelHparams, outputs=None , d_in=None):
     """Get the model for the corresponding hyperparameters."""
 
     # Select the activation function.
@@ -56,7 +58,12 @@ def get(model_hparams: ModelHparams, outputs=None):
     model = None
     for registered_model in registered_models:
         if registered_model.is_valid_model_name(model_hparams.model_name):
-            model = registered_model.get_model_from_name(model_hparams.model_name, init_fn, act_fun, outputs)
+            sig = inspect.signature(registered_model.get_model_from_name)  
+            if 'd_in' in sig.parameters:  
+                # 从某处获取 d_in,例如从全局配置或环境变量  
+                model = registered_model.get_model_from_name(model_hparams.model_name, init_fn, act_fun, outputs, d_in=d_in)  
+            else:  
+                model = registered_model.get_model_from_name(model_hparams.model_name, init_fn, act_fun, outputs)
             break
 
     if model is None:

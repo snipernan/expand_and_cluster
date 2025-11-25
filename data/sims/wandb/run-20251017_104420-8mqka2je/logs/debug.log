@@ -1,0 +1,93 @@
+2025-10-17 10:44:20,109 INFO    MainThread:242924 [wandb_setup.py:_flush():81] Current SDK version is 0.22.1
+2025-10-17 10:44:20,109 INFO    MainThread:242924 [wandb_setup.py:_flush():81] Configure stats pid to 242924
+2025-10-17 10:44:20,109 INFO    MainThread:242924 [wandb_setup.py:_flush():81] Loading settings from /home/alvin/.config/wandb/settings
+2025-10-17 10:44:20,109 INFO    MainThread:242924 [wandb_setup.py:_flush():81] Loading settings from /home/alvin/expand-and-cluster/wandb/settings
+2025-10-17 10:44:20,109 INFO    MainThread:242924 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-10-17 10:44:20,109 INFO    MainThread:242924 [wandb_init.py:setup_run_log_directory():705] Logging user logs to /home/alvin/expand-and-cluster/data/sims/wandb/run-20251017_104420-8mqka2je/logs/debug.log
+2025-10-17 10:44:20,109 INFO    MainThread:242924 [wandb_init.py:setup_run_log_directory():706] Logging internal logs to /home/alvin/expand-and-cluster/data/sims/wandb/run-20251017_104420-8mqka2je/logs/debug-internal.log
+2025-10-17 10:44:20,109 INFO    MainThread:242924 [wandb_init.py:init():832] calling init triggers
+2025-10-17 10:44:20,109 INFO    MainThread:242924 [wandb_init.py:init():837] wandb.init called with sweep_config: {}
+config: {'model_name': 'students_mnist_lenet(20)_80_80', 'model_init': 'kaiming_normal', 'batchnorm_init': 'uniform', 'batchnorm_frozen': False, 'output_frozen': False, 'others_frozen': False, 'others_frozen_exceptions': None, 'act_fun': 'relu', 'dataset_name': 'teacher', 'batch_size': 640, 'do_not_augment': False, 'transformation_seed': None, 'subsample_fraction': None, 'random_labels_fraction': None, 'unsupervised_labels': None, 'blur_factor': None, 'teacher_name': 'ebc1b42eee', 'teacher_seed': '-1', 'samples': 60000, 'datagen': 'mnist', 'd_in': 784, 'optimizer_name': 'adam', 'lr': 0.001, 'training_steps': '25000ep', 'data_order_seed': None, 'momentum': 0.0, 'nesterov_momentum': 0.0, 'milestone_steps': None, 'delta': None, 'plateau_opt': False, 'patience': None, 'cooldown': None, 'warmup_steps': None, 'weight_decay': None, 'apex_fp16': False, 'further_training': None, 'gamma': 0.5, 'beta': 0.53, 'finetune_traning_steps': '5000ep', 'finetune_lr': 0.0001, 'boruta': 'mnist', 'conv_level': None, '_wandb': {}}
+2025-10-17 10:44:20,109 INFO    MainThread:242924 [wandb_init.py:init():880] starting backend
+2025-10-17 10:44:20,313 INFO    MainThread:242924 [wandb_init.py:init():883] sending inform_init request
+2025-10-17 10:44:20,317 INFO    MainThread:242924 [wandb_init.py:init():891] backend started and connected
+2025-10-17 10:44:20,318 INFO    MainThread:242924 [wandb_init.py:init():961] updated telemetry
+2025-10-17 10:44:20,321 INFO    MainThread:242924 [wandb_init.py:init():985] communicating run to backend with 90.0 second timeout
+2025-10-17 10:44:21,362 INFO    MainThread:242924 [wandb_init.py:init():1036] starting run threads in backend
+2025-10-17 10:44:21,391 INFO    MainThread:242924 [wandb_run.py:_console_start():2506] atexit reg
+2025-10-17 10:44:21,391 INFO    MainThread:242924 [wandb_run.py:_redirect():2354] redirect: wrap_raw
+2025-10-17 10:44:21,392 INFO    MainThread:242924 [wandb_run.py:_redirect():2423] Wrapping output streams.
+2025-10-17 10:44:21,392 INFO    MainThread:242924 [wandb_run.py:_redirect():2446] Redirects installed.
+2025-10-17 10:44:21,393 INFO    MainThread:242924 [wandb_init.py:init():1076] run started, returning control to user process
+2025-10-17 11:03:13,878 INFO    wandb-AsyncioManager-main:242924 [service_client.py:_forward_responses():80] Reached EOF.
+2025-10-17 11:03:13,878 INFO    wandb-AsyncioManager-main:242924 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.
+2025-10-17 11:03:14,865 ERROR   MainThread:242924 [redirect.py:_on_write():664] [all runs] error in stderr callback
+Traceback (most recent call last):
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/lib/redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 2433, in <lambda>
+    lambda data: self._console_raw_callback("stderr", data),
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 399, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 457, in wrapper_fn
+    return func(self, *args, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 1595, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/interface/interface.py", line 802, in publish_output_raw
+    self._publish_output_raw(o)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/interface/interface_shared.py", line 37, in _publish_output_raw
+    self._publish(rec)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/interface/interface_sock.py", line 43, in _publish
+    self._asyncer.run(lambda: self._client.publish(request))
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/lib/asyncio_manager.py", line 136, in run
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 458, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/lib/asyncio_manager.py", line 219, in _wrap
+    return await fn()
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/usr/lib/python3.10/asyncio/streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "/usr/lib/python3.10/asyncio/streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2025-10-17 11:03:14,867 ERROR   MainThread:242924 [redirect.py:_on_write():664] [all runs] error in stderr callback
+Traceback (most recent call last):
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/lib/redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 2433, in <lambda>
+    lambda data: self._console_raw_callback("stderr", data),
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 399, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 457, in wrapper_fn
+    return func(self, *args, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 1595, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/interface/interface.py", line 802, in publish_output_raw
+    self._publish_output_raw(o)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/interface/interface_shared.py", line 37, in _publish_output_raw
+    self._publish(rec)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/interface/interface_sock.py", line 43, in _publish
+    self._asyncer.run(lambda: self._client.publish(request))
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/lib/asyncio_manager.py", line 136, in run
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 458, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/lib/asyncio_manager.py", line 219, in _wrap
+    return await fn()
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/usr/lib/python3.10/asyncio/streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "/usr/lib/python3.10/asyncio/streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost

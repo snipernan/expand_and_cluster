@@ -1,0 +1,12 @@
+{"time":"2025-10-29T19:04:48.95715617+08:00","level":"INFO","msg":"stream: starting","core version":"0.22.1"}
+{"time":"2025-10-29T19:04:49.428628638+08:00","level":"INFO","msg":"stream: created new stream","id":"z8lk4b4f"}
+{"time":"2025-10-29T19:04:49.428689861+08:00","level":"INFO","msg":"handler: started","stream_id":"z8lk4b4f"}
+{"time":"2025-10-29T19:04:49.428712064+08:00","level":"INFO","msg":"stream: started","id":"z8lk4b4f"}
+{"time":"2025-10-29T19:04:49.428728086+08:00","level":"INFO","msg":"writer: started","stream_id":"z8lk4b4f"}
+{"time":"2025-10-29T19:04:49.428754553+08:00","level":"INFO","msg":"sender: started","stream_id":"z8lk4b4f"}
+{"time":"2025-10-29T19:25:07.75406836+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/202100460027-shandong-university/expand-and-cluster/z8lk4b4f/file_stream\": EOF"}
+{"time":"2025-10-29T19:44:03.616264394+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/202100460027-shandong-university/expand-and-cluster/z8lk4b4f/file_stream\": EOF"}
+{"time":"2025-10-29T20:00:34.433938172+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/202100460027-shandong-university/expand-and-cluster/z8lk4b4f/file_stream\": unexpected EOF"}
+{"time":"2025-10-29T20:52:45.982644947+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/202100460027-shandong-university/expand-and-cluster/z8lk4b4f/file_stream\": EOF"}
+{"time":"2025-10-29T21:52:22.423593513+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/202100460027-shandong-university/expand-and-cluster/z8lk4b4f/file_stream\": EOF"}
+{"time":"2025-10-29T22:08:37.87931805+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}

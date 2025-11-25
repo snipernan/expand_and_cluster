@@ -1,0 +1,75 @@
+Generating dataset with teacher...
+Exception ignored in: <function WeakSet.__init__.<locals>._remove at 0x79469e434ee0>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/_weakrefset.py", line 39, in _remove
+    def _remove(item, selfref=ref(self)):
+  File "_pydevd_bundle\\pydevd_cython.pyx", line 1697, in _pydevd_bundle.pydevd_cython.SafeCallWrapper.__call__
+  File "_pydevd_bundle\\pydevd_cython.pyx", line 2017, in _pydevd_bundle.pydevd_cython.ThreadTracer.__call__
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydev_bundle/pydev_is_thread_alive.py", line 20, in is_thread_alive
+    def is_thread_alive(t):
+KeyboardInterrupt:
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /home/alvin/expand-and-cluster/data/sims/ec_cec6cb3244/seed_-1/main/clustering_8389c857d6
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 24 of size bigger than 5.0.
+removing 4/24 unaligned clusters
+Collapsing 20 clusters.
+producing dendrogram...
+producing simmat...
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 71, in <module>
+    cli.main()
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 508, in main
+    run()
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 358, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+  File "/home/alvin/expand-and-cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/alvin/expand-and-cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/alvin/expand-and-cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/alvin/expand-and-cluster/extraction/runner.py", line 79, in run
+    expand_and_cluster.reconstruct(students, losses, self.desc.extraction_path(self.global_seed),
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 170, in reconstruct
+    w_rec, a_rec = reconstruct_layer(w_cat, N, extraction_hparams.gamma, beta, losses, A=a,
+  File "/home/alvin/expand-and-cluster/extraction/layer_reconstruction.py", line 97, in reconstruct_layer
+    fig.savefig(os.path.join(plots_folder, f"{exp_name}_simmat.pdf"))
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/matplotlib/figure.py", line 3378, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/matplotlib/backend_bases.py", line 2366, in print_figure
+    result = print_method(
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/matplotlib/backend_bases.py", line 2232, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/matplotlib/backends/backend_pdf.py", line 2823, in print_pdf
+    file.finalize()
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/matplotlib/backends/backend_pdf.py", line 869, in finalize
+    self.writeImages()
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/matplotlib/backends/backend_pdf.py", line 1819, in writeImages
+    self._writeImg(data, ob.id, smaskObject)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/matplotlib/backends/backend_pdf.py", line 1784, in _writeImg
+    img = Image.fromarray(rgb8, mode='P')
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/PIL/Image.py", line 3012, in fromarray
+    def fromarray(obj, mode=None):
+KeyboardInterrupt

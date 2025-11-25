@@ -55,26 +55,28 @@ class Dataset(base.Dataset):
         self._num_classes = labels.shape[1]
         super(Dataset, self).__init__(examples, labels)
 
-    def extract_teacher_data(self, dataset_hparams, use_augmentation):
-        if not hasattr(dataset_hparams, "teacher_seed"):
-            raise ValueError('No --teacher_seed specified!')
-        teacher_folder = os.path.join(get_platform().root, "train_" + dataset_hparams.teacher_name,
-                                      "seed_" + dataset_hparams.teacher_seed, "main")
-        model = self.get_specified_model(teacher_folder)
+    def extract_teacher_data(self, dataset_hparams, use_augmentation):  
+        if not hasattr(dataset_hparams, "teacher_seed"):  
+            raise ValueError('No --teacher_seed specified!')  
+        teacher_folder = os.path.join(get_platform().root, "train_" + dataset_hparams.teacher_name,  
+                                    "seed_" + dataset_hparams.teacher_seed, "main")  
+        # 从 dataset_hparams 获取 d_in 并传递给 get_specified_model  
+        d_in = dataset_hparams.d_in if hasattr(dataset_hparams, 'd_in') else None  
+        model = self.get_specified_model(teacher_folder, d_in=d_in)  
         return registry.get(dataset_hparams, model, use_augmentation)
 
     @staticmethod
-    def get_specified_model(directory):
-        """ Returns the final saved model from the directory """
-        all_models = [d for d in os.listdir(directory) if d.startswith("model_")]
-        eps = [int(model_name.split("_")[1][2:]) for model_name in all_models]
-        id_max_ep = np.argmax(eps)
-        model_state_dict = torch.load(os.path.join(directory, all_models[id_max_ep]),
-                                      map_location=get_platform().torch_device)
-        loaded_model_hparams = torch.load(os.path.join(directory, "hparams_dict"))["model_hparams"]
-        loaded_model_hparams = ModelHparams.create_from_args(loaded_model_hparams)
-        model = models.registry.get(loaded_model_hparams)
-        model.load_state_dict(model_state_dict)
+    def get_specified_model(directory, d_in=None):  
+        """ Returns the final saved model from the directory """  
+        all_models = [d for d in os.listdir(directory) if d.startswith("model_")]  
+        eps = [int(model_name.split("_")[1][2:]) for model_name in all_models]  
+        id_max_ep = np.argmax(eps)  
+        model_state_dict = torch.load(os.path.join(directory, all_models[id_max_ep]),  
+                                    map_location=get_platform().torch_device)  
+        loaded_model_hparams = torch.load(os.path.join(directory, "hparams_dict"))["model_hparams"]  
+        loaded_model_hparams = ModelHparams.create_from_args(loaded_model_hparams)  
+        model = models.registry.get(loaded_model_hparams, d_in=d_in)  # 添加 d_in 参数  
+        model.load_state_dict(model_state_dict)  
         return model
 
     def __getitem__(self, index):

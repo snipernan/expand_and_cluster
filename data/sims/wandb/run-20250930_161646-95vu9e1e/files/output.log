@@ -1,0 +1,4 @@
+--- 正在检查标签 (Checking Labels) ---
+标签的形状 (Shape): torch.Size([640])
+标签的数据类型 (dtype): torch.int64
+前5个标签的内容 (First 5 labels): tensor([9, 0, 6, 4, 5])

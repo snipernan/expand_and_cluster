@@ -1,0 +1,60 @@
+{
+  "os":  "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "python":  "CPython 3.10.12",
+  "startedAt":  "2025-11-25T13:36:28.574469Z",
+  "args":  [
+    "extract",
+    "--default_hparams",
+    "students_custom(20)_2_12",
+    "--teacher_name",
+    "custom_teacher_1",
+    "--teacher_seed",
+    "0",
+    "--d_in",
+    "2",
+    "--dataset_name",
+    "teacher",
+    "--datagen",
+    "custom_2d",
+    "--samples",
+    "60000",
+    "--beta",
+    "24",
+    "--gamma",
+    "0.8"
+  ],
+  "program":  "/home/alvin/expand-and-cluster/EC.py",
+  "codePath":  "EC.py",
+  "codePathLocal":  "EC.py",
+  "git":  {
+    "remote":  "https://github.com/snipernan/expand-and-cluster.git",
+    "commit":  "cdcc01d3cbd2c75402d8024c7fc983d8aa3490b3"
+  },
+  "email":  "202100460027@mail.sdu.edu.cn",
+  "root":  "/home/alvin/expand-and-cluster/data/sims",
+  "host":  "DESKTOP-COEPU1G",
+  "executable":  "/home/alvin/expand-and-cluster/venv/bin/python",
+  "cpu_count":  10,
+  "cpu_count_logical":  20,
+  "gpu":  "NVIDIA T400 4GB",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "1081101176832",
+      "used":  "10577760256"
+    }
+  },
+  "memory":  {
+    "total":  "16604364800"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA T400 4GB",
+      "memoryTotal":  "4294967296",
+      "architecture":  "Turing",
+      "uuid":  "GPU-dec18f15-efad-2324-df10-ba3756e2b89c"
+    }
+  ],
+  "cudaVersion":  "12.8",
+  "writerId":  "q577uzm4bkr1e0j5rnlc0tjy9jdk5ccr"
+}

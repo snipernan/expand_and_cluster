@@ -1,0 +1,361 @@
+Generating dataset with teacher...
+train	ep 00000	it 000	loss 2.034e+03	ex 60000	time 0.00s
+Ep 0	It 0	Time Elapsed 0.00
+Ep 100	It 0	Time Elapsed 126.35
+Ep 200	It 0	Time Elapsed 126.04
+Ep 300	It 0	Time Elapsed 125.50
+Ep 400	It 0	Time Elapsed 125.66
+Ep 500	It 0	Time Elapsed 123.64
+Ep 600	It 0	Time Elapsed 123.95
+Ep 700	It 0	Time Elapsed 123.96
+Ep 800	It 0	Time Elapsed 123.80
+Ep 900	It 0	Time Elapsed 122.84
+Ep 1000	It 0	Time Elapsed 124.46
+Ep 1100	It 0	Time Elapsed 124.67
+Ep 1200	It 0	Time Elapsed 125.46
+Ep 1300	It 0	Time Elapsed 123.58
+Ep 1400	It 0	Time Elapsed 124.36
+Ep 1500	It 0	Time Elapsed 124.38
+Ep 1600	It 0	Time Elapsed 124.41
+Ep 1700	It 0	Time Elapsed 124.46
+Ep 1800	It 0	Time Elapsed 123.65
+Ep 1900	It 0	Time Elapsed 124.23
+Ep 2000	It 0	Time Elapsed 123.37
+Ep 2100	It 0	Time Elapsed 123.85
+Ep 2200	It 0	Time Elapsed 124.43
+Ep 2300	It 0	Time Elapsed 124.44
+Ep 2400	It 0	Time Elapsed 124.30
+Ep 2500	It 0	Time Elapsed 123.49
+Ep 2600	It 0	Time Elapsed 125.18
+Ep 2700	It 0	Time Elapsed 123.93
+Ep 2800	It 0	Time Elapsed 124.51
+Ep 2900	It 0	Time Elapsed 124.57
+Ep 3000	It 0	Time Elapsed 124.01
+Ep 3100	It 0	Time Elapsed 124.10
+Ep 3200	It 0	Time Elapsed 124.92
+Ep 3300	It 0	Time Elapsed 124.17
+Ep 3400	It 0	Time Elapsed 123.61
+Ep 3500	It 0	Time Elapsed 124.56
+Ep 3600	It 0	Time Elapsed 124.65
+Ep 3700	It 0	Time Elapsed 123.84
+Ep 3800	It 0	Time Elapsed 124.67
+Ep 3900	It 0	Time Elapsed 124.58
+Ep 4000	It 0	Time Elapsed 124.26
+Ep 4100	It 0	Time Elapsed 124.72
+Ep 4200	It 0	Time Elapsed 124.39
+Ep 4300	It 0	Time Elapsed 124.39
+Ep 4400	It 0	Time Elapsed 123.88
+Ep 4500	It 0	Time Elapsed 124.34
+Ep 4600	It 0	Time Elapsed 124.31
+Ep 4700	It 0	Time Elapsed 123.62
+Ep 4800	It 0	Time Elapsed 124.25
+Ep 4900	It 0	Time Elapsed 123.81
+Ep 5000	It 0	Time Elapsed 127.19
+Ep 5100	It 0	Time Elapsed 126.58
+Ep 5200	It 0	Time Elapsed 125.35
+Ep 5300	It 0	Time Elapsed 125.52
+Ep 5400	It 0	Time Elapsed 124.71
+Ep 5500	It 0	Time Elapsed 125.29
+Ep 5600	It 0	Time Elapsed 124.44
+Ep 5700	It 0	Time Elapsed 124.55
+Ep 5800	It 0	Time Elapsed 123.48
+Ep 5900	It 0	Time Elapsed 124.15
+Ep 6000	It 0	Time Elapsed 125.38
+Ep 6100	It 0	Time Elapsed 124.70
+Ep 6200	It 0	Time Elapsed 123.74
+Ep 6300	It 0	Time Elapsed 124.38
+Ep 6400	It 0	Time Elapsed 124.62
+Ep 6500	It 0	Time Elapsed 124.17
+Ep 6600	It 0	Time Elapsed 123.97
+Ep 6700	It 0	Time Elapsed 125.15
+Ep 6800	It 0	Time Elapsed 124.95
+Ep 6900	It 0	Time Elapsed 124.25
+Ep 7000	It 0	Time Elapsed 126.29
+Ep 7100	It 0	Time Elapsed 124.87
+Ep 7200	It 0	Time Elapsed 125.51
+Ep 7300	It 0	Time Elapsed 126.08
+Ep 7400	It 0	Time Elapsed 126.12
+Ep 7500	It 0	Time Elapsed 125.91
+Ep 7600	It 0	Time Elapsed 124.74
+Ep 7700	It 0	Time Elapsed 126.49
+Ep 7800	It 0	Time Elapsed 126.35
+Ep 7900	It 0	Time Elapsed 126.78
+Ep 8000	It 0	Time Elapsed 125.35
+Ep 8100	It 0	Time Elapsed 126.97
+Ep 8200	It 0	Time Elapsed 126.77
+Ep 8300	It 0	Time Elapsed 124.48
+Ep 8400	It 0	Time Elapsed 126.14
+Ep 8500	It 0	Time Elapsed 126.12
+Ep 8600	It 0	Time Elapsed 126.40
+Ep 8700	It 0	Time Elapsed 126.15
+Ep 8800	It 0	Time Elapsed 126.75
+Ep 8900	It 0	Time Elapsed 126.76
+Ep 9000	It 0	Time Elapsed 125.29
+Ep 9100	It 0	Time Elapsed 126.06
+Ep 9200	It 0	Time Elapsed 125.93
+Ep 9300	It 0	Time Elapsed 124.03
+Ep 9400	It 0	Time Elapsed 124.30
+Ep 9500	It 0	Time Elapsed 124.95
+Ep 9600	It 0	Time Elapsed 123.76
+Ep 9700	It 0	Time Elapsed 124.76
+Ep 9800	It 0	Time Elapsed 125.15
+Ep 9900	It 0	Time Elapsed 125.76
+Ep 10000	It 0	Time Elapsed 124.10
+Ep 10100	It 0	Time Elapsed 125.08
+Ep 10200	It 0	Time Elapsed 124.33
+Ep 10300	It 0	Time Elapsed 124.57
+Ep 10400	It 0	Time Elapsed 124.50
+Ep 10500	It 0	Time Elapsed 123.81
+Ep 10600	It 0	Time Elapsed 124.83
+Ep 10700	It 0	Time Elapsed 125.51
+Ep 10800	It 0	Time Elapsed 124.67
+Ep 10900	It 0	Time Elapsed 125.08
+Ep 11000	It 0	Time Elapsed 125.32
+Ep 11100	It 0	Time Elapsed 125.58
+Ep 11200	It 0	Time Elapsed 123.24
+Ep 11300	It 0	Time Elapsed 124.83
+Ep 11400	It 0	Time Elapsed 124.33
+Ep 11500	It 0	Time Elapsed 124.84
+Ep 11600	It 0	Time Elapsed 123.60
+Ep 11700	It 0	Time Elapsed 125.21
+Ep 11800	It 0	Time Elapsed 124.59
+Ep 11900	It 0	Time Elapsed 123.68
+Ep 12000	It 0	Time Elapsed 125.13
+Ep 12100	It 0	Time Elapsed 125.13
+Ep 12200	It 0	Time Elapsed 124.52
+Ep 12300	It 0	Time Elapsed 123.38
+Ep 12400	It 0	Time Elapsed 124.46
+Ep 12500	It 0	Time Elapsed 125.00
+Ep 12600	It 0	Time Elapsed 123.19
+Ep 12700	It 0	Time Elapsed 125.27
+Ep 12800	It 0	Time Elapsed 125.24
+Ep 12900	It 0	Time Elapsed 124.14
+Ep 13000	It 0	Time Elapsed 124.74
+Ep 13100	It 0	Time Elapsed 124.64
+Ep 13200	It 0	Time Elapsed 125.67
+Ep 13300	It 0	Time Elapsed 124.65
+Ep 13400	It 0	Time Elapsed 124.04
+Ep 13500	It 0	Time Elapsed 125.15
+Ep 13600	It 0	Time Elapsed 124.81
+Ep 13700	It 0	Time Elapsed 124.86
+Ep 13800	It 0	Time Elapsed 123.67
+Ep 13900	It 0	Time Elapsed 125.07
+Ep 14000	It 0	Time Elapsed 124.91
+Ep 14100	It 0	Time Elapsed 124.05
+Ep 14200	It 0	Time Elapsed 125.06
+Ep 14300	It 0	Time Elapsed 124.45
+Ep 14400	It 0	Time Elapsed 125.32
+Ep 14500	It 0	Time Elapsed 123.18
+Ep 14600	It 0	Time Elapsed 124.88
+Ep 14700	It 0	Time Elapsed 125.43
+Ep 14800	It 0	Time Elapsed 125.22
+Ep 14900	It 0	Time Elapsed 123.95
+Ep 15000	It 0	Time Elapsed 124.80
+Ep 15100	It 0	Time Elapsed 124.60
+Ep 15200	It 0	Time Elapsed 123.45
+Ep 15300	It 0	Time Elapsed 124.88
+Ep 15400	It 0	Time Elapsed 124.99
+Ep 15500	It 0	Time Elapsed 123.28
+Ep 15600	It 0	Time Elapsed 125.91
+Ep 15700	It 0	Time Elapsed 125.44
+Ep 15800	It 0	Time Elapsed 124.66
+Ep 15900	It 0	Time Elapsed 123.63
+Ep 16000	It 0	Time Elapsed 124.50
+Ep 16100	It 0	Time Elapsed 124.70
+Ep 16200	It 0	Time Elapsed 123.26
+Ep 16300	It 0	Time Elapsed 124.86
+Ep 16400	It 0	Time Elapsed 124.79
+Ep 16500	It 0	Time Elapsed 123.19
+Ep 16600	It 0	Time Elapsed 125.53
+Ep 16700	It 0	Time Elapsed 125.37
+Ep 16800	It 0	Time Elapsed 123.24
+Ep 16900	It 0	Time Elapsed 124.92
+Ep 17000	It 0	Time Elapsed 124.42
+Ep 17100	It 0	Time Elapsed 123.59
+Ep 17200	It 0	Time Elapsed 124.56
+Ep 17300	It 0	Time Elapsed 124.57
+Ep 17400	It 0	Time Elapsed 125.51
+Ep 17500	It 0	Time Elapsed 123.63
+Ep 17600	It 0	Time Elapsed 125.31
+Ep 17700	It 0	Time Elapsed 124.82
+Ep 17800	It 0	Time Elapsed 123.54
+Ep 17900	It 0	Time Elapsed 125.08
+Ep 18000	It 0	Time Elapsed 125.38
+Ep 18100	It 0	Time Elapsed 123.83
+Ep 18200	It 0	Time Elapsed 125.12
+Ep 18300	It 0	Time Elapsed 124.77
+Ep 18400	It 0	Time Elapsed 122.76
+Ep 18500	It 0	Time Elapsed 125.69
+Ep 18600	It 0	Time Elapsed 125.18
+Ep 18700	It 0	Time Elapsed 125.51
+Ep 18800	It 0	Time Elapsed 123.40
+Ep 18900	It 0	Time Elapsed 124.84
+Ep 19000	It 0	Time Elapsed 125.38
+Ep 19100	It 0	Time Elapsed 123.42
+Ep 19200	It 0	Time Elapsed 125.07
+Ep 19300	It 0	Time Elapsed 124.76
+Ep 19400	It 0	Time Elapsed 122.98
+Ep 19500	It 0	Time Elapsed 124.81
+Ep 19600	It 0	Time Elapsed 125.44
+Ep 19700	It 0	Time Elapsed 123.79
+Ep 19800	It 0	Time Elapsed 125.13
+Ep 19900	It 0	Time Elapsed 125.27
+Ep 20000	It 0	Time Elapsed 123.74
+Ep 20100	It 0	Time Elapsed 125.02
+Ep 20200	It 0	Time Elapsed 125.47
+Ep 20300	It 0	Time Elapsed 123.23
+Ep 20400	It 0	Time Elapsed 125.31
+Ep 20500	It 0	Time Elapsed 125.36
+Ep 20600	It 0	Time Elapsed 123.73
+Ep 20700	It 0	Time Elapsed 125.50
+Ep 20800	It 0	Time Elapsed 125.12
+Ep 20900	It 0	Time Elapsed 123.77
+Ep 21000	It 0	Time Elapsed 125.10
+Ep 21100	It 0	Time Elapsed 124.88
+Ep 21200	It 0	Time Elapsed 122.56
+Ep 21300	It 0	Time Elapsed 124.63
+Ep 21400	It 0	Time Elapsed 126.06
+Ep 21500	It 0	Time Elapsed 123.07
+Ep 21600	It 0	Time Elapsed 125.07
+Ep 21700	It 0	Time Elapsed 125.12
+Ep 21800	It 0	Time Elapsed 123.73
+Ep 21900	It 0	Time Elapsed 124.93
+Ep 22000	It 0	Time Elapsed 125.13
+Ep 22100	It 0	Time Elapsed 123.58
+Ep 22200	It 0	Time Elapsed 125.07
+Ep 22300	It 0	Time Elapsed 125.15
+Ep 22400	It 0	Time Elapsed 123.13
+Ep 22500	It 0	Time Elapsed 125.14
+Ep 22600	It 0	Time Elapsed 125.75
+Ep 22700	It 0	Time Elapsed 123.80
+Ep 22800	It 0	Time Elapsed 125.16
+Ep 22900	It 0	Time Elapsed 124.92
+Ep 23000	It 0	Time Elapsed 124.82
+Ep 23100	It 0	Time Elapsed 123.09
+Ep 23200	It 0	Time Elapsed 125.79
+Ep 23300	It 0	Time Elapsed 123.76
+Ep 23400	It 0	Time Elapsed 125.37
+Ep 23500	It 0	Time Elapsed 125.22
+Ep 23600	It 0	Time Elapsed 123.60
+Ep 23700	It 0	Time Elapsed 125.02
+Ep 23800	It 0	Time Elapsed 125.64
+Ep 23900	It 0	Time Elapsed 123.27
+Ep 24000	It 0	Time Elapsed 124.81
+Ep 24100	It 0	Time Elapsed 124.83
+Ep 24200	It 0	Time Elapsed 122.98
+Ep 24300	It 0	Time Elapsed 127.15
+Ep 24400	It 0	Time Elapsed 125.12
+Ep 24500	It 0	Time Elapsed 123.29
+Ep 24600	It 0	Time Elapsed 124.83
+Ep 24700	It 0	Time Elapsed 125.07
+Ep 24800	It 0	Time Elapsed 123.70
+Ep 24900	It 0	Time Elapsed 124.89
+train	ep 25000	it 000	loss 7.308e-03	ex 60000	time 31174.84s
+Ep 25000	It 0	Time Elapsed 125.52
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /home/alvin/expand-and-cluster/data/sims/ec_c95c879305/seed_-1/main/clustering_8389c857d6
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 5 of size bigger than 25.0.
+removing 0/5 unaligned clusters
+Collapsing 5 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+#0->2, #1->1, #2->1, #3->1, #4->1,
+Final layer size: 5
+
+train	ep 00000	it 000	loss 2.033e+03	ex 60000	time 0.00s
+train	ep 00100	it 000	loss 4.904e+00	ex 60000	time 98.49s
+train	ep 00200	it 000	loss 2.148e+00	ex 60000	time 99.18s
+train	ep 00300	it 000	loss 1.278e+00	ex 60000	time 99.49s
+train	ep 00400	it 000	loss 9.839e-01	ex 60000	time 99.34s
+train	ep 00500	it 000	loss 8.409e-01	ex 60000	time 99.43s
+train	ep 00600	it 000	loss 7.395e-01	ex 60000	time 97.45s
+train	ep 00700	it 000	loss 6.333e-01	ex 60000	time 99.59s
+train	ep 00800	it 000	loss 5.779e-01	ex 60000	time 99.51s
+train	ep 00900	it 000	loss 4.216e-01	ex 60000	time 99.51s
+train	ep 01000	it 000	loss 3.932e-01	ex 60000	time 99.62s
+train	ep 01100	it 000	loss 3.747e-01	ex 60000	time 99.29s
+train	ep 01200	it 000	loss 3.580e-01	ex 60000	time 99.47s
+train	ep 01300	it 000	loss 3.408e-01	ex 60000	time 99.36s
+train	ep 01400	it 000	loss 3.244e-01	ex 60000	time 99.61s
+train	ep 01500	it 000	loss 3.123e-01	ex 60000	time 99.41s
+train	ep 01600	it 000	loss 3.011e-01	ex 60000	time 98.95s
+train	ep 01700	it 000	loss 2.820e-01	ex 60000	time 96.66s
+train	ep 01800	it 000	loss 2.747e-01	ex 60000	time 99.38s
+train	ep 01900	it 000	loss 2.609e-01	ex 60000	time 99.25s
+train	ep 02000	it 000	loss 2.553e-01	ex 60000	time 99.66s
+train	ep 02100	it 000	loss 2.526e-01	ex 60000	time 99.69s
+train	ep 02200	it 000	loss 2.453e-01	ex 60000	time 99.21s
+train	ep 02300	it 000	loss 2.369e-01	ex 60000	time 99.53s
+train	ep 02400	it 000	loss 2.245e-01	ex 60000	time 99.37s
+train	ep 02500	it 000	loss 2.101e-01	ex 60000	time 99.34s
+train	ep 02600	it 000	loss 2.007e-01	ex 60000	time 99.35s
+train	ep 02700	it 000	loss 1.978e-01	ex 60000	time 97.65s
+train	ep 02800	it 000	loss 1.938e-01	ex 60000	time 100.71s
+train	ep 02900	it 000	loss 1.869e-01	ex 60000	time 99.29s
+train	ep 03000	it 000	loss 1.785e-01	ex 60000	time 99.69s
+train	ep 03100	it 000	loss 1.741e-01	ex 60000	time 99.30s
+train	ep 03200	it 000	loss 1.714e-01	ex 60000	time 99.39s
+train	ep 03300	it 000	loss 1.687e-01	ex 60000	time 99.75s
+train	ep 03400	it 000	loss 1.686e-01	ex 60000	time 99.68s
+train	ep 03500	it 000	loss 1.666e-01	ex 60000	time 98.95s
+train	ep 03600	it 000	loss 1.640e-01	ex 60000	time 99.41s
+train	ep 03700	it 000	loss 1.618e-01	ex 60000	time 98.66s
+train	ep 03800	it 000	loss 1.591e-01	ex 60000	time 99.19s
+train	ep 03900	it 000	loss 1.578e-01	ex 60000	time 97.38s
+train	ep 04000	it 000	loss 1.546e-01	ex 60000	time 99.57s
+train	ep 04100	it 000	loss 1.507e-01	ex 60000	time 99.67s
+train	ep 04200	it 000	loss 1.510e-01	ex 60000	time 99.71s
+train	ep 04300	it 000	loss 1.495e-01	ex 60000	time 99.57s
+train	ep 04400	it 000	loss 1.473e-01	ex 60000	time 99.30s
+train	ep 04500	it 000	loss 1.436e-01	ex 60000	time 99.94s
+train	ep 04600	it 000	loss 1.414e-01	ex 60000	time 99.83s
+train	ep 04700	it 000	loss 1.417e-01	ex 60000	time 99.68s
+train	ep 04800	it 000	loss 1.366e-01	ex 60000	time 99.12s
+train	ep 04900	it 000	loss 1.342e-01	ex 60000	time 97.05s
+train	ep 05000	it 000	loss 1.341e-01	ex 60000	time 99.55s
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 1
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 9 of size bigger than 25.0.
+removing 9/9 unaligned clusters
+Collapsing 0 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+
+Final layer size: 0
+Traceback (most recent call last):
+  File "/home/alvin/expand-and-cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/alvin/expand-and-cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/alvin/expand-and-cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/alvin/expand-and-cluster/extraction/runner.py", line 79, in run
+    expand_and_cluster.reconstruct(students, losses, self.desc.extraction_path(self.global_seed),
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 170, in reconstruct
+    w_rec, a_rec = reconstruct_layer(w_cat, N, extraction_hparams.gamma, beta, losses, A=a,
+  File "/home/alvin/expand-and-cluster/extraction/layer_reconstruction.py", line 116, in reconstruct_layer
+    a_reconstructed = np.transpose(np.array(theta[1]), [0, 2, 1])
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/numpy/core/fromnumeric.py", line 655, in transpose
+    return _wrapfunc(a, 'transpose', axes)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/numpy/core/fromnumeric.py", line 59, in _wrapfunc
+    return bound(*args, **kwds)
+ValueError: axes don't match array

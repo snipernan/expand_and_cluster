@@ -1,0 +1,123 @@
+Generating dataset with teacher...
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /home/alvin/expand-and-cluster/data/sims/ec_d592e06c8b/seed_-1/main/clustering_995dc42cbd
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 6 of size bigger than 16.0.
+removing 1/6 unaligned clusters
+Collapsing 5 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+#0->1, #1->1, #2->1, #3->1, #4->2,
+Final layer size: 5
+
+MSE of linear component after reconstruction 0.08013710150428874
+Best average sim w: 0.2314736464906179
+Best max sim w: 0.3635884543387681
+Best average sim a: 0.5
+Best max sim a: 2.0
+Best average sim w: 0.25592144288002794
+Best max sim w: 0.3635887157680848
+Best average sim a: 0.5
+Best max sim a: 2.0
+Traceback (most recent call last):
+  File "/home/alvin/expand-and-cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/alvin/expand-and-cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/alvin/expand-and-cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/alvin/expand-and-cluster/extraction/runner.py", line 79, in run
+    expand_and_cluster.reconstruct(students, losses, self.desc.extraction_path(self.global_seed),
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 257, in reconstruct
+    teacher_comparison(teacher, students, symmetry, cluster_mask, alignment_tuning)
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 330, in teacher_comparison
+    log_histogram_wandb(np.log10(best_sims_a)+1e-16, "clustering/student_alignment_A", "log cosine distance")
+  File "/home/alvin/expand-and-cluster/training/wandb_init.py", line 112, in log_histogram_wandb
+    wandb.log({name: wandb.plot.histogram(table, xaxis_name, title=name)}, commit=True)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 399, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 457, in wrapper_fn
+    return func(self, *args, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 444, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 2028, in log
+    self._log(data=data, step=step, commit=commit)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 1739, in _log
+    self._partial_history_callback(data, step, commit)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 399, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 1566, in _partial_history_callback
+    self._backend.interface.publish_partial_history(
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/interface/interface.py", line 713, in publish_partial_history
+    data = history_dict_to_json(run, data, step=user_step, ignore_copy_err=True)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/data_types/utils.py", line 54, in history_dict_to_json
+    payload[key] = val_to_json(
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/data_types/utils.py", line 151, in val_to_json
+    _log_table_artifact(val, key, run)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/data_types/utils.py", line 202, in _log_table_artifact
+    run.log_artifact(art)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 399, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 457, in wrapper_fn
+    return func(self, *args, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 444, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 3172, in log_artifact
+    return self._log_artifact(
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 3323, in _log_artifact
+    self._assert_can_log_artifact(artifact)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 3374, in _assert_can_log_artifact
+    expected_type = Artifact._expected_type(
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/artifacts/artifact.py", line 2573, in _expected_type
+    data = client.execute(query, variable_values=gql_vars)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 318, in wrapped_fn
+    return retrier(*args, **kargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 158, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/apis/public/api.py", line 124, in execute
+    return self._client.execute(*args, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/wandb/sdk/lib/gql_request.py", line 69, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/urllib3/connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.10/ssl.py", line 1303, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.10/ssl.py", line 1159, in read
+    return self._sslobj.read(len, buffer)
+KeyboardInterrupt

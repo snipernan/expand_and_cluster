@@ -1,0 +1,13 @@
+{"time":"2025-11-13T15:28:46.171078364+08:00","level":"INFO","msg":"stream: starting","core version":"0.22.1"}
+{"time":"2025-11-13T15:28:46.644181452+08:00","level":"INFO","msg":"stream: created new stream","id":"1yrlr9pj"}
+{"time":"2025-11-13T15:28:46.64425436+08:00","level":"INFO","msg":"handler: started","stream_id":"1yrlr9pj"}
+{"time":"2025-11-13T15:28:46.644319756+08:00","level":"INFO","msg":"stream: started","id":"1yrlr9pj"}
+{"time":"2025-11-13T15:28:46.644656517+08:00","level":"INFO","msg":"writer: started","stream_id":"1yrlr9pj"}
+{"time":"2025-11-13T15:28:46.644665932+08:00","level":"INFO","msg":"sender: started","stream_id":"1yrlr9pj"}
+{"time":"2025-11-13T15:31:53.602115203+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/202100460027-shandong-university/expand-and-cluster/1yrlr9pj/file_stream\": dial tcp 35.186.228.49:443: connect: connection timed out"}
+{"time":"2025-11-13T15:35:11.006380238+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/202100460027-shandong-university/expand-and-cluster/1yrlr9pj/file_stream\": dial tcp 35.186.228.49:443: connect: connection timed out"}
+{"time":"2025-11-13T15:38:54.449240036+08:00","level":"INFO","msg":"stream: closing","id":"1yrlr9pj"}
+{"time":"2025-11-13T15:38:55.860905917+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-11-13T15:38:56.250286741+08:00","level":"INFO","msg":"handler: closed","stream_id":"1yrlr9pj"}
+{"time":"2025-11-13T15:38:56.250398762+08:00","level":"INFO","msg":"sender: closed","stream_id":"1yrlr9pj"}
+{"time":"2025-11-13T15:38:56.250406573+08:00","level":"INFO","msg":"stream: closed","id":"1yrlr9pj"}

@@ -64,7 +64,7 @@ class ExtractionRunner(Runner):
                                             summary_infos={'local_hashname': self.desc.hashname.split('_')[-1]})
 
         students, losses = expand_and_cluster.train_students(
-                    models.registry.get(self.desc.model_hparams), self.desc.run_path(self.global_seed),
+                    models.registry.get(self.desc.model_hparams,d_in=self.desc.dataset_hparams.d_in), self.desc.run_path(self.global_seed),
                     self.desc.dataset_hparams, self.desc.training_hparams,
                     evaluate_every_epoch=self.evaluate_every_epoch)
 

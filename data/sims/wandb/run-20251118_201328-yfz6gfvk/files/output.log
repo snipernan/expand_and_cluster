@@ -1,0 +1,53 @@
+Generating dataset with teacher...
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /home/alvin/expand-and-cluster/data/sims/ec_d592e06c8b/seed_-1/main/clustering_995dc42cbd
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 5 of size bigger than 16.0.
+removing 1/5 unaligned clusters
+Collapsing 4 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+#0->1, #1->1, #2->3, #3->3,
+Final layer size: 4
+
+MSE of linear component after reconstruction 0.1936414441203949
+Best average sim w: 1.318948085138727e-07
+Best max sim w: 2.637896169277454e-07
+Best average sim a: 1e-16
+Best max sim a: 1e-16
+train	ep 00000	it 000	loss 2.706e+00	ex 8000	time 0.00s
+train	ep 00100	it 000	loss 1.643e-01	ex 8000	time 12.67s
+Traceback (most recent call last):
+  File "/home/alvin/expand-and-cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/alvin/expand-and-cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/alvin/expand-and-cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/alvin/expand-and-cluster/extraction/runner.py", line 79, in run
+    expand_and_cluster.reconstruct(students, losses, self.desc.extraction_path(self.global_seed),
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 247, in reconstruct
+    parallel_train(finetune_hparams, students, train_loader, reconstructed_folder, callbacks,
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 427, in parallel_train
+    for it, (examples, labels) in enumerate(train_loader):
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 677, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+KeyboardInterrupt

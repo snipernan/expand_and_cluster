@@ -1,0 +1,16 @@
+{"time":"2025-10-21T09:54:20.233365316+08:00","level":"INFO","msg":"stream: starting","core version":"0.22.1"}
+{"time":"2025-10-21T09:54:20.70887671+08:00","level":"INFO","msg":"stream: created new stream","id":"2103603x"}
+{"time":"2025-10-21T09:54:20.708957315+08:00","level":"INFO","msg":"handler: started","stream_id":"2103603x"}
+{"time":"2025-10-21T09:54:20.70899894+08:00","level":"INFO","msg":"stream: started","id":"2103603x"}
+{"time":"2025-10-21T09:54:20.709324224+08:00","level":"INFO","msg":"sender: started","stream_id":"2103603x"}
+{"time":"2025-10-21T09:54:20.709329981+08:00","level":"INFO","msg":"writer: started","stream_id":"2103603x"}
+{"time":"2025-10-21T09:54:31.350809105+08:00","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":51}
+{"time":"2025-10-21T09:54:31.351098839+08:00","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":12}
+{"time":"2025-10-21T10:16:53.144169025+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-10-21T10:17:26.805462961+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-10-21T10:18:02.478715482+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-10-21T10:18:42.609406657+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-10-21T10:19:32.157500234+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-10-21T10:20:43.128707503+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-10-21T10:20:45.431831775+08:00","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":298}
+{"time":"2025-10-21T10:21:44.636705163+08:00","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":12}

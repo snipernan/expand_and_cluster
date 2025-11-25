@@ -1,0 +1,6 @@
+Extraction Hyperparameters
+    * gamma => 0.5
+    * beta => 0.6283185307179586
+    * finetune_traning_steps => 5000ep
+    * finetune_lr => 0.0001
+    * boruta => mnist

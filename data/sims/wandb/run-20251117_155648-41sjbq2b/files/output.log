@@ -1,0 +1,43 @@
+Generating dataset with teacher...
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /home/alvin/expand-and-cluster/data/sims/ec_6830710519/seed_-1/main/clustering_851c1b8aed
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 6 of size bigger than 12.0.
+removing 0/6 unaligned clusters
+Collapsing 6 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+#0->1, #1->2, #3->1, #4->2, #5->1,
+Final layer size: 5
+
+MSE of linear component after reconstruction 0.1920674182026765
+Traceback (most recent call last):
+  File "/home/alvin/expand-and-cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/alvin/expand-and-cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/alvin/expand-and-cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/alvin/expand-and-cluster/extraction/runner.py", line 79, in run
+    expand_and_cluster.reconstruct(students, losses, self.desc.extraction_path(self.global_seed),
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 237, in reconstruct
+    teacher_comparison(teacher, students, symmetry, cluster_mask, alignment_reconstruction)
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 327, in teacher_comparison
+    out = compare_with_teacher(wt, bt, at, ws, bs, as_, symmetry, cluster_mask=cluster_mask, verbose=True)
+  File "/home/alvin/expand-and-cluster/extraction/layer_reconstruction.py", line 398, in compare_with_teacher
+    idx_sorted = np.argsort(np.linalg.norm(at, ord=2, axis=1))[::-1]
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/numpy/linalg/linalg.py", line 2583, in norm
+    return sqrt(add.reduce(s, axis=axis, keepdims=keepdims))
+numpy.exceptions.AxisError: axis 1 is out of bounds for array of dimension 1

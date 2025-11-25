@@ -1,0 +1,38 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 71, in <module>
+    cli.main()
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 501, in main
+    run()
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/libs/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 351, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+  File "/home/alvin/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+  File "/home/alvin/expand-and-cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/alvin/expand-and-cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/alvin/expand-and-cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/alvin/expand-and-cluster/extraction/runner.py", line 66, in run
+    students, losses = expand_and_cluster.train_students(
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 82, in train_students
+    train(training_hparams, model, train_loader, output_location, callbacks, start_step=start_step)
+  File "/home/alvin/expand-and-cluster/training/train.py", line 133, in train
+    for callback in callbacks: callback(output_location, step, model, optimizer, logger)
+  File "/home/alvin/expand-and-cluster/training/standard_callbacks.py", line 306, in modified_callback
+    callback(output_location, step, model, optimizer, logger)
+  File "/home/alvin/expand-and-cluster/training/standard_callbacks.py", line 183, in eval_callback
+    total_loss += model.loss_criterion(output, labels) * labels_size
+  File "/home/alvin/expand-and-cluster/models/students_mnist_lenet.py", line 122, in loss_fn
+    overall_loss = Model.individual_losses(y_hat, y).sum()
+  File "/home/alvin/expand-and-cluster/models/students_mnist_lenet.py", line 127, in individual_losses
+    y_repeats = y.unsqueeze(2).repeat(1, 1, y_hat.shape[-1])
+IndexError: Dimension out of range (expected to be in range of [-2, 1], but got 2)

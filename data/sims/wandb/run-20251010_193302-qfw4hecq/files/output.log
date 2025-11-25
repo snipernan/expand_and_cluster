@@ -1,0 +1,90 @@
+Generating dataset with teacher...
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /home/alvin/expand-and-cluster/data/sims/ec_cec6cb3244/seed_-1/main/clustering_8389c857d6
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 24 of size bigger than 5.0.
+removing 4/24 unaligned clusters
+Collapsing 20 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+#0->1, #1->1, #2->1, #3->1, #4->1, #5->1, #6->1, #7->1, #8->1, #9->1, #10->1, #11->1, #12->1, #13->1, #14->1, #15->1, #16->1, #17->1, #18->1, #19->1,
+Final layer size: 20
+
+train	ep 00000	it 000	loss 2.069e+03	ex 60000	time 0.00s
+train	ep 00100	it 000	loss 8.544e+01	ex 60000	time 79.02s
+train	ep 00200	it 000	loss 6.563e+01	ex 60000	time 84.49s
+train	ep 00300	it 000	loss 5.695e+01	ex 60000	time 84.13s
+train	ep 00400	it 000	loss 5.217e+01	ex 60000	time 71.53s
+train	ep 00500	it 000	loss 4.897e+01	ex 60000	time 72.38s
+train	ep 00600	it 000	loss 4.662e+01	ex 60000	time 72.70s
+train	ep 00700	it 000	loss 4.469e+01	ex 60000	time 71.26s
+train	ep 00800	it 000	loss 4.280e+01	ex 60000	time 79.20s
+train	ep 00900	it 000	loss 4.123e+01	ex 60000	time 83.07s
+train	ep 01000	it 000	loss 3.969e+01	ex 60000	time 84.24s
+train	ep 01100	it 000	loss 3.820e+01	ex 60000	time 83.71s
+train	ep 01200	it 000	loss 3.690e+01	ex 60000	time 69.70s
+train	ep 01300	it 000	loss 3.574e+01	ex 60000	time 69.56s
+train	ep 01400	it 000	loss 3.475e+01	ex 60000	time 68.74s
+train	ep 01500	it 000	loss 3.395e+01	ex 60000	time 70.10s
+train	ep 01600	it 000	loss 3.326e+01	ex 60000	time 68.99s
+train	ep 01700	it 000	loss 3.259e+01	ex 60000	time 69.89s
+train	ep 01800	it 000	loss 3.193e+01	ex 60000	time 69.22s
+train	ep 01900	it 000	loss 3.132e+01	ex 60000	time 69.25s
+train	ep 02000	it 000	loss 3.074e+01	ex 60000	time 69.45s
+train	ep 02100	it 000	loss 3.019e+01	ex 60000	time 70.13s
+train	ep 02200	it 000	loss 2.974e+01	ex 60000	time 69.20s
+train	ep 02300	it 000	loss 2.928e+01	ex 60000	time 70.04s
+train	ep 02400	it 000	loss 2.890e+01	ex 60000	time 68.68s
+train	ep 02500	it 000	loss 2.855e+01	ex 60000	time 70.53s
+train	ep 02600	it 000	loss 2.816e+01	ex 60000	time 70.48s
+train	ep 02700	it 000	loss 2.781e+01	ex 60000	time 70.32s
+train	ep 02800	it 000	loss 2.739e+01	ex 60000	time 70.40s
+train	ep 02900	it 000	loss 2.704e+01	ex 60000	time 69.65s
+train	ep 03000	it 000	loss 2.674e+01	ex 60000	time 70.24s
+train	ep 03100	it 000	loss 2.647e+01	ex 60000	time 69.91s
+train	ep 03200	it 000	loss 2.625e+01	ex 60000	time 69.31s
+train	ep 03300	it 000	loss 2.599e+01	ex 60000	time 69.58s
+train	ep 03400	it 000	loss 2.578e+01	ex 60000	time 69.27s
+train	ep 03500	it 000	loss 2.561e+01	ex 60000	time 69.70s
+train	ep 03600	it 000	loss 2.538e+01	ex 60000	time 70.03s
+train	ep 03700	it 000	loss 2.519e+01	ex 60000	time 68.99s
+train	ep 03800	it 000	loss 2.505e+01	ex 60000	time 69.73s
+train	ep 03900	it 000	loss 2.482e+01	ex 60000	time 69.27s
+train	ep 04000	it 000	loss 2.466e+01	ex 60000	time 69.45s
+train	ep 04100	it 000	loss 2.450e+01	ex 60000	time 70.81s
+train	ep 04200	it 000	loss 2.434e+01	ex 60000	time 69.95s
+train	ep 04300	it 000	loss 2.420e+01	ex 60000	time 70.14s
+train	ep 04400	it 000	loss 2.405e+01	ex 60000	time 70.26s
+train	ep 04500	it 000	loss 2.391e+01	ex 60000	time 69.72s
+train	ep 04600	it 000	loss 2.378e+01	ex 60000	time 70.16s
+train	ep 04700	it 000	loss 2.364e+01	ex 60000	time 69.82s
+train	ep 04800	it 000	loss 2.350e+01	ex 60000	time 68.65s
+train	ep 04900	it 000	loss 2.338e+01	ex 60000	time 69.80s
+train	ep 05000	it 000	loss 2.326e+01	ex 60000	time 70.19s
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 1
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 49 of size bigger than 5.0.
+removing 49/49 unaligned clusters
+Collapsing 0 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+
+Final layer size: 0

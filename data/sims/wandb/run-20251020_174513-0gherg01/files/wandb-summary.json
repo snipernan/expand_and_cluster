@@ -1,0 +1,1 @@
+{"local_hashname":"84ffdd7cbf","_wandb":{"runtime":551},"_timestamp":1.7609540675844471e+09,"training/test_accuracy":0.6809,"_step":41,"training/examples":10000,"training/train_loss":1.042614453125,"training/iteration_step":18760,"_runtime":551,"training/train_accuracy":0.6891833333333334,"training/test_loss":1.08688017578125}

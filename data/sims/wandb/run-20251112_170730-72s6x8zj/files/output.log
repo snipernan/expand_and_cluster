@@ -1,0 +1,35 @@
+Generating dataset with teacher...
+train	ep 00000	it 000	loss 8.141e+02	ex 60000	time 0.00s
+Ep 0	It 0	Time Elapsed 0.00
+Traceback (most recent call last):
+  File "/home/alvin/expand-and-cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/alvin/expand-and-cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/alvin/expand-and-cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/alvin/expand-and-cluster/extraction/runner.py", line 66, in run
+    students, losses = expand_and_cluster.train_students(
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 82, in train_students
+    train(training_hparams, model, train_loader, output_location, callbacks, start_step=start_step)
+  File "/home/alvin/expand-and-cluster/training/train.py", line 126, in train
+    for it, (examples, labels) in enumerate(train_loader):
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 677, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 265, in default_collate
+    return collate(batch, collate_fn_map=default_collate_fn_map)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 142, in collate
+    return [collate(samples, collate_fn_map=collate_fn_map) for samples in transposed]  # Backwards compatibility.
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 142, in <listcomp>
+    return [collate(samples, collate_fn_map=collate_fn_map) for samples in transposed]  # Backwards compatibility.
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 119, in collate
+    return collate_fn_map[elem_type](batch, collate_fn_map=collate_fn_map)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 171, in collate_numpy_array_fn
+    return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/_utils/collate.py", line 171, in <listcomp>
+    return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+KeyboardInterrupt

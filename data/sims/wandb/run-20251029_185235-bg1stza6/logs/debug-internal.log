@@ -1,0 +1,12 @@
+{"time":"2025-10-29T18:52:35.452161704+08:00","level":"INFO","msg":"stream: starting","core version":"0.22.1"}
+{"time":"2025-10-29T18:52:35.96854653+08:00","level":"INFO","msg":"stream: created new stream","id":"bg1stza6"}
+{"time":"2025-10-29T18:52:35.968652773+08:00","level":"INFO","msg":"handler: started","stream_id":"bg1stza6"}
+{"time":"2025-10-29T18:52:35.968712774+08:00","level":"INFO","msg":"stream: started","id":"bg1stza6"}
+{"time":"2025-10-29T18:52:35.969067565+08:00","level":"INFO","msg":"sender: started","stream_id":"bg1stza6"}
+{"time":"2025-10-29T18:52:35.969075899+08:00","level":"INFO","msg":"writer: started","stream_id":"bg1stza6"}
+{"time":"2025-10-29T18:55:07.503302726+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/202100460027-shandong-university/expand-and-cluster/bg1stza6/file_stream\": EOF"}
+{"time":"2025-10-29T19:01:40.508933146+08:00","level":"INFO","msg":"stream: closing","id":"bg1stza6"}
+{"time":"2025-10-29T19:01:44.697473121+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-10-29T19:01:45.102707+08:00","level":"INFO","msg":"handler: closed","stream_id":"bg1stza6"}
+{"time":"2025-10-29T19:01:45.102868049+08:00","level":"INFO","msg":"sender: closed","stream_id":"bg1stza6"}
+{"time":"2025-10-29T19:01:45.102882258+08:00","level":"INFO","msg":"stream: closed","id":"bg1stza6"}

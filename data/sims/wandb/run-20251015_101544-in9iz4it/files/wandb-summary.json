@@ -1,0 +1,1 @@
+{"_timestamp":1.7604950547086096e+09,"_wandb":{"runtime":472},"training/test_loss":0.15396708984375,"local_hashname":"4e06f40307","_runtime":472,"_step":41,"training/examples":10000,"training/iteration_step":18760,"training/train_loss":0.052470947265625,"training/train_accuracy":0.9842666666666666,"training/test_accuracy":0.9616}

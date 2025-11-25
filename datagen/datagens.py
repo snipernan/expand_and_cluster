@@ -72,3 +72,7 @@ def fashion_mnist(augment=None, d_in=None):
         X.append(im)
     X = torch.concat(X)
     return X
+
+def custom_2d(augment=None, d_in=None, samples=8000): # 1. 添加 "samples" 参数
+    X = torch.randn(samples, 2) 
+    return X

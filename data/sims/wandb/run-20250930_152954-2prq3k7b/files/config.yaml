@@ -1,0 +1,140 @@
+_wandb:
+    value:
+        cli_version: 0.22.1
+        e:
+            lnuic166o0b16il2k5hjo45g0v5vkb6t:
+                args:
+                    - train
+                    - --default_hparams=mnist_lenet_20
+                codePath: EC.py
+                codePathLocal: EC.py
+                cpu_count: 10
+                cpu_count_logical: 20
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "1081101176832"
+                        used: "9542873088"
+                email: 202100460027@mail.sdu.edu.cn
+                executable: /home/alvin/expand-and-cluster/venv/bin/python
+                git:
+                    commit: 231cac970ceef43cb6361cd39917d75e44d7776e
+                    remote: https://github.com/flavio-martinelli/expand-and-cluster
+                gpu: NVIDIA T400 4GB
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Turing
+                      memoryTotal: "4294967296"
+                      name: NVIDIA T400 4GB
+                      uuid: GPU-dec18f15-efad-2324-df10-ba3756e2b89c
+                host: DESKTOP-COEPU1G
+                memory:
+                    total: "16604372992"
+                os: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+                program: /home/alvin/expand-and-cluster/EC.py
+                python: CPython 3.10.12
+                root: /home/alvin/expand-and-cluster/data/sims
+                startedAt: "2025-09-30T07:29:54.610453Z"
+                writerId: lnuic166o0b16il2k5hjo45g0v5vkb6t
+        m:
+            - "1": training/iteration_step
+              "6":
+                - 3
+              "7": []
+            - "2": training/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+        python_version: 3.10.12
+        t:
+            "1":
+                - 1
+                - 41
+                - 51
+            "2":
+                - 1
+                - 41
+                - 51
+            "3":
+                - 7
+                - 16
+                - 62
+            "4": 3.10.12
+            "5": 0.22.1
+            "10":
+                - 20
+            "12": 0.22.1
+            "13": linux-x86_64
+act_fun:
+    value: relu
+apex_fp16:
+    value: false
+batch_size:
+    value: 128
+batchnorm_frozen:
+    value: false
+batchnorm_init:
+    value: uniform
+blur_factor:
+    value: null
+cooldown:
+    value: null
+d_in:
+    value: null
+data_order_seed:
+    value: null
+datagen:
+    value: null
+dataset_name:
+    value: mnist
+delta:
+    value: null
+do_not_augment:
+    value: false
+further_training:
+    value: null
+lr:
+    value: 0.1
+milestone_steps:
+    value: null
+model_init:
+    value: kaiming_normal
+model_name:
+    value: mnist_lenet_20
+momentum:
+    value: 0
+nesterov_momentum:
+    value: 0
+optimizer_name:
+    value: sgd
+others_frozen:
+    value: false
+others_frozen_exceptions:
+    value: null
+output_frozen:
+    value: false
+patience:
+    value: null
+plateau_opt:
+    value: false
+random_labels_fraction:
+    value: null
+samples:
+    value: null
+subsample_fraction:
+    value: null
+teacher_name:
+    value: null
+teacher_seed:
+    value: null
+training_steps:
+    value: 40ep
+transformation_seed:
+    value: null
+unsupervised_labels:
+    value: null
+warmup_steps:
+    value: null
+weight_decay:
+    value: null

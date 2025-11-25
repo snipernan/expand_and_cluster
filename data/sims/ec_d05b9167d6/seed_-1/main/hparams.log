@@ -1,0 +1,13 @@
+Dataset Hyperparameters
+    * dataset_name => mnist
+    * batch_size => 640
+    * teacher_name => train_f55b402935
+Model Hyperparameters
+    * model_name => students_mnist_lenet(50)_60_60
+    * model_init => kaiming_normal
+    * batchnorm_init => uniform
+    * act_fun => relu
+Training Hyperparameters
+    * optimizer_name => adam
+    * lr => 0.001
+    * training_steps => 25000ep

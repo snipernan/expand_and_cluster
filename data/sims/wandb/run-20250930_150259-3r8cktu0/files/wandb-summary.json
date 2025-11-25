@@ -1,0 +1,1 @@
+{"training/test_accuracy":0.9615,"training/train_accuracy":0.9853,"training/iteration_step":18760,"training/examples":10000,"local_hashname":"4e06f40307","_runtime":584,"_wandb":{"runtime":584},"training/train_loss":0.04924880777994792,"_timestamp":1.7592163758398578e+09,"training/test_loss":0.15097691650390624,"_step":41}

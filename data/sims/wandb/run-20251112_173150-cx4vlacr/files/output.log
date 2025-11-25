@@ -1,0 +1,338 @@
+Generating dataset with teacher...
+train	ep 00000	it 000	loss 1.053e+02	ex 60000	time 0.00s
+Ep 0	It 0	Time Elapsed 0.00
+Ep 100	It 0	Time Elapsed 79.11
+Ep 200	It 0	Time Elapsed 66.89
+Ep 300	It 0	Time Elapsed 82.07
+Ep 400	It 0	Time Elapsed 84.37
+Ep 500	It 0	Time Elapsed 101.22
+Ep 600	It 0	Time Elapsed 118.22
+Ep 700	It 0	Time Elapsed 89.28
+Ep 800	It 0	Time Elapsed 88.58
+Ep 900	It 0	Time Elapsed 73.06
+Ep 1000	It 0	Time Elapsed 88.01
+Ep 1100	It 0	Time Elapsed 80.56
+Ep 1200	It 0	Time Elapsed 82.91
+Ep 1300	It 0	Time Elapsed 92.16
+Ep 1400	It 0	Time Elapsed 99.56
+Ep 1500	It 0	Time Elapsed 97.25
+Ep 1600	It 0	Time Elapsed 108.51
+Ep 1700	It 0	Time Elapsed 90.67
+Ep 1800	It 0	Time Elapsed 106.35
+Ep 1900	It 0	Time Elapsed 75.34
+Ep 2000	It 0	Time Elapsed 75.71
+Ep 2100	It 0	Time Elapsed 74.23
+Ep 2200	It 0	Time Elapsed 72.28
+Ep 2300	It 0	Time Elapsed 86.22
+Ep 2400	It 0	Time Elapsed 82.96
+Ep 2500	It 0	Time Elapsed 69.74
+Ep 2600	It 0	Time Elapsed 58.91
+Ep 2700	It 0	Time Elapsed 57.55
+Ep 2800	It 0	Time Elapsed 80.31
+Ep 2900	It 0	Time Elapsed 106.01
+Ep 3000	It 0	Time Elapsed 67.03
+Ep 3100	It 0	Time Elapsed 71.95
+Ep 3200	It 0	Time Elapsed 73.27
+Ep 3300	It 0	Time Elapsed 69.19
+Ep 3400	It 0	Time Elapsed 90.68
+Ep 3500	It 0	Time Elapsed 68.76
+Ep 3600	It 0	Time Elapsed 73.20
+Ep 3700	It 0	Time Elapsed 75.77
+Ep 3800	It 0	Time Elapsed 99.25
+Ep 3900	It 0	Time Elapsed 90.89
+Ep 4000	It 0	Time Elapsed 98.72
+Ep 4100	It 0	Time Elapsed 78.90
+Ep 4200	It 0	Time Elapsed 82.02
+Ep 4300	It 0	Time Elapsed 65.95
+Ep 4400	It 0	Time Elapsed 65.73
+Ep 4500	It 0	Time Elapsed 58.03
+Ep 4600	It 0	Time Elapsed 63.40
+Ep 4700	It 0	Time Elapsed 61.63
+Ep 4800	It 0	Time Elapsed 57.19
+Ep 4900	It 0	Time Elapsed 59.48
+Ep 5000	It 0	Time Elapsed 59.29
+Ep 5100	It 0	Time Elapsed 60.67
+Ep 5200	It 0	Time Elapsed 63.07
+Ep 5300	It 0	Time Elapsed 55.57
+Ep 5400	It 0	Time Elapsed 60.93
+Ep 5500	It 0	Time Elapsed 61.86
+Ep 5600	It 0	Time Elapsed 59.02
+Ep 5700	It 0	Time Elapsed 58.32
+Ep 5800	It 0	Time Elapsed 63.02
+Ep 5900	It 0	Time Elapsed 58.02
+Ep 6000	It 0	Time Elapsed 56.34
+Ep 6100	It 0	Time Elapsed 61.12
+Ep 6200	It 0	Time Elapsed 63.20
+Ep 6300	It 0	Time Elapsed 61.71
+Ep 6400	It 0	Time Elapsed 62.43
+Ep 6500	It 0	Time Elapsed 56.93
+Ep 6600	It 0	Time Elapsed 60.54
+Ep 6700	It 0	Time Elapsed 62.82
+Ep 6800	It 0	Time Elapsed 59.08
+Ep 6900	It 0	Time Elapsed 58.80
+Ep 7000	It 0	Time Elapsed 56.70
+Ep 7100	It 0	Time Elapsed 66.84
+Ep 7200	It 0	Time Elapsed 60.14
+Ep 7300	It 0	Time Elapsed 60.62
+Ep 7400	It 0	Time Elapsed 60.09
+Ep 7500	It 0	Time Elapsed 57.83
+Ep 7600	It 0	Time Elapsed 59.05
+Ep 7700	It 0	Time Elapsed 56.58
+Ep 7800	It 0	Time Elapsed 57.42
+Ep 7900	It 0	Time Elapsed 64.59
+Ep 8000	It 0	Time Elapsed 64.34
+Ep 8100	It 0	Time Elapsed 62.61
+Ep 8200	It 0	Time Elapsed 62.20
+Ep 8300	It 0	Time Elapsed 57.39
+Ep 8400	It 0	Time Elapsed 59.19
+Ep 8500	It 0	Time Elapsed 60.91
+Ep 8600	It 0	Time Elapsed 59.58
+Ep 8700	It 0	Time Elapsed 59.90
+Ep 8800	It 0	Time Elapsed 58.58
+Ep 8900	It 0	Time Elapsed 56.21
+Ep 9000	It 0	Time Elapsed 58.92
+Ep 9100	It 0	Time Elapsed 59.66
+Ep 9200	It 0	Time Elapsed 60.66
+Ep 9300	It 0	Time Elapsed 59.74
+Ep 9400	It 0	Time Elapsed 61.05
+Ep 9500	It 0	Time Elapsed 57.65
+Ep 9600	It 0	Time Elapsed 65.36
+Ep 9700	It 0	Time Elapsed 60.06
+Ep 9800	It 0	Time Elapsed 58.93
+Ep 9900	It 0	Time Elapsed 61.86
+Ep 10000	It 0	Time Elapsed 60.39
+Ep 10100	It 0	Time Elapsed 59.82
+Ep 10200	It 0	Time Elapsed 53.94
+Ep 10300	It 0	Time Elapsed 55.20
+Ep 10400	It 0	Time Elapsed 66.96
+Ep 10500	It 0	Time Elapsed 64.69
+Ep 10600	It 0	Time Elapsed 71.61
+Ep 10700	It 0	Time Elapsed 67.55
+Ep 10800	It 0	Time Elapsed 62.38
+Ep 10900	It 0	Time Elapsed 55.43
+Ep 11000	It 0	Time Elapsed 56.96
+Ep 11100	It 0	Time Elapsed 59.08
+Ep 11200	It 0	Time Elapsed 56.95
+Ep 11300	It 0	Time Elapsed 55.34
+Ep 11400	It 0	Time Elapsed 53.44
+Ep 11500	It 0	Time Elapsed 51.16
+Ep 11600	It 0	Time Elapsed 54.25
+Ep 11700	It 0	Time Elapsed 51.93
+Ep 11800	It 0	Time Elapsed 53.15
+Ep 11900	It 0	Time Elapsed 51.92
+Ep 12000	It 0	Time Elapsed 53.59
+Ep 12100	It 0	Time Elapsed 51.56
+Ep 12200	It 0	Time Elapsed 53.44
+Ep 12300	It 0	Time Elapsed 54.38
+Ep 12400	It 0	Time Elapsed 52.02
+Ep 12500	It 0	Time Elapsed 53.48
+Ep 12600	It 0	Time Elapsed 51.90
+Ep 12700	It 0	Time Elapsed 53.65
+Ep 12800	It 0	Time Elapsed 52.72
+Ep 12900	It 0	Time Elapsed 54.62
+Ep 13000	It 0	Time Elapsed 53.26
+Ep 13100	It 0	Time Elapsed 54.46
+Ep 13200	It 0	Time Elapsed 55.04
+Ep 13300	It 0	Time Elapsed 52.23
+Ep 13400	It 0	Time Elapsed 54.81
+Ep 13500	It 0	Time Elapsed 52.61
+Ep 13600	It 0	Time Elapsed 55.38
+Ep 13700	It 0	Time Elapsed 63.10
+Ep 13800	It 0	Time Elapsed 60.55
+Ep 13900	It 0	Time Elapsed 54.98
+Ep 14000	It 0	Time Elapsed 56.24
+Ep 14100	It 0	Time Elapsed 57.34
+Ep 14200	It 0	Time Elapsed 62.90
+Ep 14300	It 0	Time Elapsed 72.91
+Ep 14400	It 0	Time Elapsed 70.13
+Ep 14500	It 0	Time Elapsed 71.76
+Ep 14600	It 0	Time Elapsed 70.08
+Ep 14700	It 0	Time Elapsed 71.17
+Ep 14800	It 0	Time Elapsed 73.21
+Ep 14900	It 0	Time Elapsed 73.27
+Ep 15000	It 0	Time Elapsed 70.39
+Ep 15100	It 0	Time Elapsed 56.82
+Ep 15200	It 0	Time Elapsed 55.10
+Ep 15300	It 0	Time Elapsed 54.02
+Ep 15400	It 0	Time Elapsed 55.04
+Ep 15500	It 0	Time Elapsed 70.23
+Ep 15600	It 0	Time Elapsed 72.58
+Ep 15700	It 0	Time Elapsed 68.98
+Ep 15800	It 0	Time Elapsed 71.17
+Ep 15900	It 0	Time Elapsed 57.02
+Ep 16000	It 0	Time Elapsed 54.32
+Ep 16100	It 0	Time Elapsed 57.28
+Ep 16200	It 0	Time Elapsed 56.45
+Ep 16300	It 0	Time Elapsed 54.11
+Ep 16400	It 0	Time Elapsed 52.99
+Ep 16500	It 0	Time Elapsed 65.54
+Ep 16600	It 0	Time Elapsed 72.95
+Ep 16700	It 0	Time Elapsed 72.94
+Ep 16800	It 0	Time Elapsed 72.09
+Ep 16900	It 0	Time Elapsed 70.26
+Ep 17000	It 0	Time Elapsed 65.63
+Ep 17100	It 0	Time Elapsed 71.07
+Ep 17200	It 0	Time Elapsed 74.04
+Ep 17300	It 0	Time Elapsed 69.13
+Ep 17400	It 0	Time Elapsed 68.33
+Ep 17500	It 0	Time Elapsed 72.10
+Ep 17600	It 0	Time Elapsed 71.06
+Ep 17700	It 0	Time Elapsed 72.98
+Ep 17800	It 0	Time Elapsed 71.57
+Ep 17900	It 0	Time Elapsed 68.55
+Ep 18000	It 0	Time Elapsed 71.56
+Ep 18100	It 0	Time Elapsed 68.55
+Ep 18200	It 0	Time Elapsed 63.01
+Ep 18300	It 0	Time Elapsed 71.30
+Ep 18400	It 0	Time Elapsed 64.48
+Ep 18500	It 0	Time Elapsed 65.00
+Ep 18600	It 0	Time Elapsed 67.84
+Ep 18700	It 0	Time Elapsed 67.33
+Ep 18800	It 0	Time Elapsed 70.09
+Ep 18900	It 0	Time Elapsed 70.86
+Ep 19000	It 0	Time Elapsed 76.97
+Ep 19100	It 0	Time Elapsed 72.84
+Ep 19200	It 0	Time Elapsed 71.28
+Ep 19300	It 0	Time Elapsed 72.72
+Ep 19400	It 0	Time Elapsed 68.80
+Ep 19500	It 0	Time Elapsed 75.59
+Ep 19600	It 0	Time Elapsed 71.35
+Ep 19700	It 0	Time Elapsed 68.08
+Ep 19800	It 0	Time Elapsed 72.56
+Ep 19900	It 0	Time Elapsed 67.13
+Ep 20000	It 0	Time Elapsed 53.91
+Ep 20100	It 0	Time Elapsed 62.94
+Ep 20200	It 0	Time Elapsed 72.05
+Ep 20300	It 0	Time Elapsed 68.75
+Ep 20400	It 0	Time Elapsed 73.89
+Ep 20500	It 0	Time Elapsed 59.95
+Ep 20600	It 0	Time Elapsed 55.71
+Ep 20700	It 0	Time Elapsed 54.17
+Ep 20800	It 0	Time Elapsed 55.05
+Ep 20900	It 0	Time Elapsed 55.81
+Ep 21000	It 0	Time Elapsed 52.37
+Ep 21100	It 0	Time Elapsed 60.97
+Ep 21200	It 0	Time Elapsed 72.25
+Ep 21300	It 0	Time Elapsed 72.83
+Ep 21400	It 0	Time Elapsed 67.37
+Ep 21500	It 0	Time Elapsed 63.52
+Ep 21600	It 0	Time Elapsed 71.42
+Ep 21700	It 0	Time Elapsed 68.56
+Ep 21800	It 0	Time Elapsed 56.65
+Ep 21900	It 0	Time Elapsed 53.70
+Ep 22000	It 0	Time Elapsed 55.17
+Ep 22100	It 0	Time Elapsed 56.04
+Ep 22200	It 0	Time Elapsed 54.73
+Ep 22300	It 0	Time Elapsed 53.93
+Ep 22400	It 0	Time Elapsed 51.76
+Ep 22500	It 0	Time Elapsed 54.17
+Ep 22600	It 0	Time Elapsed 52.84
+Ep 22700	It 0	Time Elapsed 55.43
+Ep 22800	It 0	Time Elapsed 56.79
+Ep 22900	It 0	Time Elapsed 51.92
+Ep 23000	It 0	Time Elapsed 53.79
+Ep 23100	It 0	Time Elapsed 52.47
+Ep 23200	It 0	Time Elapsed 54.32
+Ep 23300	It 0	Time Elapsed 51.40
+Ep 23400	It 0	Time Elapsed 53.87
+Ep 23500	It 0	Time Elapsed 51.10
+Ep 23600	It 0	Time Elapsed 52.31
+Ep 23700	It 0	Time Elapsed 49.65
+Ep 23800	It 0	Time Elapsed 54.09
+Ep 23900	It 0	Time Elapsed 52.26
+Ep 24000	It 0	Time Elapsed 54.44
+Ep 24100	It 0	Time Elapsed 54.70
+Ep 24200	It 0	Time Elapsed 50.70
+Ep 24300	It 0	Time Elapsed 52.17
+Ep 24400	It 0	Time Elapsed 50.07
+Ep 24500	It 0	Time Elapsed 53.15
+Ep 24600	It 0	Time Elapsed 50.24
+Ep 24700	It 0	Time Elapsed 52.29
+Ep 24800	It 0	Time Elapsed 51.06
+Ep 24900	It 0	Time Elapsed 53.31
+train	ep 25000	it 000	loss 4.556e-04	ex 60000	time 16132.69s
+Ep 25000	It 0	Time Elapsed 52.86
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /home/alvin/expand-and-cluster/data/sims/ec_47d5c1ae9b/seed_-1/main/clustering_c5e0308286
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 11 of size bigger than 5.0.
+removing 0/11 unaligned clusters
+Collapsing 11 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+#1->1, #2->2, #3->3, #4->1, #5->3, #6->3, #7->1, #8->1, #9->3, #10->1,
+Final layer size: 10
+
+Best average sim w: 0.0001648528341659794
+Best max sim w: 0.00036448409669576076
+Best average sim a: 3.328968928295595e-07
+Best max sim a: 9.595590666489073e-07
+Loss before bias alignment: 1.846e+01
+Loss after bias alignment: 1.745e+00
+train	ep 00000	it 000	loss 1.745e+00	ex 60000	time 0.00s
+train	ep 00100	it 000	loss 8.939e-04	ex 60000	time 68.91s
+train	ep 00200	it 000	loss 1.982e-04	ex 60000	time 62.37s
+train	ep 00300	it 000	loss 3.222e-05	ex 60000	time 66.31s
+train	ep 00400	it 000	loss 7.033e-06	ex 60000	time 66.68s
+train	ep 00500	it 000	loss 2.653e-06	ex 60000	time 65.28s
+train	ep 00600	it 000	loss 2.092e-06	ex 60000	time 55.74s
+train	ep 00700	it 000	loss 3.785e-06	ex 60000	time 59.59s
+train	ep 00800	it 000	loss 1.870e-06	ex 60000	time 59.07s
+train	ep 00900	it 000	loss 1.367e-06	ex 60000	time 57.57s
+train	ep 01000	it 000	loss 3.102e-06	ex 60000	time 58.54s
+train	ep 01100	it 000	loss 2.777e-06	ex 60000	time 57.75s
+train	ep 01200	it 000	loss 1.479e-06	ex 60000	time 53.81s
+train	ep 01300	it 000	loss 1.124e-06	ex 60000	time 56.80s
+train	ep 01400	it 000	loss 1.779e-06	ex 60000	time 58.47s
+train	ep 01500	it 000	loss 9.447e-07	ex 60000	time 56.91s
+train	ep 01600	it 000	loss 9.748e-07	ex 60000	time 60.22s
+train	ep 01700	it 000	loss 1.091e-06	ex 60000	time 57.19s
+train	ep 01800	it 000	loss 1.356e-06	ex 60000	time 54.37s
+train	ep 01900	it 000	loss 6.736e-07	ex 60000	time 57.93s
+train	ep 02000	it 000	loss 1.610e-06	ex 60000	time 58.65s
+train	ep 02100	it 000	loss 8.049e-07	ex 60000	time 57.05s
+train	ep 02200	it 000	loss 5.430e-07	ex 60000	time 59.67s
+train	ep 02300	it 000	loss 4.358e-07	ex 60000	time 57.20s
+train	ep 02400	it 000	loss 9.239e-07	ex 60000	time 55.16s
+train	ep 02500	it 000	loss 3.861e-07	ex 60000	time 57.51s
+train	ep 02600	it 000	loss 1.153e-06	ex 60000	time 58.28s
+train	ep 02700	it 000	loss 4.493e-07	ex 60000	time 58.41s
+train	ep 02800	it 000	loss 7.372e-07	ex 60000	time 58.87s
+train	ep 02900	it 000	loss 3.975e-07	ex 60000	time 56.35s
+train	ep 03000	it 000	loss 2.079e-06	ex 60000	time 58.06s
+train	ep 03100	it 000	loss 6.761e-07	ex 60000	time 59.35s
+train	ep 03200	it 000	loss 5.080e-07	ex 60000	time 58.83s
+train	ep 03300	it 000	loss 7.788e-07	ex 60000	time 57.82s
+train	ep 03400	it 000	loss 6.549e-07	ex 60000	time 58.86s
+train	ep 03500	it 000	loss 4.915e-07	ex 60000	time 57.60s
+train	ep 03600	it 000	loss 5.434e-07	ex 60000	time 54.96s
+train	ep 03700	it 000	loss 1.861e-06	ex 60000	time 57.25s
+train	ep 03800	it 000	loss 1.764e-07	ex 60000	time 58.58s
+train	ep 03900	it 000	loss 2.169e-06	ex 60000	time 59.09s
+train	ep 04000	it 000	loss 3.558e-07	ex 60000	time 58.94s
+train	ep 04100	it 000	loss 3.759e-07	ex 60000	time 64.08s
+train	ep 04200	it 000	loss 6.711e-07	ex 60000	time 58.41s
+train	ep 04300	it 000	loss 2.192e-06	ex 60000	time 57.48s
+train	ep 04400	it 000	loss 1.377e-06	ex 60000	time 56.15s
+train	ep 04500	it 000	loss 1.863e-06	ex 60000	time 56.85s
+train	ep 04600	it 000	loss 4.069e-07	ex 60000	time 56.70s
+train	ep 04700	it 000	loss 1.268e-06	ex 60000	time 56.72s
+train	ep 04800	it 000	loss 9.763e-07	ex 60000	time 57.86s
+train	ep 04900	it 000	loss 6.171e-07	ex 60000	time 57.35s
+train	ep 05000	it 000	loss 1.396e-07	ex 60000	time 56.79s
+Best average sim w: 0.00045666815411918305
+Best max sim w: 0.0006766546764205295
+Best average sim a: 0.004760047277585775
+Best max sim a: 0.019039966936869157

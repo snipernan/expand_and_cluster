@@ -1,0 +1,135 @@
+Generating dataset with teacher...
+Ep 22500	It 0	Time Elapsed 0.00
+Ep 22600	It 0	Time Elapsed 115.91
+Ep 22700	It 0	Time Elapsed 116.06
+Ep 22800	It 0	Time Elapsed 115.83
+Ep 22900	It 0	Time Elapsed 113.93
+Ep 23000	It 0	Time Elapsed 113.51
+Ep 23100	It 0	Time Elapsed 113.26
+Ep 23200	It 0	Time Elapsed 111.93
+Ep 23300	It 0	Time Elapsed 113.79
+Ep 23400	It 0	Time Elapsed 112.66
+Ep 23500	It 0	Time Elapsed 112.67
+Ep 23600	It 0	Time Elapsed 112.79
+Ep 23700	It 0	Time Elapsed 113.10
+Ep 23800	It 0	Time Elapsed 112.75
+Ep 23900	It 0	Time Elapsed 112.40
+Ep 24000	It 0	Time Elapsed 112.19
+Ep 24100	It 0	Time Elapsed 114.12
+Ep 24200	It 0	Time Elapsed 112.16
+Ep 24300	It 0	Time Elapsed 112.78
+Ep 24400	It 0	Time Elapsed 113.69
+Ep 24500	It 0	Time Elapsed 112.85
+Ep 24600	It 0	Time Elapsed 114.13
+Ep 24700	It 0	Time Elapsed 113.67
+Ep 24800	It 0	Time Elapsed 112.03
+Ep 24900	It 0	Time Elapsed 112.94
+train	ep 25000	it 000	loss 2.259e-02	ex 60000	time 0.00s
+Ep 25000	It 0	Time Elapsed 114.13
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /home/alvin/expand-and-cluster/data/sims/ec_57f294b11a/seed_-1/main/clustering_8389c857d6
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 6 of size bigger than 25.0.
+removing 3/6 unaligned clusters
+Collapsing 3 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+#0->1, #1->1, #2->1,
+Final layer size: 3
+
+train	ep 00000	it 000	loss 3.142e+03	ex 60000	time 0.00s
+train	ep 00100	it 000	loss 3.110e+02	ex 60000	time 85.63s
+train	ep 00200	it 000	loss 2.576e+02	ex 60000	time 83.32s
+train	ep 00300	it 000	loss 2.298e+02	ex 60000	time 84.70s
+train	ep 00400	it 000	loss 2.165e+02	ex 60000	time 83.84s
+train	ep 00500	it 000	loss 2.083e+02	ex 60000	time 85.71s
+train	ep 00600	it 000	loss 2.012e+02	ex 60000	time 83.96s
+train	ep 00700	it 000	loss 1.947e+02	ex 60000	time 84.12s
+train	ep 00800	it 000	loss 1.898e+02	ex 60000	time 85.46s
+train	ep 00900	it 000	loss 1.858e+02	ex 60000	time 84.54s
+train	ep 01000	it 000	loss 1.826e+02	ex 60000	time 84.87s
+train	ep 01100	it 000	loss 1.797e+02	ex 60000	time 83.70s
+train	ep 01200	it 000	loss 1.768e+02	ex 60000	time 85.12s
+train	ep 01300	it 000	loss 1.748e+02	ex 60000	time 84.97s
+train	ep 01400	it 000	loss 1.734e+02	ex 60000	time 84.13s
+train	ep 01500	it 000	loss 1.715e+02	ex 60000	time 84.68s
+train	ep 01600	it 000	loss 1.700e+02	ex 60000	time 83.95s
+train	ep 01700	it 000	loss 1.684e+02	ex 60000	time 83.73s
+train	ep 01800	it 000	loss 1.674e+02	ex 60000	time 84.56s
+train	ep 01900	it 000	loss 1.660e+02	ex 60000	time 83.84s
+train	ep 02000	it 000	loss 1.627e+02	ex 60000	time 86.22s
+train	ep 02100	it 000	loss 1.612e+02	ex 60000	time 85.16s
+train	ep 02200	it 000	loss 1.599e+02	ex 60000	time 84.85s
+train	ep 02300	it 000	loss 1.586e+02	ex 60000	time 85.22s
+train	ep 02400	it 000	loss 1.573e+02	ex 60000	time 85.53s
+train	ep 02500	it 000	loss 1.564e+02	ex 60000	time 85.04s
+train	ep 02600	it 000	loss 1.556e+02	ex 60000	time 86.35s
+train	ep 02700	it 000	loss 1.547e+02	ex 60000	time 84.55s
+train	ep 02800	it 000	loss 1.540e+02	ex 60000	time 85.45s
+train	ep 02900	it 000	loss 1.533e+02	ex 60000	time 84.21s
+train	ep 03000	it 000	loss 1.528e+02	ex 60000	time 85.30s
+train	ep 03100	it 000	loss 1.525e+02	ex 60000	time 84.96s
+train	ep 03200	it 000	loss 1.516e+02	ex 60000	time 85.01s
+train	ep 03300	it 000	loss 1.510e+02	ex 60000	time 83.85s
+train	ep 03400	it 000	loss 1.507e+02	ex 60000	time 85.43s
+train	ep 03500	it 000	loss 1.501e+02	ex 60000	time 84.41s
+train	ep 03600	it 000	loss 1.500e+02	ex 60000	time 85.42s
+train	ep 03700	it 000	loss 1.493e+02	ex 60000	time 85.38s
+train	ep 03800	it 000	loss 1.492e+02	ex 60000	time 85.74s
+train	ep 03900	it 000	loss 1.487e+02	ex 60000	time 85.61s
+train	ep 04000	it 000	loss 1.484e+02	ex 60000	time 84.36s
+train	ep 04100	it 000	loss 1.483e+02	ex 60000	time 84.80s
+train	ep 04200	it 000	loss 1.480e+02	ex 60000	time 85.81s
+train	ep 04300	it 000	loss 1.477e+02	ex 60000	time 84.61s
+train	ep 04400	it 000	loss 1.475e+02	ex 60000	time 85.67s
+train	ep 04500	it 000	loss 1.472e+02	ex 60000	time 84.25s
+train	ep 04600	it 000	loss 1.472e+02	ex 60000	time 85.80s
+train	ep 04700	it 000	loss 1.470e+02	ex 60000	time 83.95s
+train	ep 04800	it 000	loss 1.471e+02	ex 60000	time 85.45s
+train	ep 04900	it 000	loss 1.467e+02	ex 60000	time 84.12s
+train	ep 05000	it 000	loss 1.464e+02	ex 60000	time 84.92s
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 1
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 7 of size bigger than 25.0.
+removing 7/7 unaligned clusters
+Collapsing 0 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+
+Final layer size: 0
+Traceback (most recent call last):
+  File "/home/alvin/expand-and-cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/alvin/expand-and-cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/alvin/expand-and-cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/alvin/expand-and-cluster/extraction/runner.py", line 79, in run
+    expand_and_cluster.reconstruct(students, losses, self.desc.extraction_path(self.global_seed),
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 170, in reconstruct
+    w_rec, a_rec = reconstruct_layer(w_cat, N, extraction_hparams.gamma, beta, losses, A=a,
+  File "/home/alvin/expand-and-cluster/extraction/layer_reconstruction.py", line 116, in reconstruct_layer
+    a_reconstructed = np.transpose(np.array(theta[1]), [0, 2, 1])
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/numpy/core/fromnumeric.py", line 655, in transpose
+    return _wrapfunc(a, 'transpose', axes)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/numpy/core/fromnumeric.py", line 59, in _wrapfunc
+    return bound(*args, **kwds)
+ValueError: axes don't match array

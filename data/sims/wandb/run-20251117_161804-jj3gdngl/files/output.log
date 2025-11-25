@@ -1,0 +1,144 @@
+Generating dataset with teacher...
+train	ep 00000	it 000	loss 1.139e+01	ex 10000	time 0.00s
+train	ep 00100	it 000	loss 1.674e-02	ex 10000	time 7.41s
+train	ep 00200	it 000	loss 4.035e-03	ex 10000	time 7.41s
+train	ep 00300	it 000	loss 1.361e-03	ex 10000	time 7.35s
+train	ep 00400	it 000	loss 5.925e-04	ex 10000	time 7.21s
+train	ep 00500	it 000	loss 2.979e-04	ex 10000	time 7.24s
+train	ep 00600	it 000	loss 1.494e-04	ex 10000	time 7.22s
+train	ep 00700	it 000	loss 5.867e-05	ex 10000	time 7.24s
+train	ep 00800	it 000	loss 2.630e-05	ex 10000	time 7.24s
+train	ep 00900	it 000	loss 8.224e-06	ex 10000	time 7.32s
+train	ep 01000	it 000	loss 8.891e-06	ex 10000	time 7.24s
+train	ep 01100	it 000	loss 1.406e-06	ex 10000	time 7.37s
+train	ep 01200	it 000	loss 5.803e-06	ex 10000	time 7.14s
+train	ep 01300	it 000	loss 4.988e-07	ex 10000	time 7.32s
+train	ep 01400	it 000	loss 6.841e-06	ex 10000	time 7.45s
+train	ep 01500	it 000	loss 1.030e-06	ex 10000	time 7.32s
+train	ep 01600	it 000	loss 5.202e-07	ex 10000	time 7.15s
+train	ep 01700	it 000	loss 4.402e-06	ex 10000	time 7.11s
+train	ep 01800	it 000	loss 1.778e-06	ex 10000	time 7.67s
+train	ep 01900	it 000	loss 3.257e-06	ex 10000	time 7.22s
+train	ep 02000	it 000	loss 5.378e-06	ex 10000	time 6.99s
+train	ep 02100	it 000	loss 6.528e-06	ex 10000	time 7.13s
+train	ep 02200	it 000	loss 8.873e-06	ex 10000	time 7.29s
+train	ep 02300	it 000	loss 5.668e-07	ex 10000	time 7.40s
+train	ep 02400	it 000	loss 4.950e-05	ex 10000	time 7.34s
+train	ep 02500	it 000	loss 8.909e-06	ex 10000	time 7.21s
+train	ep 02600	it 000	loss 6.549e-06	ex 10000	time 7.60s
+train	ep 02700	it 000	loss 3.203e-06	ex 10000	time 7.35s
+train	ep 02800	it 000	loss 1.453e-06	ex 10000	time 7.66s
+train	ep 02900	it 000	loss 2.415e-06	ex 10000	time 7.95s
+train	ep 03000	it 000	loss 5.426e-06	ex 10000	time 8.20s
+train	ep 03100	it 000	loss 9.395e-07	ex 10000	time 7.20s
+train	ep 03200	it 000	loss 8.600e-06	ex 10000	time 7.68s
+train	ep 03300	it 000	loss 5.503e-06	ex 10000	time 7.46s
+train	ep 03400	it 000	loss 2.157e-06	ex 10000	time 7.38s
+train	ep 03500	it 000	loss 1.893e-06	ex 10000	time 7.67s
+train	ep 03600	it 000	loss 7.989e-06	ex 10000	time 7.57s
+train	ep 03700	it 000	loss 6.456e-07	ex 10000	time 7.94s
+train	ep 03800	it 000	loss 1.488e-06	ex 10000	time 8.10s
+train	ep 03900	it 000	loss 7.939e-06	ex 10000	time 8.08s
+train	ep 04000	it 000	loss 1.034e-06	ex 10000	time 8.19s
+train	ep 04100	it 000	loss 6.214e-06	ex 10000	time 7.61s
+train	ep 04200	it 000	loss 1.552e-05	ex 10000	time 7.53s
+train	ep 04300	it 000	loss 6.083e-06	ex 10000	time 7.55s
+train	ep 04400	it 000	loss 7.968e-07	ex 10000	time 7.66s
+train	ep 04500	it 000	loss 7.176e-07	ex 10000	time 8.44s
+train	ep 04600	it 000	loss 3.449e-06	ex 10000	time 9.73s
+train	ep 04700	it 000	loss 3.232e-06	ex 10000	time 9.67s
+train	ep 04800	it 000	loss 1.375e-06	ex 10000	time 7.94s
+train	ep 04900	it 000	loss 4.403e-06	ex 10000	time 7.64s
+train	ep 05000	it 000	loss 1.570e-05	ex 10000	time 7.83s
+train	ep 05100	it 000	loss 6.322e-07	ex 10000	time 7.84s
+train	ep 05200	it 000	loss 5.196e-06	ex 10000	time 8.03s
+train	ep 05300	it 000	loss 2.534e-06	ex 10000	time 7.67s
+train	ep 05400	it 000	loss 8.733e-06	ex 10000	time 7.63s
+train	ep 05500	it 000	loss 9.924e-06	ex 10000	time 7.78s
+train	ep 05600	it 000	loss 1.466e-05	ex 10000	time 7.52s
+train	ep 05700	it 000	loss 4.511e-06	ex 10000	time 7.57s
+train	ep 05800	it 000	loss 2.892e-06	ex 10000	time 7.67s
+train	ep 05900	it 000	loss 1.758e-05	ex 10000	time 7.73s
+train	ep 06000	it 000	loss 1.267e-05	ex 10000	time 7.40s
+train	ep 06100	it 000	loss 1.907e-06	ex 10000	time 7.54s
+train	ep 06200	it 000	loss 4.362e-06	ex 10000	time 7.38s
+train	ep 06300	it 000	loss 6.098e-06	ex 10000	time 7.57s
+train	ep 06400	it 000	loss 8.203e-06	ex 10000	time 7.47s
+train	ep 06500	it 000	loss 2.027e-06	ex 10000	time 7.60s
+train	ep 06600	it 000	loss 2.226e-06	ex 10000	time 7.32s
+train	ep 06700	it 000	loss 4.839e-06	ex 10000	time 7.63s
+train	ep 06800	it 000	loss 3.145e-06	ex 10000	time 8.32s
+train	ep 06900	it 000	loss 7.441e-06	ex 10000	time 9.89s
+train	ep 07000	it 000	loss 2.634e-06	ex 10000	time 10.81s
+train	ep 07100	it 000	loss 5.637e-07	ex 10000	time 8.86s
+train	ep 07200	it 000	loss 9.004e-06	ex 10000	time 8.66s
+train	ep 07300	it 000	loss 2.087e-06	ex 10000	time 7.93s
+train	ep 07400	it 000	loss 3.723e-06	ex 10000	time 7.53s
+train	ep 07500	it 000	loss 1.447e-06	ex 10000	time 7.34s
+train	ep 07600	it 000	loss 1.156e-06	ex 10000	time 7.54s
+train	ep 07700	it 000	loss 1.916e-05	ex 10000	time 7.31s
+train	ep 07800	it 000	loss 2.435e-05	ex 10000	time 6.90s
+train	ep 07900	it 000	loss 9.772e-06	ex 10000	time 7.72s
+train	ep 08000	it 000	loss 4.741e-06	ex 10000	time 7.91s
+train	ep 08100	it 000	loss 8.544e-06	ex 10000	time 8.49s
+train	ep 08200	it 000	loss 1.190e-06	ex 10000	time 8.13s
+train	ep 08300	it 000	loss 2.273e-06	ex 10000	time 8.97s
+train	ep 08400	it 000	loss 3.146e-06	ex 10000	time 9.55s
+train	ep 08500	it 000	loss 6.398e-07	ex 10000	time 9.27s
+train	ep 08600	it 000	loss 3.845e-06	ex 10000	time 9.19s
+train	ep 08700	it 000	loss 5.868e-07	ex 10000	time 9.41s
+train	ep 08800	it 000	loss 1.413e-05	ex 10000	time 9.39s
+train	ep 08900	it 000	loss 4.536e-06	ex 10000	time 8.80s
+train	ep 09000	it 000	loss 2.327e-06	ex 10000	time 8.58s
+train	ep 09100	it 000	loss 7.137e-06	ex 10000	time 8.74s
+train	ep 09200	it 000	loss 6.297e-06	ex 10000	time 8.02s
+train	ep 09300	it 000	loss 1.253e-06	ex 10000	time 7.51s
+train	ep 09400	it 000	loss 7.890e-07	ex 10000	time 6.87s
+train	ep 09500	it 000	loss 3.586e-06	ex 10000	time 8.27s
+train	ep 09600	it 000	loss 1.070e-05	ex 10000	time 7.38s
+train	ep 09700	it 000	loss 1.561e-06	ex 10000	time 8.34s
+train	ep 09800	it 000	loss 3.877e-06	ex 10000	time 9.38s
+train	ep 09900	it 000	loss 2.055e-06	ex 10000	time 7.55s
+train	ep 10000	it 000	loss 3.821e-06	ex 10000	time 7.85s
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /home/alvin/expand-and-cluster/data/sims/ec_d592e06c8b/seed_-1/main/clustering_851c1b8aed
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 7 of size bigger than 12.0.
+removing 0/7 unaligned clusters
+Collapsing 7 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+#0->1, #1->1, #2->1, #3->1, #4->1, #5->1, #6->2,
+Final layer size: 7
+
+MSE of linear component after reconstruction 0.18994301758208615
+Traceback (most recent call last):
+  File "/home/alvin/expand-and-cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/alvin/expand-and-cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/alvin/expand-and-cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/alvin/expand-and-cluster/extraction/runner.py", line 79, in run
+    expand_and_cluster.reconstruct(students, losses, self.desc.extraction_path(self.global_seed),
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 237, in reconstruct
+    teacher_comparison(teacher, students, symmetry, cluster_mask, alignment_reconstruction)
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 327, in teacher_comparison
+    out = compare_with_teacher(wt, bt, at, ws, bs, as_, symmetry, cluster_mask=cluster_mask, verbose=True)
+  File "/home/alvin/expand-and-cluster/extraction/layer_reconstruction.py", line 398, in compare_with_teacher
+    idx_sorted = np.argsort(np.linalg.norm(at, ord=2, axis=1))[::-1]
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/numpy/linalg/linalg.py", line 2583, in norm
+    return sqrt(add.reduce(s, axis=axis, keepdims=keepdims))
+numpy.exceptions.AxisError: axis 1 is out of bounds for array of dimension 1

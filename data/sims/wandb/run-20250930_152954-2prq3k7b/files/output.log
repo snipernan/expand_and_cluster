@@ -1,0 +1,36 @@
+train	ep 000	it 000	loss 3.022	acc 12.54%	ex 60000	time 0.00s
+test	ep 000	it 000	loss 3.015	acc 13.10%	ex 10000	time 0.00s
+train	ep 001	it 000	loss 0.253	acc 92.73%	ex 60000	time 13.74s
+test	ep 001	it 000	loss 0.258	acc 92.47%	ex 10000	time 13.93s
+Traceback (most recent call last):
+  File "/home/alvin/expand-and-cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/alvin/expand-and-cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/alvin/expand-and-cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/alvin/expand-and-cluster/training/runner.py", line 63, in run
+    train.standard_train(
+  File "/home/alvin/expand-and-cluster/training/train.py", line 196, in standard_train
+    train(training_hparams, model, train_loader, output_location, callbacks, start_step=start_step)
+  File "/home/alvin/expand-and-cluster/training/train.py", line 126, in train
+    for it, (examples, labels) in enumerate(train_loader):
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 677, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/alvin/expand-and-cluster/datasets/base.py", line 116, in __getitem__
+    example = self.example_to_image(example)
+  File "/home/alvin/expand-and-cluster/datasets/mnist.py", line 50, in example_to_image
+    return Image.fromarray(example.numpy(), mode='L')
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/PIL/Image.py", line 3093, in fromarray
+    return frombuffer(mode, size, obj, "raw", rawmode, 0, 1)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/PIL/Image.py", line 3001, in frombuffer
+    im = im._new(core.map_buffer(data, size, decoder_name, 0, args))
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/PIL/Image.py", line 510, in _new
+    if im.mode in ("P", "PA"):
+KeyboardInterrupt

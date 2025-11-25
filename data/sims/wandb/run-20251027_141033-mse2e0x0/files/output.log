@@ -1,0 +1,53 @@
+Generating dataset with teacher...
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /home/alvin/expand-and-cluster/data/sims/ec_6a716683e5/seed_-1/main/clustering_8389c857d6
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 5 of size bigger than 25.0.
+removing 2/5 unaligned clusters
+Collapsing 3 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+#0->1, #1->1, #2->1,
+Final layer size: 3
+
+train	ep 00000	it 000	loss 5.535e+03	ex 60000	time 0.00s
+train	ep 00100	it 000	loss 1.825e+02	ex 60000	time 73.88s
+train	ep 00200	it 000	loss 9.218e+01	ex 60000	time 74.69s
+train	ep 00300	it 000	loss 6.049e+01	ex 60000	time 75.34s
+train	ep 00400	it 000	loss 4.872e+01	ex 60000	time 76.88s
+train	ep 00500	it 000	loss 4.287e+01	ex 60000	time 79.20s
+train	ep 00600	it 000	loss 3.712e+01	ex 60000	time 83.38s
+train	ep 00700	it 000	loss 3.233e+01	ex 60000	time 82.48s
+train	ep 00800	it 000	loss 2.993e+01	ex 60000	time 79.84s
+train	ep 00900	it 000	loss 2.676e+01	ex 60000	time 77.47s
+train	ep 01000	it 000	loss 2.492e+01	ex 60000	time 75.17s
+train	ep 01100	it 000	loss 2.406e+01	ex 60000	time 74.38s
+train	ep 01200	it 000	loss 2.362e+01	ex 60000	time 80.61s
+train	ep 01300	it 000	loss 2.331e+01	ex 60000	time 77.58s
+train	ep 01400	it 000	loss 2.305e+01	ex 60000	time 76.78s
+train	ep 01500	it 000	loss 2.286e+01	ex 60000	time 75.13s
+train	ep 01600	it 000	loss 2.271e+01	ex 60000	time 77.37s
+train	ep 01700	it 000	loss 2.262e+01	ex 60000	time 78.09s
+train	ep 01800	it 000	loss 2.250e+01	ex 60000	time 77.82s
+train	ep 01900	it 000	loss 2.240e+01	ex 60000	time 82.48s
+train	ep 02000	it 000	loss 2.227e+01	ex 60000	time 78.93s
+train	ep 02100	it 000	loss 2.214e+01	ex 60000	time 76.36s
+train	ep 02200	it 000	loss 2.193e+01	ex 60000	time 77.67s
+train	ep 02300	it 000	loss 2.185e+01	ex 60000	time 80.39s
+train	ep 02400	it 000	loss 2.172e+01	ex 60000	time 84.24s
+train	ep 02500	it 000	loss 2.165e+01	ex 60000	time 140.86s
+train	ep 02600	it 000	loss 2.161e+01	ex 60000	time 133.01s
+train	ep 02700	it 000	loss 2.153e+01	ex 60000	time 176.18s
+train	ep 02800	it 000	loss 2.149e+01	ex 60000	time 173.56s

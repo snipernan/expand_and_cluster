@@ -1,0 +1,84 @@
+Generating dataset with teacher...
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /home/alvin/expand-and-cluster/data/sims/ec_d2cbdbf017/seed_-1/main/clustering_995dc42cbd
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 6 of size bigger than 16.0.
+removing 2/6 unaligned clusters
+Collapsing 4 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+#0->1, #1->1, #2->1, #3->1,
+Final layer size: 4
+
+MSE of linear component after reconstruction 0.19291749177202389
+Best average sim w: 7.028809750937444e-09
+Best max sim w: 1.4057619401874888e-08
+Best average sim a: 1e-16
+Best max sim a: 1e-16
+train	ep 00000	it 000	loss 2.074e+00	ex 8000	time 0.00s
+train	ep 00100	it 000	loss 1.321e-01	ex 8000	time 11.10s
+train	ep 00200	it 000	loss 1.793e-02	ex 8000	time 12.72s
+train	ep 00300	it 000	loss 2.617e-03	ex 8000	time 11.83s
+train	ep 00400	it 000	loss 3.581e-04	ex 8000	time 13.49s
+train	ep 00500	it 000	loss 2.467e-05	ex 8000	time 12.46s
+train	ep 00600	it 000	loss 1.613e-07	ex 8000	time 10.92s
+train	ep 00700	it 000	loss 4.729e-09	ex 8000	time 11.22s
+train	ep 00800	it 000	loss 6.775e-08	ex 8000	time 11.82s
+train	ep 00900	it 000	loss 4.305e-13	ex 8000	time 10.74s
+train	ep 01000	it 000	loss 1.494e-08	ex 8000	time 11.05s
+train	ep 01100	it 000	loss 5.864e-09	ex 8000	time 11.75s
+train	ep 01200	it 000	loss 2.902e-11	ex 8000	time 10.91s
+train	ep 01300	it 000	loss 6.951e-12	ex 8000	time 10.96s
+train	ep 01400	it 000	loss 3.901e-09	ex 8000	time 11.23s
+train	ep 01500	it 000	loss 1.042e-10	ex 8000	time 12.28s
+train	ep 01600	it 000	loss 1.654e-13	ex 8000	time 11.07s
+train	ep 01700	it 000	loss 2.469e-10	ex 8000	time 10.78s
+train	ep 01800	it 000	loss 2.327e-07	ex 8000	time 11.22s
+train	ep 01900	it 000	loss 3.914e-09	ex 8000	time 12.39s
+train	ep 02000	it 000	loss 2.310e-12	ex 8000	time 11.98s
+train	ep 02100	it 000	loss 6.870e-09	ex 8000	time 12.08s
+train	ep 02200	it 000	loss 4.230e-12	ex 8000	time 10.98s
+train	ep 02300	it 000	loss 1.733e-12	ex 8000	time 12.14s
+train	ep 02400	it 000	loss 7.653e-09	ex 8000	time 11.11s
+train	ep 02500	it 000	loss 3.714e-07	ex 8000	time 11.19s
+train	ep 02600	it 000	loss 1.394e-12	ex 8000	time 12.00s
+train	ep 02700	it 000	loss 1.061e-13	ex 8000	time 10.79s
+train	ep 02800	it 000	loss 3.621e-12	ex 8000	time 11.09s
+train	ep 02900	it 000	loss 1.098e-08	ex 8000	time 12.07s
+train	ep 03000	it 000	loss 6.014e-10	ex 8000	time 11.01s
+train	ep 03100	it 000	loss 4.117e-11	ex 8000	time 11.32s
+train	ep 03200	it 000	loss 7.482e-08	ex 8000	time 12.17s
+train	ep 03300	it 000	loss 1.234e-12	ex 8000	time 10.96s
+train	ep 03400	it 000	loss 1.728e-10	ex 8000	time 11.16s
+train	ep 03500	it 000	loss 2.755e-10	ex 8000	time 12.13s
+train	ep 03600	it 000	loss 9.830e-13	ex 8000	time 10.85s
+train	ep 03700	it 000	loss 5.106e-13	ex 8000	time 10.95s
+train	ep 03800	it 000	loss 5.531e-13	ex 8000	time 11.80s
+train	ep 03900	it 000	loss 6.625e-07	ex 8000	time 10.64s
+train	ep 04000	it 000	loss 2.471e-09	ex 8000	time 11.03s
+train	ep 04100	it 000	loss 4.242e-09	ex 8000	time 11.87s
+train	ep 04200	it 000	loss 8.047e-09	ex 8000	time 10.74s
+train	ep 04300	it 000	loss 7.007e-07	ex 8000	time 11.00s
+train	ep 04400	it 000	loss 6.944e-08	ex 8000	time 11.82s
+train	ep 04500	it 000	loss 5.692e-07	ex 8000	time 10.74s
+train	ep 04600	it 000	loss 9.384e-13	ex 8000	time 10.99s
+train	ep 04700	it 000	loss 1.750e-11	ex 8000	time 11.03s
+train	ep 04800	it 000	loss 5.046e-12	ex 8000	time 12.15s
+train	ep 04900	it 000	loss 2.681e-12	ex 8000	time 10.75s
+train	ep 05000	it 000	loss 4.694e-13	ex 8000	time 12.67s
+Best average sim w: 1e-16
+Best max sim w: 1e-16
+Best average sim a: 1e-16
+Best max sim a: 1e-16

@@ -1,0 +1,30 @@
+Generating dataset with teacher...
+train	ep 00000	it 000	loss 8.125e+02	ex 60000	time 0.00s
+Ep 0	It 0	Time Elapsed 0.00
+Ep 100	It 0	Time Elapsed 70.51
+Ep 200	It 0	Time Elapsed 64.84
+Ep 300	It 0	Time Elapsed 64.13
+Traceback (most recent call last):
+  File "/home/alvin/expand-and-cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/alvin/expand-and-cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/alvin/expand-and-cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/alvin/expand-and-cluster/extraction/runner.py", line 66, in run
+    students, losses = expand_and_cluster.train_students(
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 82, in train_students
+    train(training_hparams, model, train_loader, output_location, callbacks, start_step=start_step)
+  File "/home/alvin/expand-and-cluster/training/train.py", line 144, in train
+    loss = model.loss_criterion(model(examples), labels)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/alvin/expand-and-cluster/models/students_mnist_lenet.py", line 81, in forward
+    x = layer(x)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/alvin/expand-and-cluster/models/students_mnist_lenet.py", line 38, in forward
+    return self.act_fun(torch.einsum('bi,ihn->bhn', x, self.fc) +
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/nn/functional.py", line 1961, in sigmoid
+    def sigmoid(input):
+KeyboardInterrupt

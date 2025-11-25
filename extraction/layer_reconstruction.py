@@ -395,7 +395,14 @@ def compare_with_teacher(wt, bt, at, ws, bs, as_, symmetry, cluster_mask=None, l
     ws = np.concatenate([ws, bs[np.newaxis, :]], axis=0)
 
     # sort teacher weights from highest to lowest output neuron norm
-    idx_sorted = np.argsort(np.linalg.norm(at, ord=2, axis=1))[::-1]
+    # 检查 at 是否为一维数组  
+    if at.ndim == 1:  
+        # 如果是一维数组(标量输出),将其重塑为二维数组  
+        at = at.reshape(-1, 1)  
+        idx_sorted = np.arange(len(at))  # 不需要排序,因为只有一个输出维度  
+    else:  
+        # 原有的排序逻辑  
+        idx_sorted = np.argsort(np.linalg.norm(at, ord=2, axis=1))[::-1]
     wt = wt[:, idx_sorted].astype(np.double)  # We need higher precision for cosine similarity
     at = at[idx_sorted, :].astype(np.double)
 
@@ -421,6 +428,11 @@ def compare_with_teacher(wt, bt, at, ws, bs, as_, symmetry, cluster_mask=None, l
         print(f"Best max sim w: {np.max(best_sims_w)}")
         print(f"Best average sim a: {np.mean(best_sims_a)}")
         print(f"Best max sim a: {np.max(best_sims_a)}")
+
+    # 在第 435 行之前添加  
+
+    best_sims_w = np.array(best_sims_w).flatten()  
+    best_sims_a = np.array(best_sims_a).flatten()  
 
     fig = plt.figure(figsize=(7, 5), dpi=200)
     gs = fig.add_gridspec(2, 4)
@@ -473,8 +485,14 @@ def compare_with_teacher(wt, bt, at, ws, bs, as_, symmetry, cluster_mask=None, l
         sim_w = np.array([dist_fun_w(cluster_mask * wtt, cluster_mask * wss) for wtt in wt.T])
         best_sims_w.append(sim_w.min())
         teacher_idx_matched.append(sim_w.argmin())
-        student_out_norms.append(np.linalg.norm(as_[s_id], ord=2))
-
+        # 处理标量输出的情况  
+        out_weight = as_[s_id]  
+        if np.isscalar(out_weight) or (isinstance(out_weight, np.ndarray) and out_weight.ndim == 0):  
+            # 如果是标量,直接使用绝对值作为范数  
+            student_out_norms.append(np.abs(out_weight))  
+        else:  
+            # 否则计算正常的 L2 范数  
+            student_out_norms.append(np.linalg.norm(out_weight, ord=2))
     # sort teacher weights from highest to lowest output neuron norm
     idx_sorted = np.argsort(teacher_idx_matched)
     teacher_idx_matched = np.array(teacher_idx_matched)[idx_sorted]
