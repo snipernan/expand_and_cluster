@@ -35,7 +35,7 @@ model_hparams = hparams.ModelHparams(
     model_name='custom_teacher',
     model_init='kaiming_normal',
     batchnorm_init='uniform',
-    act_fun='relu'
+    act_fun='sigmoid'
 )
 
 # 创建模型时明确指定outputs  
@@ -72,7 +72,7 @@ with torch.no_grad():
 # 手动设置根目录，因为 get_platform() 无法识别本地环境
 # 你的路径就是 /home/expand-and-cluster
 root_dir = '/home/alvin/expand-and-cluster/data/sims' 
-save_dir = os.path.join(root_dir, "train_custom_teacher_1", "seed_0", "main")
+save_dir = os.path.join(root_dir, "train_custom_teacher_s", "seed_0", "main")
 # --- 结束修复 ---
 os.makedirs(save_dir, exist_ok=True)
 

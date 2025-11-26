@@ -291,7 +291,11 @@ def align_final_bias(model, loader, verbose=False):
 
     if verbose: print(f"Loss before bias alignment: {total_loss:.3e}")
 
-    list(model.parameters())[-1].data += -total_output + dataset_bias[:, None]
+    bias_tensor = dataset_bias
+    if bias_tensor.ndim == 0:
+        bias_tensor = bias_tensor.unsqueeze(0)
+
+    list(model.parameters())[-1].data += -total_output + bias_tensor[:, None]
 
     total_loss = torch.tensor(0.0).to(get_platform().torch_device)
     example_count = torch.tensor(0.0).to(get_platform().torch_device)

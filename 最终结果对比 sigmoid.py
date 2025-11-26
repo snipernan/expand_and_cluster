@@ -21,9 +21,10 @@ model_B_path = '/home/alvin/expand-and-cluster/data/sims/train_custom_teacher/se
 teacher_B_out = None
 
 try:
+    # 【修改点 1】：这里必须改为 sigmoid，否则模型 B 的输出会按照 ReLU 计算，导致结果不一致
     teacher_hparams = hparams.ModelHparams(
         model_name='custom_teacher', model_init='kaiming_normal',
-        batchnorm_init='uniform', act_fun='relu'
+        batchnorm_init='uniform', act_fun='sigmoid' 
     )
     teacher_model_B = registry.get(teacher_hparams, outputs=1, d_in=2)
     teacher_ckpt = torch.load(model_B_path)
@@ -32,11 +33,6 @@ try:
     print(f"成功加载模型 B: {model_B_path}\n")
 
     # ----- [新增部分] 提取并打印模型 B 的权重结构 -----
-    # 假设模型是简单的 MLP，我们可以按顺序获取参数
-    # param_list[0]: Layer 1 Weights [Hidden, Input]
-    # param_list[1]: Layer 1 Bias    [Hidden]
-    # param_list[2]: Layer 2 Weights [Output, Hidden]
-    # param_list[3]: Layer 2 Bias    [Output]
     params_B = list(teacher_model_B.parameters())
     
     W1_B = params_B[0].detach().cpu().numpy() # Shape: [Hidden, Input]
@@ -53,7 +49,6 @@ try:
     print("格式: 神经元: [Input 1 权重] [Input 2 权重]   [偏置]")
     print("-" * 59)
     for i in range(W1_B.shape[0]):
-        # W1_B 的每一行对应一个神经元的输入权重
         weights_str = "   ".join([f"{w:11.7f}" for w in W1_B[i, :]])
         bias_str = f"{b1_B[i]:11.7f}"
         print(f"神经元 {i+1:02d}:  {weights_str}  {bias_str}")
@@ -62,13 +57,11 @@ try:
     # 第二层权重
     print(f"\n--- 第二层 (Output) 输出层 ---")
     print(f"权重 (来自 L1 的 {W1_B.shape[0]} 个神经元，连接到唯一的输出):")
-    # 展平以便打印，匹配模型 A 的格式
     print(W2_B.flatten()) 
     print(f"\n偏置 (L2 的 {len(b2_B)} 个输出):")
     for i, bias in enumerate(b2_B):
         print(f"  {bias:.7f}")
     print("-" * 59 + "\n")
-    # -----------------------------------------------------
 
     with torch.no_grad():
         teacher_B_out = teacher_model_B(compare_input).detach().cpu().numpy().flatten()
@@ -86,7 +79,7 @@ print("=" * 60)
 print("加载模型 A (重构教师 - 手动加载)")  
 print("=" * 60)  
   
-model_A_path = "/home/alvin/expand-and-cluster/data/sims/ec_9b8f3fb9cd/seed_-1/main/clustering_995dc42cbd/reconstructed_model/model_ep5000_it0.pth"  
+model_A_path = "/home/alvin/expand-and-cluster/data/sims/ec_f0eefa712d/seed_-1/main/clustering_995dc42cbd/reconstructed_model/model_ep5000_it0.pth"  
 affine_path = "/home/alvin/expand-and-cluster/data/sims/ec_9b8f3fb9cd/seed_-1/main/clustering_995dc42cbd/reconstructed_model/affine.pth"  
 teacher_A_out = None  
   
@@ -95,32 +88,32 @@ try:
     state_dict_A = torch.load(model_A_path, map_location='cpu')  
     print(f"成功加载模型 A 的 state_dict: {model_A_path}\n")  
   
-    # 2. 加载线性分量  
-    thetas = torch.load(affine_path, map_location='cpu')  
-    print(f"成功加载线性分量: {affine_path}")  
-    print(f"线性分量形状: {thetas.shape}")  
-      
-    # 修正线性分量形状  
-    if thetas.shape[1] != 1:  
-        print(f"警告: thetas形状为 {thetas.shape},预期为 [3, 1]")  
-        print(f"使用第一列作为线性分量\n")  
-        thetas = thetas[:, 0:1]  # 只取第一列  
+    # 2. 加载线性分量 (【修改点 2】：增加文件存在性检查)
+    thetas = None
+    if os.path.exists(affine_path):
+        thetas = torch.load(affine_path, map_location='cpu')  
+        print(f"成功加载线性分量: {affine_path}")  
+        print(f"线性分量形状: {thetas.shape}")  
+          
+        # 修正线性分量形状  
+        if thetas.shape[1] != 1:  
+            print(f"警告: thetas形状为 {thetas.shape},预期为 [3, 1]")  
+            print(f"使用第一列作为线性分量\n")  
+            thetas = thetas[:, 0:1]  # 只取第一列 
+    else:
+        print("⚠️ 未找到 affine.pth (这对 Sigmoid 模型是正常的，跳过线性修正)") 
   
-    # 3. 提取权重和偏置张量 (这部分必须在使用 W1_A 之前!)  
+    # 3. 提取权重和偏置张量
     fc0_fc_tensor = state_dict_A['fc_layers.0.fc']  
     fc0_b_tensor = state_dict_A['fc_layers.0.b']  
     fc1_fc_tensor = state_dict_A['fc_layers.1.fc']  
     fc1_b_tensor = state_dict_A['fc_layers.1.b']  
   
     # 使用 .clone().detach() 来创建新的无梯度副本  
-    # L1 权重: [2, 4, N] -> [2, 4] -> .T -> [4, 2]  
     W1_A = fc0_fc_tensor[:, :, 0].T.clone().detach()  
-    # L1 偏置: [4, N] -> [4]  
     b1_A = fc0_b_tensor[:, 0].clone().detach()  
       
-    # L2 权重: [4, 1, N] -> [4, 1] -> .T -> [1, 4]  
     W2_A = fc1_fc_tensor[:, :, 0].T.clone().detach()  
-    # L2 偏置: [1, N] -> [1]  
     b2_A = fc1_b_tensor[:, 0].clone().detach()  
     
     # ===== 添加权重输出部分 =====  
@@ -148,27 +141,33 @@ try:
     print("-" * 59)  
     
     # 线性分量  
-    print(f"\n--- 线性分量 (thetas) ---")  
-    print(f"形状: {thetas.shape}")  
-    print("参数 (包含输入权重和偏置项):")  
-    print(thetas.squeeze().detach().numpy())  # 添加 .detach()  
-    print("-" * 59 + "\n")
+    if thetas is not None:
+        print(f"\n--- 线性分量 (thetas) ---")  
+        print(f"形状: {thetas.shape}")  
+        print("参数 (包含输入权重和偏置项):")  
+        print(thetas.squeeze().detach().numpy())  
+        print("-" * 59 + "\n")
+    else:
+        print("\n--- 线性分量: 无 ---\n")
 
 
-    # 4. 准备输入 (添加偏置项用于线性分量)  
+    # 4. 准备输入 (添加偏置项用于线性分量，只有当 thetas 存在时才真正需要)  
     x = torch.cat([compare_input, torch.ones(compare_input.shape[0], 1)], dim=1)  
   
     # 5. 完整的前向计算 (神经网络 + 线性分量)  
     with torch.no_grad():  
-        # 神经网络部分  
-        h_A = torch.relu(compare_input @ W1_A.T + b1_A)  
+        # 【修改点 3】: 将 torch.relu 改为 torch.sigmoid
+        h_A = torch.sigmoid(compare_input @ W1_A.T + b1_A)  
         nn_out = (h_A @ W2_A.T + b2_A)  
           
-        # 线性分量部分  
-        linear_out = (x @ thetas).squeeze()  
-          
-        # 最终输出 = 神经网络输出 + 线性修正  
-        out_A = nn_out.squeeze() + linear_out  
+        # 线性分量部分 (仅当 thetas 存在时计算)
+        if thetas is not None:
+            linear_out = (x @ thetas).squeeze() 
+            # 最终输出 = 神经网络输出 + 线性修正 
+            out_A = nn_out.squeeze() + linear_out 
+        else:
+            # 没有线性分量，直接使用神经网络输出
+            out_A = nn_out.squeeze()
       
     teacher_A_out = out_A.cpu().numpy().flatten()  
   
@@ -179,9 +178,8 @@ except Exception as e:
     traceback.print_exc()
 
 # ============================================================
-#   (4) 和 (5) 对比输出 (与之前完全相同)
+#   (4) 和 (5) 对比输出
 # ============================================================
-# (这部分代码与之前完全相同)
 print("\n\n==================== 输出对比 (5 个样本) ====================\n")
 if teacher_B_out is not None:
     print("模型 B (原始教师) 输出:")
@@ -210,4 +208,3 @@ if teacher_A_out is not None and teacher_B_out is not None:
     print(f"\n平均绝对差异: {np.mean(diff):.7f}")
 else:
     print("\n无法生成对比矩阵，因为至少有一个模型加载失败。")
-    
