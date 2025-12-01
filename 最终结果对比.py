@@ -86,8 +86,8 @@ print("=" * 60)
 print("加载模型 A (重构教师 - 手动加载)")  
 print("=" * 60)  
   
-model_A_path = "/home/alvin/expand-and-cluster/data/sims/ec_9b8f3fb9cd/seed_-1/main/clustering_995dc42cbd/reconstructed_model/model_ep5000_it0.pth"  
-affine_path = "/home/alvin/expand-and-cluster/data/sims/ec_9b8f3fb9cd/seed_-1/main/clustering_995dc42cbd/reconstructed_model/affine.pth"  
+model_A_path = "/home/alvin/expand-and-cluster/data/sims/ec_d592e06c8b/seed_-1/main/clustering_995dc42cbd/reconstructed_model/model_ep5000_it0.pth"  
+affine_path = "/home/alvin/expand-and-cluster/data/sims/ec_d592e06c8b/seed_-1/main/clustering_995dc42cbd/reconstructed_model/affine.pth"  
 teacher_A_out = None  
   
 try:  

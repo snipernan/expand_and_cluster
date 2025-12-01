@@ -1,0 +1,235 @@
+_wandb:
+    value:
+        cli_version: 0.22.1
+        e:
+            uvqawnjpswacnzas87up7kecdk2lhadd:
+                args:
+                    - extract
+                    - --default_hparams
+                    - students_custom(20)_2_12
+                    - --teacher_name
+                    - custom_teacher
+                    - --teacher_seed
+                    - "0"
+                    - --d_in
+                    - "2"
+                    - --dataset_name
+                    - teacher
+                    - --datagen
+                    - custom_critical
+                    - --samples
+                    - "60000"
+                    - --beta
+                    - "24"
+                    - --gamma
+                    - "0.8"
+                codePath: EC.py
+                codePathLocal: EC.py
+                cpu_count: 10
+                cpu_count_logical: 20
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "1081101176832"
+                        used: "11073970176"
+                email: 202100460027@mail.sdu.edu.cn
+                executable: /home/alvin/expand-and-cluster/venv/bin/python
+                git:
+                    commit: e95fdba211581e9afc72a25dff62fbbc9b7d5af6
+                    remote: https://github.com/snipernan/expand_and_cluster.git
+                gpu: NVIDIA T400 4GB
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Turing
+                      memoryTotal: "4294967296"
+                      name: NVIDIA T400 4GB
+                      uuid: GPU-dec18f15-efad-2324-df10-ba3756e2b89c
+                host: DESKTOP-COEPU1G
+                memory:
+                    total: "16604368896"
+                os: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+                program: /home/alvin/expand-and-cluster/EC.py
+                python: CPython 3.10.12
+                root: /home/alvin/expand-and-cluster/data/sims
+                startedAt: "2025-11-28T06:26:40.557888Z"
+                writerId: uvqawnjpswacnzas87up7kecdk2lhadd
+        m:
+            - "1": training/iteration_step
+              "6":
+                - 3
+              "7": []
+            - "1": reconstruction/iteration_step
+              "6":
+                - 3
+              "7": []
+            - "2": reconstruction/*
+              "5": 2
+              "6":
+                - 1
+              "7": []
+            - "2": training/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+        python_version: 3.10.12
+        t:
+            "1":
+                - 1
+                - 41
+                - 51
+            "2":
+                - 1
+                - 41
+                - 51
+            "3":
+                - 7
+                - 16
+                - 62
+            "4": 3.10.12
+            "5": 0.22.1
+            "10":
+                - 20
+            "12": 0.22.1
+            "13": linux-x86_64
+        visualize:
+            clustering/student_alignment_A:
+                panel_config:
+                    fieldSettings:
+                        value: log cosine distance
+                    panelDefId: wandb/histogram/v0
+                    stringSettings:
+                        title: clustering/student_alignment_A
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: clustering/student_alignment_A_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+            clustering/student_alignment_W:
+                panel_config:
+                    fieldSettings:
+                        value: log cosine distance
+                    panelDefId: wandb/histogram/v0
+                    stringSettings:
+                        title: clustering/student_alignment_W
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: clustering/student_alignment_W_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+act_fun:
+    value: relu
+apex_fp16:
+    value: false
+batch_size:
+    value: 512
+batchnorm_frozen:
+    value: false
+batchnorm_init:
+    value: uniform
+beta:
+    value: 24
+blur_factor:
+    value: null
+boruta:
+    value: null
+conv_level:
+    value: null
+cooldown:
+    value: null
+d_in:
+    value: 2
+data_order_seed:
+    value: null
+datagen:
+    value: custom_critical
+dataset_name:
+    value: teacher
+delta:
+    value: null
+do_not_augment:
+    value: false
+finetune_lr:
+    value: 0.0001
+finetune_traning_steps:
+    value: 5000ep
+further_training:
+    value: null
+gamma:
+    value: 0.8
+lr:
+    value: 0.001
+milestone_steps:
+    value: null
+model_init:
+    value: kaiming_normal
+model_name:
+    value: students_custom(20)_2_12
+momentum:
+    value: 0
+nesterov_momentum:
+    value: 0
+optimizer_name:
+    value: adam
+others_frozen:
+    value: false
+others_frozen_exceptions:
+    value: null
+output_frozen:
+    value: false
+patience:
+    value: null
+plateau_opt:
+    value: false
+random_labels_fraction:
+    value: null
+samples:
+    value: 60000
+subsample_fraction:
+    value: null
+teacher_name:
+    value: custom_teacher
+teacher_seed:
+    value: "0"
+training_steps:
+    value: 10000ep
+transformation_seed:
+    value: null
+unsupervised_labels:
+    value: null
+warmup_steps:
+    value: null
+weight_decay:
+    value: null

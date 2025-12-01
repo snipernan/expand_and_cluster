@@ -1,0 +1,49 @@
+Generating dataset with teacher...
+train	ep 00000	it 000	loss 6.544e+01	ex 10000	time 0.00s
+train	ep 00100	it 000	loss 4.347e-02	ex 10000	time 8.05s
+train	ep 00200	it 000	loss 1.222e-02	ex 10000	time 9.80s
+train	ep 00300	it 000	loss 6.995e-03	ex 10000	time 9.86s
+train	ep 00400	it 000	loss 4.897e-03	ex 10000	time 9.77s
+train	ep 00500	it 000	loss 4.148e-03	ex 10000	time 10.19s
+train	ep 00600	it 000	loss 3.756e-03	ex 10000	time 10.30s
+train	ep 00700	it 000	loss 3.659e-03	ex 10000	time 10.47s
+train	ep 00800	it 000	loss 3.693e-03	ex 10000	time 10.43s
+train	ep 00900	it 000	loss 3.440e-03	ex 10000	time 9.50s
+train	ep 01000	it 000	loss 3.412e-03	ex 10000	time 9.54s
+train	ep 01100	it 000	loss 3.391e-03	ex 10000	time 9.20s
+train	ep 01200	it 000	loss 3.378e-03	ex 10000	time 9.43s
+train	ep 01300	it 000	loss 3.145e-03	ex 10000	time 9.42s
+train	ep 01400	it 000	loss 3.109e-03	ex 10000	time 9.42s
+train	ep 01500	it 000	loss 3.083e-03	ex 10000	time 9.28s
+train	ep 01600	it 000	loss 3.007e-03	ex 10000	time 9.45s
+train	ep 01700	it 000	loss 2.867e-03	ex 10000	time 9.41s
+train	ep 01800	it 000	loss 2.846e-03	ex 10000	time 9.57s
+train	ep 01900	it 000	loss 2.792e-03	ex 10000	time 10.16s
+train	ep 02000	it 000	loss 2.833e-03	ex 10000	time 10.35s
+train	ep 02100	it 000	loss 2.822e-03	ex 10000	time 10.28s
+train	ep 02200	it 000	loss 2.803e-03	ex 10000	time 10.47s
+train	ep 02300	it 000	loss 2.821e-03	ex 10000	time 9.72s
+train	ep 02400	it 000	loss 2.757e-03	ex 10000	time 9.39s
+train	ep 02500	it 000	loss 2.843e-03	ex 10000	time 9.55s
+train	ep 02600	it 000	loss 2.764e-03	ex 10000	time 9.87s
+train	ep 02700	it 000	loss 2.727e-03	ex 10000	time 10.17s
+train	ep 02800	it 000	loss 2.723e-03	ex 10000	time 9.95s
+train	ep 02900	it 000	loss 2.612e-03	ex 10000	time 10.86s
+Traceback (most recent call last):
+  File "/home/alvin/expand-and-cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/alvin/expand-and-cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/alvin/expand-and-cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/alvin/expand-and-cluster/extraction/runner.py", line 66, in run
+    students, losses = expand_and_cluster.train_students(
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 82, in train_students
+    train(training_hparams, model, train_loader, output_location, callbacks, start_step=start_step)
+  File "/home/alvin/expand-and-cluster/training/train.py", line 126, in train
+    for it, (examples, labels) in enumerate(train_loader):
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 677, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+KeyboardInterrupt

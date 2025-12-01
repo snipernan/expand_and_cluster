@@ -1,0 +1,104 @@
+Generating dataset with teacher...
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /home/alvin/expand-and-cluster/data/sims/ec_6c987cb398/seed_-1/main/clustering_f069fb9d7c
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 10 of size bigger than 4.0.
+removing 0/10 unaligned clusters
+Collapsing 10 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+#0->1, #1->1, #2->1, #3->5, #4->2, #5->1, #6->1, #7->1, #8->1, #9->3,
+Final layer size: 10
+
+train	ep 00000	it 000	loss 7.623e+00	ex 10000	time 0.00s
+train	ep 00100	it 000	loss 2.155e-01	ex 10000	time 9.05s
+train	ep 00200	it 000	loss 5.466e-02	ex 10000	time 9.15s
+train	ep 00300	it 000	loss 2.562e-02	ex 10000	time 8.91s
+train	ep 00400	it 000	loss 1.439e-02	ex 10000	time 9.16s
+train	ep 00500	it 000	loss 9.128e-03	ex 10000	time 8.70s
+train	ep 00600	it 000	loss 6.195e-03	ex 10000	time 8.57s
+train	ep 00700	it 000	loss 4.438e-03	ex 10000	time 8.70s
+train	ep 00800	it 000	loss 3.456e-03	ex 10000	time 8.22s
+train	ep 00900	it 000	loss 2.711e-03	ex 10000	time 8.12s
+train	ep 01000	it 000	loss 2.212e-03	ex 10000	time 7.96s
+train	ep 01100	it 000	loss 1.651e-03	ex 10000	time 7.95s
+train	ep 01200	it 000	loss 1.241e-03	ex 10000	time 8.22s
+train	ep 01300	it 000	loss 1.042e-03	ex 10000	time 8.31s
+train	ep 01400	it 000	loss 9.255e-04	ex 10000	time 8.15s
+train	ep 01500	it 000	loss 8.416e-04	ex 10000	time 8.14s
+train	ep 01600	it 000	loss 7.767e-04	ex 10000	time 8.05s
+train	ep 01700	it 000	loss 7.267e-04	ex 10000	time 8.24s
+train	ep 01800	it 000	loss 6.879e-04	ex 10000	time 8.27s
+train	ep 01900	it 000	loss 6.513e-04	ex 10000	time 8.35s
+train	ep 02000	it 000	loss 6.199e-04	ex 10000	time 8.35s
+train	ep 02100	it 000	loss 5.903e-04	ex 10000	time 8.69s
+train	ep 02200	it 000	loss 5.676e-04	ex 10000	time 8.25s
+train	ep 02300	it 000	loss 5.485e-04	ex 10000	time 7.93s
+train	ep 02400	it 000	loss 5.314e-04	ex 10000	time 8.19s
+train	ep 02500	it 000	loss 5.157e-04	ex 10000	time 8.09s
+train	ep 02600	it 000	loss 5.012e-04	ex 10000	time 8.35s
+train	ep 02700	it 000	loss 4.872e-04	ex 10000	time 9.26s
+train	ep 02800	it 000	loss 4.777e-04	ex 10000	time 9.65s
+train	ep 02900	it 000	loss 4.676e-04	ex 10000	time 8.80s
+train	ep 03000	it 000	loss 4.568e-04	ex 10000	time 8.89s
+train	ep 03100	it 000	loss 4.494e-04	ex 10000	time 8.93s
+train	ep 03200	it 000	loss 4.415e-04	ex 10000	time 8.80s
+train	ep 03300	it 000	loss 4.331e-04	ex 10000	time 9.31s
+train	ep 03400	it 000	loss 4.272e-04	ex 10000	time 9.02s
+train	ep 03500	it 000	loss 4.193e-04	ex 10000	time 9.01s
+train	ep 03600	it 000	loss 4.144e-04	ex 10000	time 8.59s
+train	ep 03700	it 000	loss 4.073e-04	ex 10000	time 8.12s
+train	ep 03800	it 000	loss 4.013e-04	ex 10000	time 7.85s
+train	ep 03900	it 000	loss 3.936e-04	ex 10000	time 8.29s
+train	ep 04000	it 000	loss 3.880e-04	ex 10000	time 8.16s
+train	ep 04100	it 000	loss 3.837e-04	ex 10000	time 8.20s
+train	ep 04200	it 000	loss 3.793e-04	ex 10000	time 8.43s
+train	ep 04300	it 000	loss 3.735e-04	ex 10000	time 8.49s
+train	ep 04400	it 000	loss 3.693e-04	ex 10000	time 9.03s
+train	ep 04500	it 000	loss 3.619e-04	ex 10000	time 8.68s
+train	ep 04600	it 000	loss 3.489e-04	ex 10000	time 8.71s
+train	ep 04700	it 000	loss 3.333e-04	ex 10000	time 8.77s
+train	ep 04800	it 000	loss 3.246e-04	ex 10000	time 8.72s
+train	ep 04900	it 000	loss 3.193e-04	ex 10000	time 8.93s
+train	ep 05000	it 000	loss 3.125e-04	ex 10000	time 8.43s
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 1
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 18 of size bigger than 4.0.
+removing 18/18 unaligned clusters
+Collapsing 0 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+
+Final layer size: 0
+Traceback (most recent call last):
+  File "/home/alvin/expand-and-cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/alvin/expand-and-cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/alvin/expand-and-cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/alvin/expand-and-cluster/extraction/runner.py", line 79, in run
+    expand_and_cluster.reconstruct(students, losses, self.desc.extraction_path(self.global_seed),
+  File "/home/alvin/expand-and-cluster/extraction/expand_and_cluster.py", line 175, in reconstruct
+    w_rec = np.stack([w_rec]*N, axis=2)
+  File "/home/alvin/expand-and-cluster/venv/lib/python3.10/site-packages/numpy/core/shape_base.py", line 452, in stack
+    axis = normalize_axis_index(axis, result_ndim)
+numpy.exceptions.AxisError: axis 2 is out of bounds for array of dimension 2
