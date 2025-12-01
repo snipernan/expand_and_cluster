@@ -1,0 +1,179 @@
+_wandb:
+    value:
+        cli_version: 0.23.0
+        e:
+            tc1n15rv5m0cluua30yxm5y8rakrx948:
+                args:
+                    - extract
+                    - --default_hparams
+                    - students_custom(20)_2_12_12
+                    - --teacher_name
+                    - custom_teacher_deep
+                    - --teacher_seed
+                    - "0"
+                    - --d_in
+                    - "2"
+                    - --dataset_name
+                    - teacher
+                    - --datagen
+                    - custom_critical
+                    - --samples
+                    - "60000"
+                    - --beta
+                    - "6"
+                    - --gamma
+                    - "0.15"
+                codePath: EC.py
+                codePathLocal: EC.py
+                cpu_count: 64
+                cpu_count_logical: 128
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "2197949513728"
+                        used: "908398661632"
+                email: 202100460027@mail.sdu.edu.cn
+                executable: /opt/miniconda3/envs/ec_env/bin/python
+                git:
+                    commit: af433a6f8797d5e2376c78dfd0d512f328871ba7
+                    remote: https://github.com/snipernan/expand_and_cluster.git
+                gpu: NVIDIA GeForce RTX 4090
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 16384
+                      memoryTotal: "25757220864"
+                      name: NVIDIA GeForce RTX 4090
+                      uuid: GPU-329224f0-e2cd-d494-6a69-2625e1dd1aac
+                host: development-8254-mouqomgz-6fb9674cbb-s7gcs
+                memory:
+                    total: "540850659328"
+                os: Linux-5.15.0-119-generic-x86_64-with-glibc2.35
+                program: /root/expand_and_cluster/EC.py
+                python: CPython 3.10.19
+                root: /root/expand_and_cluster/data/sims
+                startedAt: "2025-12-01T06:57:28.094589Z"
+                writerId: tc1n15rv5m0cluua30yxm5y8rakrx948
+        m:
+            - "1": reconstruction/iteration_step
+              "6":
+                - 3
+              "7": []
+            - "1": training/iteration_step
+              "6":
+                - 3
+              "7": []
+            - "2": training/*
+              "5": 2
+              "6":
+                - 1
+              "7": []
+            - "2": reconstruction/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+        python_version: 3.10.19
+        t:
+            "1":
+                - 1
+                - 41
+                - 51
+            "2":
+                - 1
+                - 41
+                - 51
+            "3":
+                - 7
+                - 16
+                - 62
+            "4": 3.10.19
+            "5": 0.23.0
+            "10":
+                - 20
+            "12": 0.23.0
+            "13": linux-x86_64
+act_fun:
+    value: relu
+apex_fp16:
+    value: false
+batch_size:
+    value: 512
+batchnorm_frozen:
+    value: false
+batchnorm_init:
+    value: uniform
+beta:
+    value: 6
+blur_factor:
+    value: null
+boruta:
+    value: null
+conv_level:
+    value: null
+cooldown:
+    value: null
+d_in:
+    value: 2
+data_order_seed:
+    value: null
+datagen:
+    value: custom_critical
+dataset_name:
+    value: teacher
+delta:
+    value: null
+do_not_augment:
+    value: false
+finetune_lr:
+    value: 0.0001
+finetune_traning_steps:
+    value: 5000ep
+further_training:
+    value: null
+gamma:
+    value: 0.15
+lr:
+    value: 0.001
+milestone_steps:
+    value: null
+model_init:
+    value: kaiming_normal
+model_name:
+    value: students_custom(20)_2_12_12
+momentum:
+    value: 0
+nesterov_momentum:
+    value: 0
+optimizer_name:
+    value: adam
+others_frozen:
+    value: false
+others_frozen_exceptions:
+    value: null
+output_frozen:
+    value: false
+patience:
+    value: null
+plateau_opt:
+    value: false
+random_labels_fraction:
+    value: null
+samples:
+    value: 60000
+subsample_fraction:
+    value: null
+teacher_name:
+    value: custom_teacher_deep
+teacher_seed:
+    value: "0"
+training_steps:
+    value: 10000ep
+transformation_seed:
+    value: null
+unsupervised_labels:
+    value: null
+warmup_steps:
+    value: null
+weight_decay:
+    value: null
