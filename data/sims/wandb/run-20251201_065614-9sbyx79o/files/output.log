@@ -1,0 +1,50 @@
+Generating dataset with teacher...
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /root/expand_and_cluster/data/sims/ec_3c2502264b/seed_-1/main/clustering_0e95f0976c
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 30 of size bigger than 2.998.
+removing 0/30 unaligned clusters
+Collapsing 30 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+#0->1, #3->3, #6->1, #10->5, #11->2, #12->3, #14->1, #15->1, #16->1, #17->1, #19->4, #22->1, #23->1, #25->2, #29->3,
+Final layer size: 15
+
+train	ep 00000	it 000	loss 1.246e+01	ex 10000	time 0.00s
+train	ep 00100	it 000	loss 2.068e-01	ex 10000	time 6.98s
+Traceback (most recent call last):
+  File "/root/expand_and_cluster/EC.py", line 76, in <module>
+    main()
+  File "/root/expand_and_cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/root/expand_and_cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/root/expand_and_cluster/extraction/runner.py", line 79, in run
+    expand_and_cluster.reconstruct(students, losses, self.desc.extraction_path(self.global_seed),
+  File "/root/expand_and_cluster/extraction/expand_and_cluster.py", line 191, in reconstruct
+    train(finetune_hparams, students, train_loader,
+  File "/root/expand_and_cluster/training/train.py", line 144, in train
+    loss = model.loss_criterion(model(examples), labels)
+  File "/opt/miniconda3/envs/ec_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/expand_and_cluster/models/students_custom.py", line 66, in forward
+    x = layer(x)
+  File "/opt/miniconda3/envs/ec_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/expand_and_cluster/models/students_custom.py", line 37, in forward
+    return self.act_fun(torch.einsum('bin,ihn->bhn', x, self.fc) +
+  File "/opt/miniconda3/envs/ec_env/lib/python3.10/site-packages/torch/functional.py", line 378, in einsum
+    return _VF.einsum(equation, operands)  # type: ignore[attr-defined]
+KeyboardInterrupt

@@ -1,0 +1,25 @@
+Generating dataset with teacher...
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /root/expand_and_cluster/data/sims/ec_3c2502264b/seed_-1/main/clustering_479b40c691
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/expand_and_cluster/EC.py", line 76, in <module>
+    main()
+  File "/root/expand_and_cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/root/expand_and_cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/root/expand_and_cluster/extraction/runner.py", line 79, in run
+    expand_and_cluster.reconstruct(students, losses, self.desc.extraction_path(self.global_seed),
+  File "/root/expand_and_cluster/extraction/expand_and_cluster.py", line 170, in reconstruct
+    w_rec, a_rec = reconstruct_layer(w_cat, N, extraction_hparams.gamma, beta, losses, A=a,
+  File "/root/expand_and_cluster/extraction/layer_reconstruction.py", line 48, in reconstruct_layer
+    assert gamma * N >= 2, f"The small cluster threshold (gamma * N = {gamma * N}) is lower than 2!"
+AssertionError: The small cluster threshold (gamma * N = 0.0) is lower than 2!

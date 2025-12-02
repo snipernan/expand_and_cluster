@@ -1,0 +1,5 @@
+Extraction Hyperparameters
+    * gamma => 0.1499999999
+    * beta => 6.0
+    * finetune_traning_steps => 5000ep
+    * finetune_lr => 0.0001
