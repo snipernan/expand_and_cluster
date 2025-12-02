@@ -2,6 +2,7 @@
 venv/
 env/
 .venv/
+myenv/
 
 # 2. 绝对不要上传 Python 编译缓存 (垃圾文件)
 __pycache__/
