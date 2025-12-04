@@ -5,11 +5,14 @@ from models import registry
 from foundations import hparams
 
 # ============================================================
-#   (1) 定义对比输入
+#   (1) 定义对比输入 - 样本数量改为 50
 # ============================================================
 torch.manual_seed(0)
-compare_input = torch.randn(5, 2) 
-print(f"--- 对比输入 (Shape: {compare_input.shape}) ---\n{compare_input.numpy()}\n")
+# 将样本数量从 5 增加到 50
+compare_input = torch.randn(50, 2) 
+print(f"--- 对比输入 (Shape: {compare_input.shape}) ---")
+# 仅打印前 5 个样本以保持简洁
+print(f"仅打印前 5 个样本:\n{compare_input[:5].numpy()}\n") 
 
 # ============================================================
 #   (2) 加载模型 B (原始教师 - 标准方式) + [新增] 打印权重
@@ -17,7 +20,8 @@ print(f"--- 对比输入 (Shape: {compare_input.shape}) ---\n{compare_input.nump
 print("=" * 60)
 print("加载模型 B (原始教师 - 标准加载)")
 print("=" * 60)
-model_B_path = '/home/alvin/expand-and-cluster/data/sims/train_custom_teacher/seed_0/main/model_ep0_it0.pth'
+# 请确保这个路径是正确的，因为它在您的环境中
+model_B_path = '/home/expand_and_cluster/data/sims/train_custom_teacher/seed_0/main/model_ep0_it0.pth'
 teacher_B_out = None
 
 try:
@@ -32,11 +36,6 @@ try:
     print(f"成功加载模型 B: {model_B_path}\n")
 
     # ----- [新增部分] 提取并打印模型 B 的权重结构 -----
-    # 假设模型是简单的 MLP，我们可以按顺序获取参数
-    # param_list[0]: Layer 1 Weights [Hidden, Input]
-    # param_list[1]: Layer 1 Bias    [Hidden]
-    # param_list[2]: Layer 2 Weights [Output, Hidden]
-    # param_list[3]: Layer 2 Bias    [Output]
     params_B = list(teacher_model_B.parameters())
     
     W1_B = params_B[0].detach().cpu().numpy() # Shape: [Hidden, Input]
@@ -80,14 +79,14 @@ except Exception as e:
 
 
 # ============================================================  
-#   (3) 加载模型 A (重构教师 - 手动方式)  
+#   (3) 加载模型 A (重构教师 - 手动方式)   
 # ============================================================  
 print("=" * 60)  
 print("加载模型 A (重构教师 - 手动加载)")  
 print("=" * 60)  
   
-model_A_path = "/home/alvin/expand-and-cluster/data/sims/ec_d592e06c8b/seed_-1/main/clustering_995dc42cbd/reconstructed_model/model_ep5000_it0.pth"  
-affine_path = "/home/alvin/expand-and-cluster/data/sims/ec_d592e06c8b/seed_-1/main/clustering_995dc42cbd/reconstructed_model/affine.pth"  
+model_A_path = "/home/expand_and_cluster/data/sims/ec_6731c8b2e3/seed_-1/main/clustering_995dc42cbd/reconstructed_model/model_ep5000_it0.pth"  
+affine_path = "/home/expand_and_cluster/data/sims/ec_6731c8b2e3/seed_-1/main/clustering_995dc42cbd/reconstructed_model/affine.pth"  
 teacher_A_out = None  
   
 try:  
@@ -179,35 +178,39 @@ except Exception as e:
     traceback.print_exc()
 
 # ============================================================
-#   (4) 和 (5) 对比输出 (与之前完全相同)
+#   (4) 和 (5) 对比输出 (改为 50 个样本)
 # ============================================================
-# (这部分代码与之前完全相同)
-print("\n\n==================== 输出对比 (5 个样本) ====================\n")
+print("\n\n==================== 输出对比 (50 个样本) ====================\n")
 if teacher_B_out is not None:
-    print("模型 B (原始教师) 输出:")
-    print(teacher_B_out)
+    print("模型 B (原始教师) 输出 (前 5 个):")
+    print(teacher_B_out[:5])
     print("-----------------------------------------------------------")
 else:
     print("模型 B (原始教师) 未能计算输出。\n")
 
 if teacher_A_out is not None:
-    print("模型 A (重构教师) 输出:")
-    print(teacher_A_out)
+    print("模型 A (重构教师) 输出 (前 5 个):")
+    print(teacher_A_out[:5])
     print("-----------------------------------------------------------")
 else:
     print("模型 A (重构教师) 未能计算输出。\n")
 
 if teacher_A_out is not None and teacher_B_out is not None:
-    print("\n==================== 输出矩阵对比 ====================\n")
-    all_out = np.vstack([teacher_B_out, teacher_A_out])
+    print("\n==================== 输出矩阵对比 (前 5 个样本) ====================\n")
+    # 只打印前 5 个样本以便查看
+    all_out = np.vstack([teacher_B_out[:5], teacher_A_out[:5]])
     print("行 0 = 模型 B (原始教师)")
     print("行 1 = 模型 A (重构教师)")
     np.set_printoptions(precision=7, suppress=True)
     print(all_out)
+    
+    # 计算所有 50 个样本的差异
     diff = np.abs(teacher_B_out - teacher_A_out)
-    print("\n绝对差异 (B - A):")
-    print(diff)
-    print(f"\n平均绝对差异: {np.mean(diff):.7f}")
+    print(f"\n绝对差异 (B - A) (所有 {len(diff)} 个样本):")
+    # 只打印前 5 个样本的绝对差异
+    print(diff[:5])
+    
+    print(f"\n所有 {len(diff)} 个样本的平均绝对差异: {np.mean(diff):.7f}")
+    print(f"所有 {len(diff)} 个样本的最大绝对差异: {np.max(diff):.7f}")
 else:
     print("\n无法生成对比矩阵，因为至少有一个模型加载失败。")
-    

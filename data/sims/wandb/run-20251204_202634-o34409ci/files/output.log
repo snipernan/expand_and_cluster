@@ -1,0 +1,53 @@
+Generating dataset with teacher...
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /home/expand_and_cluster/data/sims/ec_6a716683e5/seed_-1/main/clustering_8389c857d6
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 5 of size bigger than 25.0.
+removing 2/5 unaligned clusters
+Collapsing 3 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+#0->1, #1->1, #2->1,
+Final layer size: 3
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 1
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 5 of size bigger than 25.0.
+removing 5/5 unaligned clusters
+Collapsing 0 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+
+Final layer size: 0
+Traceback (most recent call last):
+  File "/home/expand_and_cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/expand_and_cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/expand_and_cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/expand_and_cluster/extraction/runner.py", line 79, in run
+    expand_and_cluster.reconstruct(students, losses, self.desc.extraction_path(self.global_seed),
+  File "/home/expand_and_cluster/extraction/expand_and_cluster.py", line 175, in reconstruct
+    w_rec = np.stack([w_rec]*N, axis=2)
+  File "/home/expand_and_cluster/venv/lib/python3.10/site-packages/numpy/core/shape_base.py", line 452, in stack
+    axis = normalize_axis_index(axis, result_ndim)
+numpy.exceptions.AxisError: axis 2 is out of bounds for array of dimension 2

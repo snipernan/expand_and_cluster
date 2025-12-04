@@ -1,0 +1,33 @@
+Generating dataset with teacher...
+============================================================================================================================================
+Reconstruction
+--------------------------------------------------------------------------------------------------------------------------------------------
+Reconstruction Location: /home/expand_and_cluster/data/sims/ec_61a705cb47/seed_-1/main/clustering_995dc42cbd
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Generating dataset with teacher...
+--------------------------------------------------------------------------------------------------------------------------------------------
+Layer 0
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+computing pairwise L2 distances... Done!
+Finding tree cut threshold
+Extracting clusters
+Found 7 of size bigger than 16.0.
+removing 0/7 unaligned clusters
+Collapsing 7 clusters.
+producing dendrogram...
+producing simmat...
+Collapsing based on best student neuron 'cluster number -> student rank':
+#0->1, #1->2, #2->1, #3->1, #4->1, #5->1, #6->1,
+Final layer size: 7
+
+MSE of linear component after reconstruction 0.3208113938169809
+Best average sim w: 3.3987622354575863e-07
+Best max sim w: 1.3595048938830345e-06
+Best average sim a: 1e-16
+Best max sim a: 1e-16
+Best average sim w: 1.8262305939749084e-08
+Best max sim w: 5.1603981199299653e-08
+Best average sim a: 1e-16
+Best max sim a: 1e-16

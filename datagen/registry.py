@@ -12,12 +12,12 @@
 import torch
 import numpy as np
 
-from datagen.datagens import mnist, cifar10, fashion_mnist, mnist_conv, cifar10_conv, custom_2d ,custom_critical
+from datagen.datagens import mnist, cifar10, fashion_mnist, mnist_conv, cifar10_conv, custom_2d ,custom_critical,custom_critical_paired
 from foundations.hparams import DatasetHparams
 from platforms.platform import get_platform
 
 registered_datagens = {'cifar10': cifar10, 'mnist': mnist, 'fashion_mnist': fashion_mnist, 'mnist_conv': mnist_conv,
-                       'cifar10_conv': cifar10_conv,'custom_2d': custom_2d,'custom_critical':custom_critical}
+                       'cifar10_conv': cifar10_conv,'custom_2d': custom_2d,'custom_critical':custom_critical,'custom_critical_paired':custom_critical_paired}
 
 
 def get(dataset_hparams: DatasetHparams, model, use_augmentation):

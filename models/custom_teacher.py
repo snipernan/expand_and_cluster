@@ -46,7 +46,7 @@ class Model(base.Model):
     @staticmethod  
     def get_model_from_name(model_name, initializer, act_fun, outputs=None):  
         outputs = 1  # 强制使用单输出  
-        plan = [2, 4,4]  
+        plan = [2, 4]  
         return Model(plan, initializer, act_fun, outputs)
       
     @staticmethod  

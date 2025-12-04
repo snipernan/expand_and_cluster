@@ -1,0 +1,17 @@
+Dataset Hyperparameters
+    * dataset_name => teacher
+    * batch_size => 512
+    * teacher_name => custom_teacher
+    * teacher_seed => 0
+    * samples => 100000
+    * datagen => custom_critiacl
+    * d_in => 2
+Model Hyperparameters
+    * model_name => students_custom(20)_2_12
+    * model_init => kaiming_normal
+    * batchnorm_init => uniform
+    * act_fun => relu
+Training Hyperparameters
+    * optimizer_name => adam
+    * lr => 0.001
+    * training_steps => 10000ep

@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/home/expand_and_cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/expand_and_cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/expand_and_cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/expand_and_cluster/extraction/runner.py", line 66, in run
+    students, losses = expand_and_cluster.train_students(
+  File "/home/expand_and_cluster/extraction/expand_and_cluster.py", line 67, in train_students
+    train_loader = datasets.registry.get(dataset_hparams, train=True)
+  File "/home/expand_and_cluster/datasets/registry.py", line 30, in get
+    dataset = registered_datasets[dataset_hparams.dataset_name].Dataset(dataset_hparams, use_augmentation)
+  File "/home/expand_and_cluster/datasets/teacher_dataset.py", line 47, in __init__
+    examples, labels = self.extract_teacher_data(dataset_hparams, use_augmentation)
+  File "/home/expand_and_cluster/datasets/teacher_dataset.py", line 65, in extract_teacher_data
+    model = self.get_specified_model(teacher_folder, d_in=d_in)
+  File "/home/expand_and_cluster/datasets/teacher_dataset.py", line 79, in get_specified_model
+    model.load_state_dict(model_state_dict)
+  File "/home/expand_and_cluster/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2041, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for Model:
+	Missing key(s) in state_dict: "fc_layers.1.weight", "fc_layers.1.bias".

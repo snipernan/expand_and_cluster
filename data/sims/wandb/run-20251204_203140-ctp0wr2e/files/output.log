@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/home/expand_and_cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/expand_and_cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/expand_and_cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/expand_and_cluster/extraction/runner.py", line 66, in run
+    students, losses = expand_and_cluster.train_students(
+  File "/home/expand_and_cluster/extraction/expand_and_cluster.py", line 67, in train_students
+    train_loader = datasets.registry.get(dataset_hparams, train=True)
+  File "/home/expand_and_cluster/datasets/registry.py", line 30, in get
+    dataset = registered_datasets[dataset_hparams.dataset_name].Dataset(dataset_hparams, use_augmentation)
+  File "/home/expand_and_cluster/datasets/teacher_dataset.py", line 47, in __init__
+    examples, labels = self.extract_teacher_data(dataset_hparams, use_augmentation)
+  File "/home/expand_and_cluster/datasets/teacher_dataset.py", line 65, in extract_teacher_data
+    model = self.get_specified_model(teacher_folder, d_in=d_in)
+  File "/home/expand_and_cluster/datasets/teacher_dataset.py", line 71, in get_specified_model
+    all_models = [d for d in os.listdir(directory) if d.startswith("model_")]
+FileNotFoundError: [Errno 2] No such file or directory: '/home/expand_and_cluster/data/sims/train_cunstom_teacher/seed_0/main'

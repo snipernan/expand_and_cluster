@@ -1,0 +1,177 @@
+_wandb:
+    value:
+        cli_version: 0.23.1
+        e:
+            9u0nqmot30rylxsv3eofrpgcz1bfdfw6:
+                args:
+                    - extract
+                    - --teacher_name
+                    - 84ffdd7cbf
+                    - --dataset_name
+                    - teacher
+                    - --samples
+                    - "60000"
+                    - --teacher_seed
+                    - "-1"
+                    - --d_in
+                    - "784"
+                    - --datagen
+                    - mnist
+                    - --batch_size
+                    - "640"
+                    - --model_name
+                    - student_mnist_lenet(50)_16_16
+                    - --optimizer_name
+                    - adam
+                    - --lr
+                    - "0.001"
+                    - --training_steps
+                    - 25000ep
+                    - --model_init
+                    - kaiming_normal
+                    - --batchnorm_init
+                    - uniform
+                    - --gamma
+                    - "0.5"
+                    - --beta
+                    - "5"
+                    - --boruta
+                    - mnist
+                    - --evaluate_only_at_end
+                codePath: EC.py
+                codePathLocal: EC.py
+                email: 202100460027@mail.sdu.edu.cn
+                executable: /home/expand_and_cluster/venv/bin/python
+                git:
+                    commit: f7614b4375b8c4cf364efd5e03bcd728131d90a0
+                    remote: https://github.com/snipernan/expand_and_cluster.git
+                host: H13-1
+                os: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+                program: /home/expand_and_cluster/EC.py
+                python: CPython 3.10.19
+                root: /home/expand_and_cluster/data/sims
+                startedAt: "2025-12-04T12:25:59.205806Z"
+                writerId: 9u0nqmot30rylxsv3eofrpgcz1bfdfw6
+        m:
+            - "1": training/iteration_step
+              "6":
+                - 3
+              "7": []
+            - "1": reconstruction/iteration_step
+              "6":
+                - 3
+              "7": []
+            - "2": training/*
+              "5": 1
+              "6":
+                - 1
+              "7": []
+            - "2": reconstruction/*
+              "5": 2
+              "6":
+                - 1
+              "7": []
+        python_version: 3.10.19
+        t:
+            "1":
+                - 1
+                - 41
+                - 51
+            "2":
+                - 1
+                - 41
+                - 51
+            "3":
+                - 7
+                - 16
+                - 62
+            "4": 3.10.19
+            "5": 0.23.1
+            "10":
+                - 20
+            "12": 0.23.1
+            "13": linux-x86_64
+act_fun:
+    value: relu
+apex_fp16:
+    value: false
+batch_size:
+    value: 640
+batchnorm_frozen:
+    value: false
+batchnorm_init:
+    value: uniform
+beta:
+    value: 5
+blur_factor:
+    value: null
+boruta:
+    value: mnist
+conv_level:
+    value: null
+cooldown:
+    value: null
+d_in:
+    value: 784
+data_order_seed:
+    value: null
+datagen:
+    value: mnist
+dataset_name:
+    value: teacher
+delta:
+    value: null
+do_not_augment:
+    value: false
+finetune_lr:
+    value: 0.0001
+finetune_traning_steps:
+    value: 5000ep
+further_training:
+    value: null
+gamma:
+    value: 0.5
+lr:
+    value: 0.001
+milestone_steps:
+    value: null
+model_init:
+    value: kaiming_normal
+model_name:
+    value: student_mnist_lenet(50)_16_16
+momentum:
+    value: 0
+nesterov_momentum:
+    value: 0
+optimizer_name:
+    value: adam
+others_frozen:
+    value: false
+others_frozen_exceptions:
+    value: null
+output_frozen:
+    value: false
+patience:
+    value: null
+plateau_opt:
+    value: false
+random_labels_fraction:
+    value: null
+samples:
+    value: 60000
+subsample_fraction:
+    value: null
+teacher_name:
+    value: 84ffdd7cbf
+teacher_seed:
+    value: "-1"
+training_steps:
+    value: 25000ep
+transformation_seed:
+    value: null
+unsupervised_labels:
+    value: null
+warmup_steps:
+    value: null
+weight_decay:
+    value: null

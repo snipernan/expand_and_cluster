@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/expand_and_cluster/EC.py", line 76, in <module>
+    main()
+  File "/home/expand_and_cluster/EC.py", line 72, in main
+    platform.run_job(runner_registry.get(runner_name).create_from_args(args).run)
+  File "/home/expand_and_cluster/platforms/base.py", line 130, in run_job
+    f()
+  File "/home/expand_and_cluster/extraction/runner.py", line 67, in run
+    models.registry.get(self.desc.model_hparams,d_in=self.desc.dataset_hparams.d_in), self.desc.run_path(self.global_seed),
+  File "/home/expand_and_cluster/models/registry.py", line 70, in get
+    raise ValueError('No such model: {}'.format(model_hparams.model_name))
+ValueError: No such model: student_mnist_lenet(50)_16_16
