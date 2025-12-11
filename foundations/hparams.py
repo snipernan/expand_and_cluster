@@ -228,6 +228,8 @@ class ExtractionHparams(Hparams):
     finetune_lr: float = 1e-4
     boruta: str = None
     conv_level: int = None
+    fixed_teacher_neurons: str = "" # used to fix the weights I extracted through Crypto-Extraction 格式: "layer0:0,1,2;layer1:3,4"
+    teacher_neuron_scale: float = 2.0  # 教师神经元的缩放系数
 
     _name: str = 'Extraction Hyperparameters'
     _description: str = 'Hyperparameters describing the network extraction with Expand-and-Cluster.'

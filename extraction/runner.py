@@ -63,11 +63,13 @@ class ExtractionRunner(Runner):
                                             run_type='ec',
                                             summary_infos={'local_hashname': self.desc.hashname.split('_')[-1]})
 
-        students, losses = expand_and_cluster.train_students(
-                    models.registry.get(self.desc.model_hparams,d_in=self.desc.dataset_hparams.d_in), self.desc.run_path(self.global_seed),
-                    self.desc.dataset_hparams, self.desc.training_hparams,
-                    evaluate_every_epoch=self.evaluate_every_epoch)
-
+        students, losses = expand_and_cluster.train_students(  
+                            self.desc.model_hparams,  # 新增：传递 model_hparams  
+                            self.desc.run_path(self.global_seed),  
+                            self.desc.dataset_hparams, self.desc.training_hparams,  
+                            self.desc.extraction_hparams,  # 新增：传递 extraction_hparams  
+                            evaluate_every_epoch=self.evaluate_every_epoch)
+        
         plot_metrics(folder_path=self.desc.run_path(self.global_seed), metric_name='train_individual_losses',
                      logscale=True)
 

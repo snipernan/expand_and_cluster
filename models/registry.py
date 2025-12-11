@@ -27,71 +27,73 @@ registered_models = [mnist_lenet.Model, cifar_lenet.Model, cifar_resnet.Model, c
                      students_mnist_conv.Model, cifar_conv.Model, students_cifar_conv.Model,custom_teacher.Model, students_custom.Model]
 
 
-def get(model_hparams: ModelHparams, outputs=None , d_in=None):
-    """Get the model for the corresponding hyperparameters."""
-
-    # Select the activation function.
-    if hasattr(activation_functions, model_hparams.act_fun):
-        act_fun = getattr(activation_functions, model_hparams.act_fun)()
-    else:
-        raise ValueError('No activation function: {} (add it in models.activation_functions)'.format(
-            model_hparams.act_fun))
-
-    # Select the initializer.
-    if hasattr(initializers, model_hparams.model_init):
-        initializer = getattr(initializers, model_hparams.model_init)
-    else:
-        raise ValueError('No initializer: {}'.format(model_hparams.model_init))
-
-    # Select the BatchNorm initializer.
-    if hasattr(bn_initializers, model_hparams.batchnorm_init):
-        bn_initializer = getattr(bn_initializers, model_hparams.batchnorm_init)
-    else:
-        raise ValueError('No batchnorm initializer: {}'.format(model_hparams.batchnorm_init))
-
-    # Create the overall initializer function.
-    def init_fn(w):
-        initializer(w)
-        bn_initializer(w)
-
-    # Select the model.
-    model = None
-    for registered_model in registered_models:
-        if registered_model.is_valid_model_name(model_hparams.model_name):
-            sig = inspect.signature(registered_model.get_model_from_name)  
-            if 'd_in' in sig.parameters:  
-                # 从某处获取 d_in,例如从全局配置或环境变量  
-                model = registered_model.get_model_from_name(model_hparams.model_name, init_fn, act_fun, outputs, d_in=d_in)  
-            else:  
-                model = registered_model.get_model_from_name(model_hparams.model_name, init_fn, act_fun, outputs)
-            break
-
-    if model is None:
-        raise ValueError('No such model: {}'.format(model_hparams.model_name))
-
-    # Freeze various subsets of the network.
-    bn_names = []
-    for k, v in model.named_modules():
-        if isinstance(v, torch.nn.BatchNorm2d):
-            bn_names += [k + '.weight', k + '.bias']
-
-    if model_hparams.others_frozen_exceptions:
-        others_exception_names = model_hparams.others_frozen_exceptions.split(',')
-        for name in others_exception_names:
-            if name not in model.state_dict():
-                raise ValueError(f'Invalid name to except: {name}')
-    else:
-        others_exception_names = []
-
-    for k, v in model.named_parameters():
-        if k in bn_names and model_hparams.batchnorm_frozen:
-            v.requires_grad = False
-        elif k in model.output_layer_names and model_hparams.output_frozen:
-            v.requires_grad = False
-        elif k not in bn_names and k not in model.output_layer_names and model_hparams.others_frozen:
-            if k in others_exception_names: continue
-            v.requires_grad = False
-
+def get(model_hparams: ModelHparams, outputs=None, d_in=None, fixed_weights=None):  
+    """Get the model for the corresponding hyperparameters."""  
+  
+    # Select the activation function.  
+    if hasattr(activation_functions, model_hparams.act_fun):  
+        act_fun = getattr(activation_functions, model_hparams.act_fun)()  
+    else:  
+        raise ValueError('No activation function: {} (add it in models.activation_functions)'.format(  
+            model_hparams.act_fun))  
+  
+    # Select the initializer.  
+    if hasattr(initializers, model_hparams.model_init):  
+        initializer = getattr(initializers, model_hparams.model_init)  
+    else:  
+        raise ValueError('No initializer: {}'.format(model_hparams.model_init))  
+  
+    # Select the BatchNorm initializer.  
+    if hasattr(bn_initializers, model_hparams.batchnorm_init):  
+        bn_initializer = getattr(bn_initializers, model_hparams.batchnorm_init)  
+    else:  
+        raise ValueError('No batchnorm initializer: {}'.format(model_hparams.batchnorm_init))  
+  
+    # Create the overall initializer function.  
+    def init_fn(w):  
+        initializer(w)  
+        bn_initializer(w)  
+  
+    # Select the model.  
+    model = None  
+    for registered_model in registered_models:  
+        if registered_model.is_valid_model_name(model_hparams.model_name):  
+            sig = inspect.signature(registered_model.get_model_from_name)    
+            if 'd_in' in sig.parameters:    
+                if 'fixed_weights' in sig.parameters:  
+                    model = registered_model.get_model_from_name(model_hparams.model_name, init_fn, act_fun, outputs, d_in=d_in, fixed_weights=fixed_weights)    
+                else:  
+                    model = registered_model.get_model_from_name(model_hparams.model_name, init_fn, act_fun, outputs, d_in=d_in)    
+            else:    
+                model = registered_model.get_model_from_name(model_hparams.model_name, init_fn, act_fun, outputs)  
+            break  
+  
+    if model is None:  
+        raise ValueError('No such model: {}'.format(model_hparams.model_name))  
+  
+    # Freeze various subsets of the network.  
+    bn_names = []  
+    for k, v in model.named_modules():  
+        if isinstance(v, torch.nn.BatchNorm2d):  
+            bn_names += [k + '.weight', k + '.bias']  
+  
+    if model_hparams.others_frozen_exceptions:  
+        others_exception_names = model_hparams.others_frozen_exceptions.split(',')  
+        for name in others_exception_names:  
+            if name not in model.state_dict():  
+                raise ValueError(f'Invalid name to except: {name}')  
+    else:  
+        others_exception_names = []  
+  
+    for k, v in model.named_parameters():  
+        if k in bn_names and model_hparams.batchnorm_frozen:  
+            v.requires_grad = False  
+        elif k in model.output_layer_names and model_hparams.output_frozen:  
+            v.requires_grad = False  
+        elif k not in bn_names and k not in model.output_layer_names and model_hparams.others_frozen:  
+            if k in others_exception_names: continue  
+            v.requires_grad = False  
+  
     return model
 
 

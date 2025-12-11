@@ -49,213 +49,285 @@ except ImportError:
 sep = '='*140
 sep2 = '-'*140
 
-def train_students(
-    model: Model,
-    output_location: str,
-    dataset_hparams: hparams.DatasetHparams,
-    training_hparams: hparams.TrainingHparams,
-    start_step: Step = None,
-    verbose: bool = True,
-    evaluate_every_epoch: bool = True):
+def parse_fixed_neurons(fixed_neurons_str, layer_idx):  
+    """解析固定神经元字符串，返回当前层的固定神经元索引列表"""  
+    if not fixed_neurons_str:  
+        return None  
+      
+    layers_config = fixed_neurons_str.split(';')  
+    for layer_config in layers_config:  
+        if layer_config.startswith(f'layer{layer_idx}:'):  
+            neurons_str = layer_config.split(':')[1]  
+            return [int(x) for x in neurons_str.split(',')]  
+    return None  
 
-    """Train using the students through the standard_train procedure."""
+def mask_gradients_callback(step, model, optimizer, output_location, logger):  
+    """在反向传播后重置固定神经元的梯度"""  
+    if hasattr(model, 'fixed_weights') and model.fixed_weights:  
+        for layer_idx, layer_fixed_weights in model.fixed_weights.items():  
+            if layer_idx < len(model.fc_layers):  
+                layer = model.fc_layers[layer_idx]  
+                if layer.fc.grad is not None:  
+                    # 重置固定神经元的梯度  
+                    for neuron_idx in layer_fixed_weights.keys():  
+                        layer.fc.grad[:, neuron_idx, :] = 0  
+                if layer.b.grad is not None:  
+                    for neuron_idx in layer_fixed_weights.keys():  
+                        layer.b.grad[neuron_idx, :] = 0  
 
-    # If the model file for the end of training already exists in this location, do not train.
-    iterations_per_epoch = datasets.registry.iterations_per_epoch(dataset_hparams)
-    train_end_step = Step.from_str(training_hparams.training_steps, iterations_per_epoch)
+def train_students(  
+    model_hparams: hparams.ModelHparams,  
+    output_location: str,  
+    dataset_hparams: hparams.DatasetHparams,  
+    training_hparams: hparams.TrainingHparams,  
+    extraction_hparams: hparams.ExtractionHparams = None,  
+    start_step: Step = None,  
+    verbose: bool = True,  
+    evaluate_every_epoch: bool = True):  
+    # 创建 train_loader  
+    train_loader = datasets.registry.get(dataset_hparams, train=True)      
+    # 解析固定神经元参数  
+    fixed_weights = {}  
+    if extraction_hparams and extraction_hparams.fixed_teacher_neurons:  
+        fixed_indices = parse_fixed_neurons(extraction_hparams.fixed_teacher_neurons, 0)  
+        if fixed_indices:  
+            # 加载教师网络并处理权重  
+            teacher_folder = os.path.join(get_platform().root, "train_" + dataset_hparams.teacher_name,  
+                                          "seed_" + dataset_hparams.teacher_seed, "main")  
+            teacher = Dataset.get_specified_model(teacher_folder)  
+            teacher_params = list(teacher.parameters())  
+              
+            layer_fixed_weights = {}  
+            for idx, neuron_idx in enumerate(fixed_indices):  
+                w_teacher = teacher_params[0].data.cpu().numpy().T[:-1, neuron_idx]  
+                b_teacher = teacher_params[1].data.cpu().numpy()[neuron_idx]  
+                  
+                # 符号归一化  
+                if w_teacher[0] < 0:  
+                    w_normalized = -w_teacher  
+                    b_normalized = -b_teacher  
+                else:  
+                    w_normalized = w_teacher  
+                    b_normalized = b_teacher  
+                  
+                layer_fixed_weights[neuron_idx] = (w_normalized, b_normalized)  
+              
+            fixed_weights[0] = layer_fixed_weights  
+      
+    # 创建带有固定权重的学生模型  
+    students = models.registry.get(model_hparams, d_in=dataset_hparams.d_in,   
+                                   fixed_weights=fixed_weights)  
+    callbacks = ec_callbacks(training_hparams, train_loader, verbose=verbose,   
+                             start_step=start_step, evaluate_every_100_epochs=evaluate_every_epoch)  
+    # 添加梯度掩码回调  
+    callbacks.append(mask_gradients_callback)
 
-    train_loader = datasets.registry.get(dataset_hparams, train=True)
+# 训练模型 
+    train(training_hparams, students, train_loader, output_location, callbacks, start_step=start_step) 
+      
+    # --- 修改开始: 计算损失 ---
+    losses = 0 
+    # 获取模型当前所在的设备 (例如 cuda:0)
+    device = next(students.parameters()).device 
+    with torch.no_grad():  # 不计算梯度  
+        for examples, labels in train_loader: 
+            # 将数据移动到与模型相同的设备
+            examples = examples.to(device)
+            labels = labels.to(device)
 
-    if (models.registry.exists(output_location, train_end_step) and
-    get_platform().exists(paths.logger(output_location))) and training_hparams.further_training is None:
-        state_dict = get_platform().load_model(paths.model(output_location, train_end_step),
-                                               map_location=get_platform().torch_device)
-        model.load_state_dict(state_dict)
-        losses = 0
-        for examples, labels in train_loader:
-            losses += model.individual_losses(model(examples), labels) / len(labels)
-        return model, losses.detach().cpu().numpy()
-
-    callbacks = ec_callbacks(training_hparams, train_loader, verbose=verbose, start_step=start_step,
-                             evaluate_every_100_epochs=evaluate_every_epoch)
-
-    train(training_hparams, model, train_loader, output_location, callbacks, start_step=start_step)
-    model.cpu()
-
-    losses = 0
-    for examples, labels in train_loader:
-        losses += model.individual_losses(model(examples), labels)/len(labels)
-
-    return model, losses.detach().cpu().numpy()
+            # 现在计算损失不会报错了
+            losses += students.individual_losses(students(examples), labels) / len(labels)
+    # --- 修改结束 ---
+      
+    return students, losses.detach().cpu().numpy()
 
 
-def reconstruct(model: Model,
-                losses: torch.Tensor,
-                output_location: str,
-                extraction_hparams: hparams.ExtractionHparams,
-                dataset_hparams: hparams.DatasetHparams,
-                training_hparams: hparams.TrainingHparams,
-                model_hparams: hparams.ModelHparams,
-                verbose: bool = True,
-                layer: int = None):
-    """Expand-and-Cluster procedure, for the moment is only for fully connected"""
-    plots_folder = os.path.join(output_location, "ECplots")
-    os.makedirs(plots_folder, exist_ok=True)
-    finetune_checkpoints_folder = os.path.join(output_location, "finetune_checkpoints")
-    os.makedirs(finetune_checkpoints_folder, exist_ok=True)
-    reconstructed_folder = os.path.join(output_location, "reconstructed_model")
-    os.makedirs(reconstructed_folder, exist_ok=True)
-    alignment_reconstruction =  os.path.join(reconstructed_folder, "after_reconstruction")
-    os.makedirs(alignment_reconstruction, exist_ok=True)
-    alignment_tuning = os.path.join(reconstructed_folder, "after_tuning")
-    os.makedirs(alignment_tuning, exist_ok=True)
-    beta = np.pi/extraction_hparams.beta
-    train_loader = datasets.registry.get(dataset_hparams, train=True)
+def reconstruct(model: Model,  
+                losses: torch.Tensor,  
+                output_location: str,  
+                extraction_hparams: hparams.ExtractionHparams,  
+                dataset_hparams: hparams.DatasetHparams,  
+                training_hparams: hparams.TrainingHparams,  
+                model_hparams: hparams.ModelHparams,  
+                verbose: bool = True,  
+                layer: int = None):  
+    """Expand-and-Cluster procedure, for the moment is only for fully connected"""  
+    plots_folder = os.path.join(output_location, "ECplots")  
+    os.makedirs(plots_folder, exist_ok=True)  
+    finetune_checkpoints_folder = os.path.join(output_location, "finetune_checkpoints")  
+    os.makedirs(finetune_checkpoints_folder, exist_ok=True)  
+    reconstructed_folder = os.path.join(output_location, "reconstructed_model")  
+    os.makedirs(reconstructed_folder, exist_ok=True)  
+    alignment_reconstruction =  os.path.join(reconstructed_folder, "after_reconstruction")  
+    os.makedirs(alignment_reconstruction, exist_ok=True)  
+    alignment_tuning = os.path.join(reconstructed_folder, "after_tuning")  
+    os.makedirs(alignment_tuning, exist_ok=True)  
+    beta = np.pi/extraction_hparams.beta  
+    train_loader = datasets.registry.get(dataset_hparams, train=True)  
+  
+    teacher_folder = os.path.join(get_platform().root, "train_" + dataset_hparams.teacher_name,  
+                                  "seed_" + dataset_hparams.teacher_seed, "main")  
+    teacher = Dataset.get_specified_model(teacher_folder)  
+    teacher_params = list(teacher.parameters())  
+      
+    # 解析固定神经元参数的函数  
+    def parse_fixed_neurons(fixed_neurons_str, layer_idx):  
+        """解析固定神经元字符串，返回当前层的固定神经元索引列表"""  
+        if not fixed_neurons_str:  
+            return None  
+          
+        layers_config = fixed_neurons_str.split(';')  
+        for layer_config in layers_config:  
+            if layer_config.startswith(f'layer{layer_idx}:'):  
+                neurons_str = layer_config.split(':')[1]  
+                return [int(x) for x in neurons_str.split(',')]  
+        return None  
+  
+    # Iterate through the different layers of model  
+    parameter_list = copy.deepcopy(list(model.parameters()))  
+    N = parameter_list[0].shape[-1]  
+  
+    layer_no = int(len(parameter_list)/2)  
+    final_layer = False  
+  
+    students = models.registry.get(model_hparams)  
+    symmetry = get_symmetry(students.act_fun)  
+  
+    # load boruta mask (assumes we know the dataset the teacher was trained on)  
+    cluster_mask = None  
+    if extraction_hparams.boruta is not None:  
+        dataset_class = registered_datasets[extraction_hparams.boruta].Dataset  
+        cluster_mask = dataset_class.get_boruta_mask()  
+        cluster_mask = np.concatenate([cluster_mask, [1.0]])  
+  
+    for l in range(layer_no):  
+        print(sep2 + '\n' + f'Layer {l}' + '\n' + sep2 + '\n')  
+        if l+1 == layer_no-1:  # if last hidden layer, set final_layer to True  
+            final_layer = True  
+  
+        i = l*2  # parameter_list index  
+        w, b, a = parameter_list[i].data, parameter_list[i+1].data,  parameter_list[i+2].data  
+        w, b, a = [copy.deepcopy(x.cpu().numpy()) for x in [w, b, a]]  
+  
+        # concatenate the biases to the weights  
+        w_cat = np.concatenate([w, b[np.newaxis, :, :]], axis=0)  
+  
+        # move weight norms to a if symmetry is even_linear_positive_scaling  
+        if symmetry == 'even_linear_positive_scaling':  
+            w_norms = np.linalg.norm(w_cat[:, :, :], axis=0)  
+            w_cat /= w_norms  
+            a = np.einsum("hon,hn->hon", a, w_norms)  
+  
+        # 获取当前层的固定神经元索引  
+        fixed_indices = parse_fixed_neurons(extraction_hparams.fixed_teacher_neurons, l)  
+          
+        # 获取教师权重和偏置  
+        teacher_w = teacher_params[l*2].data.cpu().numpy().T  # 权重矩阵  
+        teacher_b = teacher_params[l*2+1].data.cpu().numpy()  # 偏置向量  
+          
+        w_rec, a_rec = reconstruct_layer(w_cat, N, extraction_hparams.gamma, beta, losses, A=a,  
+                                         symmetry=symmetry, verbose=verbose,   
+                                         cluster_mask=cluster_mask,  
+                                         plots_folder=plots_folder, exp_name=f"L{l+1}",   
+                                         final_layer=final_layer,  
+                                         fixed_neuron_indices=fixed_indices,  
+                                         teacher_weights=teacher_w,  
+                                         teacher_biases=teacher_b,  
+                                         scale_factor=extraction_hparams.teacher_neuron_scale)  
+  
+        # put the new clustered layer across the N networks  
+        w_rec = np.stack([w_rec]*N, axis=2)  
+        w_rec, b_rec = w_rec[:-1, :, :], w_rec[-1, :, :]  
+  
+        students = fill_current_layer(students, i, w_rec, b_rec, a_rec, symmetry)  
 
-    teacher_folder = os.path.join(get_platform().root, "train_" + dataset_hparams.teacher_name,
-                                  "seed_" + dataset_hparams.teacher_seed, "main")
-    teacher = Dataset.get_specified_model(teacher_folder)
+        # 添加调试信息：检查参数是否被正确设置  
+        if l == 0 and fixed_indices is not None:  # 只在第一层检查  
+            print(f"\n=== 参数状态检查 ===")  
+            for name, param in students.named_parameters():  
+                if 'fc_layers.0' in name:  # 检查第一层参数  
+                    print(f"{name}: requires_grad={param.requires_grad}")  
+                    if 'weight' in name and param.dim() == 3:  
+                        print(f"  前4个神经元权重形状: {param.shape}")  
+                        print(f"  神经元0权重: {param[:, 0, 0].data.cpu().numpy()}")  
+            print(f"==================\n")
 
-    # Iterate through the different layers of model
-    parameter_list = copy.deepcopy(list(model.parameters()))
-    N = parameter_list[0].shape[-1]
-
-    layer_no = int(len(parameter_list)/2)
-    final_layer = False
-
-    students = models.registry.get(model_hparams)
-    symmetry = get_symmetry(students.act_fun)
-
-    # losses = 0
-    # for examples, labels in train_loader:
-    #     losses += students.individual_losses(students(examples), labels) / len(labels)
-
-    # if symmetry == "even_linear_positive_scaling" or symmetry == "even_linear":
-    #     students = students_mnist_lenet_linear.Model.load_from_student_mnist_lenet(students)
-
-    # load boruta mask (assumes we know the dataset the teacher was trained on)
-    cluster_mask = None
-    if extraction_hparams.boruta is not None:
-        dataset_class = registered_datasets[extraction_hparams.boruta].Dataset
-        cluster_mask = dataset_class.get_boruta_mask()
-        cluster_mask = np.concatenate([cluster_mask, [1.0]])
-
-    for l in range(layer_no):  # TODO: avoid re-clustering when it is already saved
-        print(sep2 + '\n' + f'Layer {l}' + '\n' + sep2 + '\n')
-        if l+1 == layer_no-1:  # if last hidden layer, set final_layer to True
-            final_layer = True
-
-        i = l*2  # parameter_list index
-        w, b, a = parameter_list[i].data, parameter_list[i+1].data,  parameter_list[i+2].data
-        w, b, a = [copy.deepcopy(x.cpu().numpy()) for x in [w, b, a]]
-
-        # concatenate the biases to the weights
-        w_cat = np.concatenate([w, b[np.newaxis, :, :]], axis=0)
-
-        # move weight norms to a if symmetry is even_linear_positive_scaling
-        if symmetry == 'even_linear_positive_scaling':
-            w_norms = np.linalg.norm(w_cat[:, :, :], axis=0)
-            w_cat /= w_norms
-            a = np.einsum("hon,hn->hon", a, w_norms)
-
-        # compute cosine similarity between weight vectors of w_cat
-        # n = 3  # network index
-        # sim = np.zeros((w_cat.shape[1], w_cat.shape[1]))
-        # for j in range(w_cat.shape[1]):
-        #     for i in range(w_cat.shape[1]):
-        #         sim[j, i] = np.dot(w_cat[:-1, j, n], w_cat[:-1, i, n]) / \
-        #                     (np.linalg.norm(w_cat[:-1, j, n]) * np.linalg.norm(w_cat[:-1, i, n]))
-        # fig, ax = plt.subplots(); plt.imshow(sim, cmap='bwr'); plt.colorbar(); fig.show()
-
-        w_rec, a_rec = reconstruct_layer(w_cat, N, extraction_hparams.gamma, beta, losses, A=a,
-                                         symmetry=symmetry, verbose=verbose, cluster_mask=cluster_mask,
-                                         plots_folder=plots_folder, exp_name=f"L{l+1}", final_layer=final_layer)
-
-        # put the new clustered layer across the N networks
-        w_rec = np.stack([w_rec]*N, axis=2)
-        w_rec, b_rec = w_rec[:-1, :, :], w_rec[-1, :, :]
-
-        students = fill_current_layer(students, i, w_rec, b_rec, a_rec, symmetry)
-
-        if l+1 == layer_no-1:  # if last hidden layer, break
-            break
-
-        # Retrain the upper layers of the network
-        start_step = Step.zero(train_loader.iterations_per_epoch)
-        finetune_hparams = copy.deepcopy(training_hparams)
-        finetune_hparams.training_steps = extraction_hparams.finetune_traning_steps
-        finetune_hparams.lr = extraction_hparams.finetune_lr
-        callbacks = ec_callbacks(finetune_hparams, train_loader, verbose=verbose, start_step=start_step,
-                                 evaluate_every_100_epochs=True)
-        os.makedirs(os.path.join(finetune_checkpoints_folder, f"L{l + 1}"), exist_ok=True)
-        train(finetune_hparams, students, train_loader,
-              os.path.join(finetune_checkpoints_folder, f"L{l + 1}"),
-              callbacks, start_step=start_step)
-
-        plot_metrics(folder_path=os.path.join(finetune_checkpoints_folder, f"L{l + 1}"),
-                     metric_name='train_individual_losses', logscale=True)
-
-        if l==0: cluster_mask = None  # remove cluster_mask after first layer
-
-        # TODO: add filtering of neurons with non-aligned biases (how do we deal with the last layer? there's no OP
-        #  after that)
-
-    # FINAL FINE-TUNING
-    # condense in one network and make all parameters trainable
-    for i, param in enumerate(students.parameters()):
-        if i % 2 == 0 and i != 2*(layer_no-1):  # weight params except the output layer
-            param.data = torch.mean(param.data, dim=2).unsqueeze(2)  # this average is not doing anything (note the above np.stack)
-        elif i == 2*(layer_no-1):  # output layer
-            param.data = param.data.unsqueeze(2)
-        elif i % 2 == 1:  # bias params
-            param.data = torch.mean(param.data, dim=1).unsqueeze(1)
-        param.requires_grad = True
-
-    students.N = 1
-    students.to(get_platform().torch_device)
-
-    if symmetry == 'even_linear_positive_scaling' or symmetry == 'even_linear':
-        frozen_students = copy.deepcopy(students)
-        sample_no = train_loader.dataset._labels.shape[0]
-        with torch.no_grad():
-            y_frozen = []
-            list_examples = []
-            list_labels = []
-            for examples, labels in train_loader:
-                examples = examples.to(device=get_platform().torch_device)
-                labels = labels.to(device=get_platform().torch_device)
-                y_frozen.append(frozen_students(examples))
-                list_labels.append(labels)
-                list_examples.append(examples)
-            y_frozen = torch.cat(y_frozen, dim=0).squeeze()
-            y = (torch.vstack(list_labels) - y_frozen).cpu().numpy()
-            examples = torch.vstack(list_examples).cpu().numpy()
-        x = np.concatenate([examples.reshape(sample_no, -1), np.ones([sample_no, 1])], axis=1)
-        thetas = np.linalg.lstsq(x, y, rcond=None)[0]
-        print(f"MSE of linear component after reconstruction {(((x @ thetas) - y)**2).mean()}")
-
-    teacher_comparison(teacher, students, symmetry, cluster_mask, alignment_reconstruction)
-
-    start_step = Step.zero(train_loader.iterations_per_epoch)
-    finetune_hparams = copy.deepcopy(training_hparams)
-    finetune_hparams.training_steps = extraction_hparams.finetune_traning_steps
-    finetune_hparams.lr = extraction_hparams.finetune_lr
-
-    if symmetry == 'even_linear_positive_scaling' or symmetry == 'even_linear':
-        callbacks = ec_linear_callbacks(finetune_hparams, train_loader, verbose=verbose, start_step=start_step,
-                                        evaluate_every_100_epochs=True)
-        parallel_train(finetune_hparams, students, train_loader, reconstructed_folder, callbacks,
-                       thetas, start_step=start_step)
-        # TODO: Implement proper linear parallel model and avoid specifying a different train function.
-        # TODO: what about the align_final_bias?
-    else:
-        callbacks = ec_callbacks(finetune_hparams, train_loader, verbose=verbose, start_step=start_step,
-                                 evaluate_every_100_epochs=True)
-        align_final_bias(students, train_loader, verbose=verbose)
-        train(finetune_hparams, students, train_loader, reconstructed_folder, callbacks, start_step=start_step)
-
-    teacher_comparison(teacher, students, symmetry, cluster_mask, alignment_tuning)
-    plot_metrics(folder_path=reconstructed_folder,
+        if l+1 == layer_no-1:  # if last hidden layer, break  
+            break  
+  
+        # Retrain the upper layers of the network  
+        start_step = Step.zero(train_loader.iterations_per_epoch)  
+        finetune_hparams = copy.deepcopy(training_hparams)  
+        finetune_hparams.training_steps = extraction_hparams.finetune_traning_steps  
+        finetune_hparams.lr = extraction_hparams.finetune_lr  
+        callbacks = ec_callbacks(finetune_hparams, train_loader, verbose=verbose, start_step=start_step,  
+                                 evaluate_every_100_epochs=True)  
+        os.makedirs(os.path.join(finetune_checkpoints_folder, f"L{l + 1}"), exist_ok=True)  
+        train(finetune_hparams, students, train_loader,  
+              os.path.join(finetune_checkpoints_folder, f"L{l + 1}"),  
+              callbacks, start_step=start_step)  
+  
+        plot_metrics(folder_path=os.path.join(finetune_checkpoints_folder, f"L{l + 1}"),  
+                     metric_name='train_individual_losses', logscale=True)  
+  
+        if l==0: cluster_mask = None  # remove cluster_mask after first layer  
+  
+    # FINAL FINE-TUNING  
+    # condense in one network and make all parameters trainable  
+    for i, param in enumerate(students.parameters()):  
+        if i % 2 == 0 and i != 2*(layer_no-1):  # weight params except the output layer  
+            param.data = torch.mean(param.data, dim=2).unsqueeze(2)  # this average is not doing anything (note the above np.stack)  
+        elif i == 2*(layer_no-1):  # output layer  
+            param.data = param.data.unsqueeze(2)  
+        elif i % 2 == 1:  # bias params  
+            param.data = torch.mean(param.data, dim=1).unsqueeze(1)  
+        param.requires_grad = True  
+  
+    students.N = 1  
+    students.to(get_platform().torch_device)  
+  
+    if symmetry == 'even_linear_positive_scaling' or symmetry == 'even_linear':  
+        frozen_students = copy.deepcopy(students)  
+        sample_no = train_loader.dataset._labels.shape[0]  
+        with torch.no_grad():  
+            y_frozen = []  
+            list_examples = []  
+            list_labels = []  
+            for examples, labels in train_loader:  
+                examples = examples.to(device=get_platform().torch_device)  
+                labels = labels.to(device=get_platform().torch_device)  
+                y_frozen.append(frozen_students(examples))  
+                list_labels.append(labels)  
+                list_examples.append(examples)  
+            y_frozen = torch.cat(y_frozen, dim=0).squeeze()  
+            y = (torch.vstack(list_labels) - y_frozen).cpu().numpy()  
+            examples = torch.vstack(list_examples).cpu().numpy()  
+        x = np.concatenate([examples.reshape(sample_no, -1), np.ones([sample_no, 1])], axis=1)  
+        thetas = np.linalg.lstsq(x, y, rcond=None)[0]  
+        print(f"MSE of linear component after reconstruction {(((x @ thetas) - y)**2).mean()}")  
+  
+    teacher_comparison(teacher, students, symmetry, cluster_mask, alignment_reconstruction)  
+  
+    start_step = Step.zero(train_loader.iterations_per_epoch)  
+    finetune_hparams = copy.deepcopy(training_hparams)  
+    finetune_hparams.training_steps = extraction_hparams.finetune_traning_steps  
+    finetune_hparams.lr = extraction_hparams.finetune_lr  
+  
+    if symmetry == 'even_linear_positive_scaling' or symmetry == 'even_linear':  
+        callbacks = ec_linear_callbacks(finetune_hparams, train_loader, verbose=verbose, start_step=start_step,  
+                                        evaluate_every_100_epochs=True)  
+        parallel_train(finetune_hparams, students, train_loader, reconstructed_folder, callbacks,  
+                       thetas, start_step=start_step)  
+        # TODO: Implement proper linear parallel model and avoid specifying a different train function.  
+        # TODO: what about the align_final_bias?  
+    else:  
+        callbacks = ec_callbacks(finetune_hparams, train_loader, verbose=verbose, start_step=start_step,  
+                                 evaluate_every_100_epochs=True)  
+        align_final_bias(students, train_loader, verbose=verbose)  
+        train(finetune_hparams, students, train_loader, reconstructed_folder, callbacks, start_step=start_step)  
+  
+    teacher_comparison(teacher, students, symmetry, cluster_mask, alignment_tuning)  
+    plot_metrics(folder_path=reconstructed_folder,  
                  metric_name='train_individual_losses', logscale=True)
 
 

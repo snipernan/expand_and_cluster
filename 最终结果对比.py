@@ -8,7 +8,7 @@ from foundations import hparams
 #   (1) 定义对比输入
 # ============================================================
 torch.manual_seed(0)
-compare_input = torch.randn(5, 2) 
+compare_input = torch.randn(100, 2) 
 print(f"--- 对比输入 (Shape: {compare_input.shape}) ---\n{compare_input.numpy()}\n")
 
 # ============================================================
@@ -86,8 +86,8 @@ print("=" * 60)
 print("加载模型 A (重构教师 - 手动加载)")  
 print("=" * 60)  
   
-model_A_path = "/home/alvin/expand-and-cluster/data/sims/ec_d592e06c8b/seed_-1/main/clustering_995dc42cbd/reconstructed_model/model_ep5000_it0.pth"  
-affine_path = "/home/alvin/expand-and-cluster/data/sims/ec_d592e06c8b/seed_-1/main/clustering_995dc42cbd/reconstructed_model/affine.pth"  
+model_A_path = "/home/alvin/expand-and-cluster/data/sims/ec_886be3b0c8/seed_-1/main/clustering_995dc42cbd/reconstructed_model/model_ep5000_it0.pth"  
+affine_path = "/home/alvin/expand-and-cluster/data/sims/ec_886be3b0c8/seed_-1/main/clustering_995dc42cbd/reconstructed_model/affine.pth"  
 teacher_A_out = None  
   
 try:  
